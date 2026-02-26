@@ -126,6 +126,8 @@ export const companyData = [
     { title: "ABOUT US", desc: "Our history, mission, and the values that drive our innovation.", icon: "🏢" },
     { title: "BLOG", desc: "Insights, tutorials, and latest trends from our tech experts.", icon: "✍️" },
     { title: "NEWS", desc: "Stay updated with our latest company milestones and events.", icon: "📰" },
+    { title: "PEOPLE", desc: "Meet the brilliant minds behind our successful solutions.", icon: "👥" },
+    { title: "CAREERS", desc: "Join our team and build the future of technology with us.", icon: "🚀" },
     { title: "ENGAGEMENT MODELS", desc: "Flexible partnership models including dedicated teams.", icon: "🤝" }
 ];
 
