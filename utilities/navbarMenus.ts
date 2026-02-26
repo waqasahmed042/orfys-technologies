@@ -1,10 +1,3 @@
-export type MenuItem = {
-    title: string;
-    desc?: string;
-    icon: string;
-};
-
-// 1. The main data object
 export const dropdownData = {
     "Services": {
         "Software Development": [
@@ -69,9 +62,71 @@ export const dropdownData = {
             { title: "Kubernetes", desc: "Orchestration", icon: "☸️" },
             { title: "Git / GitHub", desc: "Version Control", icon: "🐙" },
         ]
-    }
+    },
+    "Industries": {
+        "Healthcare & Finance": [
+            { title: "Healthcare", desc: "Medical software systems", icon: "🏥" },
+            { title: "FinTech", desc: "Financial technology", icon: "💳" },
+            { title: "Banking", desc: "Core banking solutions", icon: "🏦" },
+        ],
+        "E-Commerce & Logistics": [
+            { title: "E-Commerce", desc: "Retail & Online stores", icon: "🛍️" },
+            { title: "Product Information", desc: "Management Software (PIM)", icon: "🏷️" },
+            { title: "Logistics", desc: "Fleet & Supply Chain", icon: "🚛" },
+            { title: "Warehouse", desc: "Inventory Management", icon: "📦" },
+        ],
+        "Gaming, Edu & Energy": [
+            { title: "Gaming & Sports", desc: "Gambling & Sports Betting", icon: "🎮" },
+            { title: "Education", desc: "School Management Software", icon: "🎓" },
+            { title: "Telecom", desc: "Connectivity solutions", icon: "📞" },
+            { title: "Energy & Utilities", desc: "Renewable & Traditional", icon: "⚡" },
+        ],
+        "Crypto & Blockchain": [
+            { title: "Cryptocurrency", desc: "Exchanges, Wallets & Bots", icon: "🪙" },
+            { title: "Blockchain", desc: "DAO, DApp & DeFi", icon: "🔗" },
+            { title: "Web3", desc: "Metaverse & NFT Development", icon: "🌐" },
+        ],
+        "Media & Emerging": [
+            { title: "Media & Entertainment", desc: "Content & Streaming", icon: "🎬" },
+            { title: "IoT", desc: "Connected devices", icon: "📡" },
+            { title: "Advertising", desc: "AdTech solutions", icon: "📢" },
+        ]
+    },
+    "Expertise": {
+        "Business Solutions": [
+            { title: "Documents Management Systems (DMS)", desc: "Organized digital filing", icon: "📁" },
+            { title: "Business Process Management (BPM)", desc: "Workflow automation", icon: "📈" },
+            { title: "Enterprise Asset Management (EAM)", desc: "Asset tracking & lifecycle", icon: "🏗️" },
+            { title: "Facility Management Software (FM)", desc: "Infrastructure maintenance", icon: "🏢" },
+        ],
+        "Management Software": [
+            { title: "Human Resource Management (HRM)", desc: "Staff & payroll tools", icon: "👥" },
+            { title: "Digital Publishing Software (DPS)", desc: "Content distribution", icon: "📖" },
+            { title: "Digital Rights Management (DRM)", desc: "Content protection", icon: "🔐" },
+            { title: "Product Lifecycle Management (PLM)", desc: "Product roadmap tech", icon: "🔄" },
+        ],
+        "Advanced Tech": [
+            { title: "AR/VR Solutions", desc: "Immersive experiences", icon: "🕶️" },
+            { title: "Big Data Software", desc: "Large scale analytics", icon: "📉" },
+            { title: "CAD Software", desc: "Engineering design tools", icon: "📐" },
+            { title: "Customer Relationship (CRM)", desc: "Client management", icon: "🤝" },
+            { title: "Enterprise Resource Planning (ERP)", desc: "Unified business logic", icon: "💼" },
+        ]
+    },
 } as const;
 
-export const dropdownKeys = ["Services", "Technologies"] as const;
+export const portfolioData = [
+    { title: "CASE STUDIES", desc: "Full range of custom software development services.", icon: "📊" },
+    { title: "R&D WORKS", desc: "Keeping pace with the latest trends and API ecosystems.", icon: "🔬" },
+    { title: "PRODUCTS", desc: "Custom software development projects and add-ons.", icon: "📦" },
+    { title: "E-PUBLISHING SOLUTIONS", desc: "Tools for secure digital publishing and management.", icon: "🛡️" }
+];
 
-export const navLinks = ["Industries", "Expertise", "Portfolio", "Company"];
+export const companyData = [
+    { title: "ABOUT US", desc: "Our history, mission, and the values that drive our innovation.", icon: "🏢" },
+    { title: "BLOG", desc: "Insights, tutorials, and latest trends from our tech experts.", icon: "✍️" },
+    { title: "NEWS", desc: "Stay updated with our latest company milestones and events.", icon: "📰" },
+    { title: "ENGAGEMENT MODELS", desc: "Flexible partnership models including dedicated teams.", icon: "🤝" }
+];
+
+export const dropdownKeys = ["Services", "Technologies", "Industries", "Expertise"] as const;
