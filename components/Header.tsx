@@ -4,11 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
-<<<<<<< HEAD
 import { companyInfo, companyMenu, dropdownKeys, navigationMenus, portfolioMenu } from "@/lib/constants";
-=======
-import { companyInfo, companyMenu, dropdownKeys, navigationLinks, navigationMenus, portfolioMenu } from "@/lib/constants";
->>>>>>> 5a14d13eb59b0b29ff3d238a4047e177ceb3c087
 import ModeToggle from "./ModeToggle";
 import { IoMenu, IoClose } from 'react-icons/io5';
 import { MenuItem } from "@/utilities/types";
@@ -78,7 +74,7 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   const StandardItem = ({ item }: { item: MenuItem }) => (
-    <a href="#" className="group/item flex items-start p-4 mb-2 -m-4 rounded-xl transition-all duration-200 hover:bg-[var(--accent-primary)]/5">
+    <a href="#" className="group/item flex items-start p-4 mb-2 -m-4 rounded-xl transition-all duration-200 hover:bg-[var(--accent-primary)]/5 cursor-pointer">
       <div className="flex-shrink-0 w-11 h-11 border rounded-lg flex items-center justify-center text-xl transition-all shadow-sm bg-[var(--bg-secondary)] border-[var(--border-default)]">
         {item.icon}
       </div>
@@ -134,19 +130,14 @@ export default function Header() {
             <ul className="flex space-x-1 items-center">
               {dropdownKeys.map((category) => (
                 <li key={category} className="group static" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-<<<<<<< HEAD
                   <button
-                    className="flex items-center px-3 py-7 text-sm font-semibold uppercase transition-colors hover:text-[var(--accent-primary)]"
+                    className="flex items-center px-3 py-7 text-sm font-semibold uppercase transition-colors hover:text-[var(--accent-primary)] cursor-pointer"
                     style={{ color: "var(--text-secondary)" }}
                   >
                     <span className="relative">
                       {category}
                       <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[var(--accent-primary)] scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                     </span>
-=======
-                  <button className="flex items-center px-4 py-7 text-sm font-bold transition-colors text-[var(--text-primary)] hover:text-[var(--accent-primary)]">
-                    {category}
->>>>>>> 5a14d13eb59b0b29ff3d238a4047e177ceb3c087
                   </button>
 
                   <div className="dropdown-pane absolute left-0 right-0 top-full hidden z-[100]">
@@ -161,11 +152,7 @@ export default function Header() {
                       >
                         {Object.entries(navigationMenus[category as keyof typeof navigationMenus]).map(([sub, items]) => (
                           <div key={sub}>
-<<<<<<< HEAD
                             <h3 className="text-[11px] uppercase tracking-widest mb-6 border-b pb-2 opacity-60" style={{ borderColor: "var(--border-default)" }}>
-=======
-                            <h3 className="font-bold text-[11px] uppercase tracking-widest mb-6 border-b pb-2 opacity-60" style={{ borderColor: "var(--border-default)" }}>
->>>>>>> 5a14d13eb59b0b29ff3d238a4047e177ceb3c087
                               {sub}
                             </h3>
                             <div className="space-y-4">
@@ -181,19 +168,14 @@ export default function Header() {
 
               {[{ title: "Portfolio", data: portfolioMenu }, { title: "Company", data: companyMenu }].map((menu) => (
                 <li key={menu.title} className="group static" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-<<<<<<< HEAD
                   <button
-                    className="flex items-center px-3 py-7 text-sm font-semibold uppercase transition-colors hover:text-[var(--accent-primary)]"
+                    className="flex items-center px-3 py-7 text-sm font-semibold uppercase transition-colors hover:text-[var(--accent-primary)] cursor-pointer"
                     style={{ color: "var(--text-secondary)" }}
                   >
                     <span className="relative">
                       {menu.title}
                       <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[var(--accent-primary)] scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                     </span>
-=======
-                  <button className="flex items-center px-4 py-7 text-sm font-bold transition-colors text-[var(--text-primary)] hover:text-[var(--accent-primary)]">
-                    {menu.title}
->>>>>>> 5a14d13eb59b0b29ff3d238a4047e177ceb3c087
                   </button>
 
                   <div className="dropdown-pane absolute left-0 right-0 top-full hidden z-[100]">
@@ -259,11 +241,7 @@ export default function Header() {
                       <div className="pb-6 pt-2 space-y-6">
                         {Object.entries(navigationMenus[key as keyof typeof navigationMenus]).map(([sub, items]) => (
                           <div key={sub}>
-<<<<<<< HEAD
                             <p className={`text-[10px] uppercase mb-4 tracking-widest border-b border-[var(--border-default)] pb-1`}>{sub}</p>
-=======
-                            <p className={`text-[10px] uppercase font-bold mb-4 tracking-widest border-b border-[var(--border-default)] pb-1`}>{sub}</p>
->>>>>>> 5a14d13eb59b0b29ff3d238a4047e177ceb3c087
                             <div className="space-y-4">
                               {items.map((item: MenuItem) => <StandardItem key={item.title} item={item} />)}
                             </div>
@@ -276,11 +254,7 @@ export default function Header() {
 
                 {[{ title: "Portfolio", data: portfolioMenu }, { title: "Company", data: companyMenu }].map((menu) => (
                   <div key={menu.title} className={`border-b border-[var(--border-default)]`}>
-<<<<<<< HEAD
                     <button onClick={() => setOpenCategory(openCategory === menu.title ? null : menu.title)} className="flex items-center justify-between w-full py-5 text-left text-lg">
-=======
-                    <button onClick={() => setOpenCategory(openCategory === menu.title ? null : menu.title)} className="flex items-center justify-between w-full py-5 text-left font-bold text-lg">
->>>>>>> 5a14d13eb59b0b29ff3d238a4047e177ceb3c087
                       {menu.title} <IoIosArrowUp className={`${openCategory === menu.title ? 'cursor-pointer rotate-180 text-purple-400' : 'cursor-pointer'}`} />
                     </button>
 
