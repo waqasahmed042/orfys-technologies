@@ -197,7 +197,7 @@ export default function Header() {
             </a>
 
             <button
-              className="lg:hidden p-2 cursor-pointer rounded-md transition-colors"
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg cursor-pointer border border-[var(--border-default)] bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:bg-[var(--bg-primary)] transition-colors"
               style={{ color: "var(--text-primary)" }}
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
