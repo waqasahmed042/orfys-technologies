@@ -74,7 +74,7 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   const StandardItem = ({ item }: { item: MenuItem }) => (
-    <a href="#" className="group/item flex items-start p-4 mb-2 -m-4 rounded-xl transition-all duration-200 hover:bg-[var(--accent-primary)]/5 cursor-pointer">
+    <a href="#" className="group/item flex items-start p-4 my-1 -m-4 rounded-xl transition-all duration-200 hover:bg-[var(--accent-primary)]/5 cursor-pointer">
       <div className="flex-shrink-0 w-11 h-11 border rounded-lg flex items-center justify-center text-xl transition-all shadow-sm bg-[var(--bg-secondary)] border-[var(--border-default)]">
         {item.icon}
       </div>
@@ -223,7 +223,7 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div
             ref={mobileMenuRef}
-            className="lg:hidden pb-6 border-t mt-4 pt-4 overflow-hidden"
+            className="lg:hidden pb-6 border-t mt-4 pt-4"
             style={{
               borderColor: "var(--border-default)",
               backgroundColor: "var(--bg-primary)"
@@ -233,7 +233,6 @@ export default function Header() {
               <div className="space-y-1">
                 {dropdownKeys.map((key) => (
                   <div key={key} className={`border-b border-[var(--border-default)]`}>
-                    {/* Added font-semibold and text-[var(--text-secondary)] here */}
                     <button
                       onClick={() => setOpenCategory(openCategory === key ? null : key)}
                       className="flex items-center justify-between w-full py-5 text-left font-semibold text-lg uppercase tracking-wide"
@@ -258,12 +257,14 @@ export default function Header() {
                 ))}
 
                 {[{ title: "Portfolio", data: portfolioMenu }, { title: "Company", data: companyMenu }].map((menu) => (
-                  <div key={menu.title} className={`border-b border-[var(--border-default)]`}>
-                    {/* Added font-semibold and text-[var(--text-secondary)] here */}
+                  <div
+                    key={menu.title}
+                    className={`border-b border-[var(--border-default)]`}
+                  >
                     <button
-                      onClick={() => setOpenCategory(openCategory === menu.title ? null : menu.title)}
-                      className="flex items-center justify-between w-full py-5 text-left font-semibold text-lg uppercase tracking-wide"
+                      className="flex items-center justify-between cursor-pointer w-full py-5 text-left font-semibold text-lg uppercase tracking-wide"
                       style={{ color: "var(--text-secondary)" }}
+                      onClick={() => setOpenCategory(openCategory === menu.title ? null : menu.title)}
                     >
                       {menu.title} <IoIosArrowUp className={`${openCategory === menu.title ? 'cursor-pointer rotate-180 text-purple-400' : 'cursor-pointer'}`} />
                     </button>
