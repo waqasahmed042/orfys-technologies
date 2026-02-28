@@ -233,7 +233,12 @@ export default function Header() {
               <div className="space-y-1">
                 {dropdownKeys.map((key) => (
                   <div key={key} className={`border-b border-[var(--border-default)]`}>
-                    <button onClick={() => setOpenCategory(openCategory === key ? null : key)} className="flex items-center justify-between w-full py-5 text-left font-bold text-lg">
+                    {/* Added font-semibold and text-[var(--text-secondary)] here */}
+                    <button
+                      onClick={() => setOpenCategory(openCategory === key ? null : key)}
+                      className="flex items-center justify-between w-full py-5 text-left font-semibold text-lg uppercase tracking-wide"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
                       {key} <IoIosArrowUp className={`${openCategory === key ? 'cursor-pointer rotate-180 text-purple-400' : 'cursor-pointer'}`} />
                     </button>
 
@@ -254,7 +259,12 @@ export default function Header() {
 
                 {[{ title: "Portfolio", data: portfolioMenu }, { title: "Company", data: companyMenu }].map((menu) => (
                   <div key={menu.title} className={`border-b border-[var(--border-default)]`}>
-                    <button onClick={() => setOpenCategory(openCategory === menu.title ? null : menu.title)} className="flex items-center justify-between w-full py-5 text-left text-lg">
+                    {/* Added font-semibold and text-[var(--text-secondary)] here */}
+                    <button
+                      onClick={() => setOpenCategory(openCategory === menu.title ? null : menu.title)}
+                      className="flex items-center justify-between w-full py-5 text-left font-semibold text-lg uppercase tracking-wide"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
                       {menu.title} <IoIosArrowUp className={`${openCategory === menu.title ? 'cursor-pointer rotate-180 text-purple-400' : 'cursor-pointer'}`} />
                     </button>
 
