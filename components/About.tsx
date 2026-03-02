@@ -50,13 +50,13 @@ export default function About() {
 
           {/* Image */}
           <div className="rounded-2xl overflow-hidden shadow-xl aspect-[5/4] relative">
-            <Image
+            {/* <Image
               src="/path/to/your/image.jpg"
               alt="Orfys Technologies team collaborating"
               fill
               className="object-cover"
               sizes="(max-w-768px) 100vw, 50vw"
-            />
+            /> */}
           </div>
 
         </div>
