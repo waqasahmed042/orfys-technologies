@@ -137,7 +137,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 z-50 w-full transition-all duration-300 px-6 sm:px-10 ${isScrolled ? "py-3 bg-[var(--bg-primary)]/90 backdrop-blur-md shadow-xl" : "py-6 bg-transparent"}`}>
+      <header className={`fixed top-0 z-50 w-full transition-all duration-300 px-6 sm:px-10 ${isScrolled ? "py-3 bg-[var(--bg-primary)]/90 backdrop-blur-md shadow-xl" : "py-3 bg-transparent"}`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between relative">
 
           {/* Brand Logo */}
@@ -158,7 +158,7 @@ export default function Header() {
 
               {dropdownKeys.map((category) => (
                 <li key={category} className="static group py-2" onMouseEnter={(e) => handleMouseEnter(e, category)} onMouseLeave={handleMouseLeave}>
-                  <button className="relative flex items-center gap-1 px-3 text-[14px] font-semibold transition-colors capitalize" style={{ color: "var(--text-primary)" }}>
+                  <button className="relative flex items-center cursor-pointer gap-1 px-3 text-[14px] font-semibold transition-colors capitalize" style={{ color: "var(--text-primary)" }}>
                     {category}
                     <span className="absolute bottom-[-2px] left-3 right-3 h-[2px] bg-[var(--accent-primary)] transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-center" />
                   </button>
@@ -187,7 +187,7 @@ export default function Header() {
 
               {[{ title: "Portfolio", data: portfolioMenu }, { title: "Company", data: companyMenu }].map((menu) => (
                 <li key={menu.title} className="static group py-2" onMouseEnter={(e) => handleMouseEnter(e, menu.title)} onMouseLeave={handleMouseLeave}>
-                  <button className="relative px-3 text-[14px] font-semibold transition-colors" style={{ color: "var(--text-primary)" }}>
+                  <button className="relative px-3 text-[14px] cursor-pointer font-semibold transition-colors" style={{ color: "var(--text-primary)" }}>
                     {menu.title}
                     <span className="absolute bottom-[-2px] left-3 right-3 h-[2px] bg-[var(--accent-primary)] transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-center" />
                   </button>
@@ -245,7 +245,7 @@ export default function Header() {
                   <div key={key} className="border-b last:border-none" style={{ borderColor: "var(--bg-secondary)" }}>
                     <button
                       onClick={() => setOpenCategory(openCategory === key ? null : key)}
-                      className="flex items-center justify-between w-full py-4 text-left font-semibold text-lg uppercase tracking-wide"
+                      className="flex items-center justify-between cursor-pointer w-full py-4 text-left font-semibold text-lg uppercase tracking-wide"
                       style={{ color: "var(--text-primary)" }}
                     >
                       {key} <IoIosArrowUp className={`transition-transform duration-300 ${openCategory === key ? 'rotate-180' : 'opacity-40'}`}

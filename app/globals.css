@@ -23,6 +23,30 @@
   --font-mono: var(--font-geist-mono);
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 10px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.2);
+  background: color-mix(in srgb, var(--accent-primary), white 20%);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) var(--bg-primary);
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -118,4 +142,42 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(var(--grid-color, #e5e7eb) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color, #e5e7eb) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* button styling */
+.button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button:hover {
+  color: #ffffff !important;
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px -5px var(--accent-primary);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--accent-primary);
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 800ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button:hover::before {
+  width: 250%;
 }

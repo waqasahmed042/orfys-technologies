@@ -30,7 +30,7 @@ export default function Services() {
             Our Services
           </h2>
           <p
-            className="text-xl max-w-2xl mx-auto"
+            className="text-sm md:text-md lg:text-lg  max-w-2xl mx-auto"
             style={{ color: "var(--text-secondary)" }}
           >
             Comprehensive solutions to automate and optimize your business
@@ -66,13 +66,13 @@ export default function Services() {
                 </div>
 
                 <h3
-                  className="text-2xl font-bold mb-3"
+                  className="text-lg md:text-xl lg:text-2xl font-bold mb-3"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {service.title}
                 </h3>
                 <p
-                  className="leading-relaxed"
+                  className="text-sm md:text-md lg:text-md leading-relaxed"
                   style={{ color: "var(--text-secondary)" }}
                 >
                   {service.description}

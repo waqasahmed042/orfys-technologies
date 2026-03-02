@@ -46,11 +46,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[100svh] flex items-center mt-28 overflow-hidden"
+      className="relative w-full flex items-center mt-28 overflow-hidden"
       style={{
         background: `linear-gradient(135deg, var(--bg-secondary), var(--bg-primary), var(--bg-secondary))`,
       }}
     >
+
       <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -64,7 +65,7 @@ export default function Hero() {
                 Build. Automate. Scale.
               </h1>
               <p
-                className="text-lg sm:text-xl md:text-2xl font-semibold"
+                className="text-md md:text-lg lg:text-2xl font-semibold"
                 style={{ color: "var(--accent-primary)" }}
               >
                 Software Development & Workflow Automation
@@ -72,7 +73,7 @@ export default function Hero() {
             </div>
 
             <p
-              className="text-base sm:text-lg md:text-xl leading-relaxed max-w-xl"
+              className="text-sm md:text-md lg:text-lg leading-relaxed max-w-xl"
               style={{ color: "var(--text-secondary)" }}
             >
               Transform your business with custom software solutions and intelligent
@@ -83,7 +84,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
                 href={`mailto:${companyInfo.email}?subject=Book%20a%20Call`}
-                className="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white rounded-lg shadow-lg transition hover:shadow-xl"
+                className="button inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white rounded-lg shadow-lg transition hover:shadow-xl"
                 style={{
                   background: `linear-gradient(to right, var(--accent-primary), var(--accent-secondary))`,
                 }}
@@ -93,7 +94,7 @@ export default function Hero() {
 
               <a
                 href={`mailto:${companyInfo.email}?subject=Get%20a%20Demo`}
-                className="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-lg border-2 transition hover:bg-[var(--bg-secondary)]"
+                className="button inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-lg border-2 transition"
                 style={{
                   borderColor: "var(--accent-primary)",
                   color: "var(--accent-primary)",

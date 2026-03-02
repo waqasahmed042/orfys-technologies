@@ -1,3 +1,4 @@
+import CustomCursor from "@/components/CustomCursor";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -11,6 +12,7 @@ import ScrollToTop from "@/hooks/scrollToTop";
 export default function Home() {
   return (
     <>
+      <CustomCursor />
       <Header />
       <main>
         <Hero />
