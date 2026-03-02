@@ -1,4 +1,18 @@
+import blob1 from "@/public/services/blob1.png";
+import blob2 from "@/public/services/blob2.png";
+import blob3 from "@/public/services/blob3.png";
+import blob4 from "@/public/services/blob4.png";
+import blob5 from "@/public/services/blob5.png";
+import blob6 from "@/public/services/blob6.png";
 import { Product, Service, TrustFactor } from "@/utilities/types";
+import {
+  IoCodeSlash,
+  IoSettingsSharp,
+  IoSyncCircleSharp,
+  IoBarChartSharp,
+  IoPhonePortraitOutline,
+  IoShieldCheckmarkSharp
+} from "react-icons/io5";
 
 export const companyInfo = {
   fullName: "ORFYS TECHNOLOGIES (PRIVATE) LIMITED",
@@ -152,41 +166,43 @@ export const navigationLinks = [
 
 export const services: Service[] = [
   {
-    iconPath:
-      "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+    bgImg: blob1,
+    iconPath: IoCodeSlash,
     title: "Software Development",
     description:
       "End-to-end software development using modern technologies. We build responsive, scalable, and secure solutions tailored to your business needs.",
   },
   {
-    iconPath:
-      "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+    bgImg: blob2,
+    iconPath: IoSyncCircleSharp,
     title: "Workflow Automation",
     description:
       "Custom automation solutions that eliminate manual processes, reduce errors, and free up your team to focus on strategic work.",
   },
   {
-    iconPath: "M13 10V3L4 14h7v7l9-11h-7z",
+    bgImg: blob3,
+    iconPath: IoSettingsSharp,
     title: "Integration Services",
     description:
       "Connect your existing tools and systems with seamless integrations that enable data flow and process synchronization.",
   },
   {
-    iconPath:
-      "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+    bgImg: blob4,
+    iconPath: IoBarChartSharp,
     title: "Data Analytics",
     description:
       "Transform raw data into actionable insights with custom analytics dashboards and reporting solutions.",
   },
   {
-    iconPath: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z",
+    bgImg: blob5,
+    iconPath: IoPhonePortraitOutline,
     title: "Mobile Solutions",
     description:
       "Native and cross-platform mobile applications that extend your automation capabilities to mobile devices.",
   },
   {
-    iconPath:
-      "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    bgImg: blob6,
+    iconPath: IoShieldCheckmarkSharp,
     title: "Security & Compliance",
     description:
       "Enterprise-grade security measures and compliance solutions to protect your data and meet regulatory requirements.",

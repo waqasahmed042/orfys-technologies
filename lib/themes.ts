@@ -49,4 +49,3 @@ export const themes: Record<ThemeName, Record<ThemeMode, Theme>> = {
 export const getTheme = (themeName: ThemeName, mode: ThemeMode): Theme => {
   return themes[themeName][mode];
 };
-

@@ -11,6 +11,11 @@
   --border-default: #e5e7eb;
 }
 
+::selection {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
 @theme inline {
   --color-background: var(--bg-primary);
   --color-foreground: var(--text-primary);

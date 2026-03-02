@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { services } from "@/lib/constants";
 import { useGSAPStagger } from "@/hooks/useGSAPStagger";
 
@@ -38,49 +39,49 @@ export default function Services() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              data-animate-item
-              className="rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              style={{ backgroundColor: "var(--bg-primary)" }}
-            >
+          {services.map((service, index) => {
+            const Icon = service.iconPath;
+
+            return (
               <div
-                className="w-14 h-14 rounded-lg flex items-center justify-center mb-6"
-                style={{ backgroundColor: "var(--bg-secondary)" }}
+                key={index}
+                data-animate-item
+                className="rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col items-center text-center"
+                style={{ backgroundColor: "var(--bg-primary)" }}
               >
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  style={{ color: "var(--accent-primary)" }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d={service.iconPath}
+                {/* Icon Container with Blob Background */}
+                <div className="relative w-28 h-28 mb-6 flex items-center justify-center">
+                  <div
+                    className="absolute inset-0 bg-no-repeat bg-contain bg-center"
+                    style={{
+                      backgroundImage: `url(${typeof service.bgImg === "string"
+                        ? service.bgImg
+                        : service.bgImg.src
+                        })`,
+                    }}
                   />
-                </svg>
+
+                  {/* Icons Component */}
+                  <Icon className="relative z-10 text-white text-4xl" />
+                </div>
+
+                <h3
+                  className="text-2xl font-bold mb-3"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  {service.title}
+                </h3>
+                <p
+                  className="leading-relaxed"
+                  style={{ color: "var(--text-secondary)" }}
+                >
+                  {service.description}
+                </p>
               </div>
-              <h3
-                className="text-2xl font-bold mb-3"
-                style={{ color: "var(--text-primary)" }}
-              >
-                {service.title}
-              </h3>
-              <p
-                className="leading-relaxed"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {service.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
   );
-}
-
+};

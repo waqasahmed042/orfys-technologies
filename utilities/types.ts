@@ -1,4 +1,6 @@
-import { Theme, ThemeName, ThemeMode, getTheme } from "@/lib/themes";
+import { Theme, ThemeName, ThemeMode } from "@/lib/themes";
+import { StaticImageData } from "next/image";
+import { IconType } from "react-icons";
 
 export type MenuItem = {
     title: string;
@@ -7,7 +9,8 @@ export type MenuItem = {
 };
 
 export interface Service {
-    iconPath: string;
+    bgImg: StaticImageData | string;
+    iconPath: IconType;
     title: string;
     description: string;
 };
