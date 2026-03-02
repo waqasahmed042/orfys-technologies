@@ -6,6 +6,7 @@ import Products from "@/components/Products";
 import WhyOrfys from "@/components/WhyOrfys";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/hooks/scrollToTop";
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+
+      <ScrollToTop />
     </>
   );
 }

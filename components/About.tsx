@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useGSAPAnimation } from "@/hooks/useGSAPAnimation";
+import about_us from "@/public/about-us.png";
 
 export default function About() {
   const ref = useGSAPAnimation({
@@ -23,7 +24,7 @@ export default function About() {
           {/* Text Content */}
           <div className="space-y-6">
             <h2
-              className="text-4xl sm:text-5xl font-bold"
+              className="text-4xl font-bold"
               style={{ color: "var(--text-primary)" }}
             >
               About Orfys Technologies
@@ -50,13 +51,13 @@ export default function About() {
 
           {/* Image */}
           <div className="rounded-2xl overflow-hidden shadow-xl aspect-[5/4] relative">
-            {/* <Image
-              src="/path/to/your/image.jpg"
+            <Image
+              src={about_us}
               alt="Orfys Technologies team collaborating"
               fill
               className="object-cover"
               sizes="(max-w-768px) 100vw, 50vw"
-            /> */}
+            />
           </div>
 
         </div>
