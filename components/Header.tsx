@@ -208,7 +208,7 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="absolute right-12 sm:right-2 top-1/2 -translate-y-1/2 flex items-center gap-2 lg:static lg:translate-y-0 lg:flex-1 lg:justify-end">
+          <div className="flex-1 flex justify-end items-center gap-2">
             <ModeToggle />
 
             <a
