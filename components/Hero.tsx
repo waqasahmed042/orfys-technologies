@@ -14,7 +14,6 @@ export default function Hero() {
 
     if (!left) return;
 
-
     gsap.set(left, { opacity: 0, y: 30 });
     if (right) gsap.set(right, { opacity: 0, y: 30, scale: 0.95 });
 
@@ -47,7 +46,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[100svh] flex items-center overflow-hidden"
+      className="relative w-full min-h-[100svh] flex items-center mt-28 overflow-hidden"
       style={{
         background: `linear-gradient(135deg, var(--bg-secondary), var(--bg-primary), var(--bg-secondary))`,
       }}
@@ -258,7 +257,6 @@ export default function Hero() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

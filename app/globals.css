@@ -91,3 +91,26 @@ body {
 .theme-button-hover {
   transition: opacity 0.3s ease, background-color 0.3s ease;
 }
+
+/* Custom Scrollbar for Dropdown Menus */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-secondary) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
