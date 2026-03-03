@@ -140,7 +140,30 @@ export default function Header() {
           {/* Brand Logo */}
           <div className="flex-1">
             <Link href="/" className="flex items-center gap-2">
-              <Image src={companyInfo.desktopLogo} alt="Logo" width={100} height={40} priority />
+              {/* Desktop Logo: Hidden by default, shown on sm screens and up */}
+              <Image
+                src={companyInfo.desktopLogo}
+                alt="Logo"
+                width={100}
+                height={40}
+                priority
+                className="hidden sm:block"
+              />
+              {/* Mobile Logo: Shown by default, hidden on sm screens and up */}
+              <Image
+                src={companyInfo.mobileLogo}
+                alt="Logo"
+                width={40}
+                height={40}
+                priority
+                className="block sm:hidden"
+              />
+              <h1
+                className="block sm:hidden text-2xl font-semibold tracking-[-0.04em] leading-none "
+                style={{ color: "var(--text-primary)" }}
+              >
+                Orfys
+              </h1>
             </Link>
           </div>
 

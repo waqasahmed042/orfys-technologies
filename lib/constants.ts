@@ -20,7 +20,7 @@ export const companyInfo = {
   email: "noman@orfys.com",
   location: "Moazzamabad, Sargodha, Punjab, 40100, Pakistan",
   desktopLogo: "/o-full-logo.png",
-  mobileLogo: "/o-logo.jpg",
+  mobileLogo: "/o-logo.png",
 };
 
 export const navigationMenus = {
