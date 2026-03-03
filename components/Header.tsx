@@ -154,14 +154,17 @@ export default function Header() {
                     <span className="absolute bottom-[-2px] left-3 right-3 h-[2px] bg-[var(--accent-primary)] transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-center" />
                   </button>
 
-                  <div className="dropdown-pane absolute top-full left-0 w-full pt-4 hidden">
+                  <div className="dropdown-pane absolute top-full inset-x-0 px-8 pt-4 hidden">
                     <div className="w-full border rounded-[2.5rem] p-8 shadow-2xl grid grid-cols-3 gap-8 overflow-y-auto custom-scrollbar"
                       style={{
                         backgroundColor: "var(--bg-primary)",
                         borderColor: "var(--bg-secondary)",
                         maxHeight: "calc(100vh - 120px)",
-                        overscrollBehavior: "contain"
+                        overscrollBehavior: "contain",
+                        msOverflowStyle: 'none',
+                        scrollbarWidth: 'none'
                       }}>
+
                       {Object.entries(navigationMenus[category as keyof typeof navigationMenus]).map(([sub, items]) => (
                         <div key={sub} className="flex flex-col group/cat">
                           <h3 className="text-[10px] uppercase tracking-widest mb-4 font-bold border-b pb-2 transition-colors group-hover/cat:text-[var(--accent-primary)] group-hover/cat:border-[var(--accent-primary)]/40"
@@ -183,13 +186,15 @@ export default function Header() {
                     <span className="absolute bottom-[-2px] left-3 right-3 h-[2px] bg-[var(--accent-primary)] transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-center" />
                   </button>
 
-                  <div className="dropdown-pane absolute top-full left-0 w-full pt-4 hidden">
-                    <div className="w-full border rounded-[2.5rem] p-6 shadow-2xl grid grid-cols-4 gap-4 overflow-y-auto custom-scrollbar"
+                  <div className="dropdown-pane absolute top-full inset-x-0 px-8 pt-4 hidden">
+                    <div className="w-full border rounded-[2.5rem] p-6 shadow-lg grid grid-cols-4 gap-4 overflow-y-auto custom-scrollbar"
                       style={{
                         backgroundColor: "var(--bg-primary)",
                         borderColor: "var(--bg-secondary)",
                         maxHeight: "calc(100vh - 120px)",
-                        overscrollBehavior: "contain"
+                        overscrollBehavior: "contain",
+                        msOverflowStyle: 'none',
+                        scrollbarWidth: 'none'
                       }}>
                       {menu.data.map((item) => <CardItem key={item.title} item={item} />)}
                     </div>
