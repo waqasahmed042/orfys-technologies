@@ -84,7 +84,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
                 href={`mailto:${companyInfo.email}?subject=Book%20a%20Call`}
-                className="button inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white rounded-lg shadow-lg transition hover:shadow-xl"
+                className="button inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white rounded-lg shadow-md transition"
                 style={{
                   background: `linear-gradient(to right, var(--accent-primary), var(--accent-secondary))`,
                 }}
@@ -262,4 +262,4 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+};

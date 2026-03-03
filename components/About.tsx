@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useGSAPAnimation } from "@/hooks/useGSAPAnimation";
-import about_us from "@/public/about-us.png";
+import about_us from "@/public/about-us-collage.png";
 
 export default function About() {
   const ref = useGSAPAnimation({
@@ -21,7 +21,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Text Content - Kept original text */}
+          {/* Text Content */}
           <div className="space-y-6">
             <h2
               className="text-xl md:text-2xl lg:text-4xl font-bold"
@@ -49,21 +49,16 @@ export default function About() {
             </p>
           </div>
 
-          <div className="relative">
-            <div
-              className="rounded-tl-[120px] lg:rounded-tl-[200px] rounded-2xl overflow-hidden shadow-2xl aspect-[5/4] relative border border-white/10"
-            >
-              <Image
-                src={about_us}
-                alt="Orfys Technologies team collaborating"
-                fill
-                className="object-cover"
-                sizes="(max-w-768px) 100vw, 50vw"
-              />
-            </div>
-
-            {/* Soft glow behind the image to match the premium feel */}
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-[var(--accent-primary)] opacity-5 blur-[100px] -z-10" />
+          {/* Image Section */}
+          <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]">
+            <Image
+              src={about_us}
+              alt="Orfys Technologies team collaborating"
+              fill
+              className="object-contain"
+              sizes="(max-w-768px) 100vw, 50vw"
+              priority
+            />
           </div>
 
         </div>

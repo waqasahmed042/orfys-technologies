@@ -19,7 +19,8 @@ export const companyInfo = {
   name: "Orfys Technologies",
   email: "noman@orfys.com",
   location: "Moazzamabad, Sargodha, Punjab, 40100, Pakistan",
-  logo: "/o-logo.png",
+  desktopLogo: "/o-full-logo.png",
+  mobileLogo: "/o-logo.jpg",
 };
 
 export const navigationMenus = {
@@ -168,6 +169,7 @@ export const services: Service[] = [
   {
     bgImg: blob1,
     iconPath: IoCodeSlash,
+    route: "/services/software-development",
     title: "Software Development",
     description:
       "End-to-end software development using modern technologies. We build responsive, scalable, and secure solutions tailored to your business needs.",
@@ -175,6 +177,7 @@ export const services: Service[] = [
   {
     bgImg: blob2,
     iconPath: IoSyncCircleSharp,
+    route: "/services/workflow-automation",
     title: "Workflow Automation",
     description:
       "Custom automation solutions that eliminate manual processes, reduce errors, and free up your team to focus on strategic work.",
@@ -182,6 +185,7 @@ export const services: Service[] = [
   {
     bgImg: blob3,
     iconPath: IoSettingsSharp,
+    route: "/services/integration-services",
     title: "Integration Services",
     description:
       "Connect your existing tools and systems with seamless integrations that enable data flow and process synchronization.",
@@ -189,6 +193,7 @@ export const services: Service[] = [
   {
     bgImg: blob4,
     iconPath: IoBarChartSharp,
+    route: "/services/data-analytics",
     title: "Data Analytics",
     description:
       "Transform raw data into actionable insights with custom analytics dashboards and reporting solutions.",
@@ -196,6 +201,7 @@ export const services: Service[] = [
   {
     bgImg: blob5,
     iconPath: IoPhonePortraitOutline,
+    route: "/services/mobile-solutions",
     title: "Mobile Solutions",
     description:
       "Native and cross-platform mobile applications that extend your automation capabilities to mobile devices.",
@@ -203,6 +209,7 @@ export const services: Service[] = [
   {
     bgImg: blob6,
     iconPath: IoShieldCheckmarkSharp,
+    route: "/services/security-compliance",
     title: "Security & Compliance",
     description:
       "Enterprise-grade security measures and compliance solutions to protect your data and meet regulatory requirements.",

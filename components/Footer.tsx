@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="py-12"
+      className="py-12 border-t border-gray-50"
       style={{
         backgroundColor: "var(--bg-secondary)",
         color: "var(--text-secondary)",
@@ -20,15 +20,12 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-3 mb-4">
               <Image
-                src={companyInfo.logo}
+                src={companyInfo.desktopLogo}
                 alt={`${companyInfo.name} Logo`}
-                width={100}
-                height={33}
+                width={140}
+                height={40}
                 className="h-6 w-auto object-contain"
               />
-              <p className="text-xl font-bold" style={{ color: "var(--text-primary)" }}>
-                <span style={{ color: "var(--accent-primary)" }}>Orfys</span> Technologies
-              </p>
             </Link>
             <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
               Building the future of software development and workflow automation.

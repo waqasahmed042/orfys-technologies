@@ -11,6 +11,7 @@ export type MenuItem = {
 export interface Service {
     bgImg: StaticImageData | string;
     iconPath: IconType;
+    route: string;
     title: string;
     description: string;
 };

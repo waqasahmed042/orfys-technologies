@@ -25,7 +25,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scrolling when mobile menu is open and restore it when closed
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -36,7 +35,6 @@ export default function Header() {
     return () => { document.body.style.overflow = "unset"; };
   }, [isMobileMenuOpen]);
 
-  // Handle dropdown opening animation on desktop when mouse enters the category
   const handleMouseEnter = (e: React.MouseEvent<HTMLLIElement>, category: string) => {
     setOpenCategory(category);
     const dropdown = e.currentTarget.querySelector(".dropdown-pane");
@@ -50,7 +48,6 @@ export default function Header() {
     };
   };
 
-  // Handle dropdown closing animation on desktop when mouse leaves the category
   const handleMouseLeave = (e: React.MouseEvent<HTMLLIElement>) => {
     setOpenCategory(null);
     const dropdown = e.currentTarget.querySelector(".dropdown-pane");
@@ -63,7 +60,6 @@ export default function Header() {
     };
   };
 
-  // Handle navigation opening animation on mobile screens
   useEffect(() => {
     if (isMobileMenuOpen && mobileMenuRef.current) {
       gsap.set(mobileMenuRef.current, { height: 0, opacity: 0, y: -20 });
@@ -78,7 +74,6 @@ export default function Header() {
     }
   }, [isMobileMenuOpen]);
 
-  // Handle navigation closing animation on mobile screens
   const toggleMobileMenu = () => {
     if (!isMobileMenuOpen) {
       setIsMobileMenuOpen(true);
@@ -99,7 +94,6 @@ export default function Header() {
     }
   };
 
-  // Standard menu item component used in dropdowns
   const StandardItem = ({ item }: { item: MenuItem }) => (
     <Link href="#" className="group/item flex items-start p-3 rounded-xl transition-all duration-200 hover:bg-[var(--bg-secondary)] cursor-pointer">
       <div className="flex-shrink-0 w-9 h-9 border rounded-lg flex items-center justify-center text-lg transition-colors bg-[var(--bg-primary)] border-[var(--bg-secondary)] group-hover/item:border-[var(--accent-primary)]">
@@ -118,7 +112,6 @@ export default function Header() {
     </Link>
   );
 
-  // Card-style menu item component used in Portfolio and Company dropdowns
   const CardItem = ({ item }: { item: MenuItem }) => (
     <div className="group/card cursor-pointer p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-primary)]/40 bg-[var(--bg-secondary)]/30 border-[var(--bg-secondary)]">
       <div className="aspect-video rounded-xl mb-4 flex items-center justify-center text-4xl transition-transform group-hover/card:scale-105 bg-[var(--bg-secondary)]/50 shadow-inner border border-[var(--bg-secondary)]">
@@ -137,25 +130,23 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 z-50 w-full transition-all duration-300 px-6 sm:px-10 ${isScrolled ? "py-3 bg-[var(--bg-primary)]/90 backdrop-blur-md shadow-xl" : "py-3 bg-transparent"}`}>
-        <div className="max-w-7xl mx-auto flex items-center justify-between relative">
+      <header className={`fixed top-0 z-50 w-full transition-all duration-500 flex justify-center ${isScrolled ? "pt-4 px-4" : "pt-0 px-0"}`}>
+        {/* Main content container this becomes the Pill */}
+        <div className={`flex items-center justify-between transition-all duration-500 ease-in-out ${isScrolled
+          ? "max-w-6xl w-full px-8 py-2.5 rounded-full border bg-[var(--bg-primary)]/90 backdrop-blur-md shadow-xl border border-gray-200"
+          : "max-w-full w-full px-6 sm:px-10 py-3 bg-transparent border-transparent"
+          }`}>
 
           {/* Brand Logo */}
           <div className="flex-1">
             <Link href="/" className="flex items-center gap-2">
-              <Image src={companyInfo.logo} alt="Logo" width={28} height={28} priority />
-              <div className="flex leading-none">
-                <span className="text-xl font-bold" style={{ color: "var(--accent-primary)" }}>Orfys</span>
-                <span className="text-xl font-bold hidden sm:inline ml-1.5" style={{ color: "var(--text-primary)" }}>Technologies</span>
-              </div>
+              <Image src={companyInfo.desktopLogo} alt="Logo" width={100} height={40} priority />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:block static">
-            <ul className="flex items-center gap-1 border transition-all duration-300 rounded-full px-4 py-1.5"
-              style={{ backgroundColor: "var(--bg-primary)", borderColor: "var(--bg-secondary)", boxShadow: "0 4px 15px -1px rgb(0 0 0 / 0.1)" }}>
-
+          <nav className="hidden lg:block">
+            <ul className="flex items-center gap-1">
               {dropdownKeys.map((category) => (
                 <li key={category} className="static group py-2" onMouseEnter={(e) => handleMouseEnter(e, category)} onMouseLeave={handleMouseLeave}>
                   <button className="relative flex items-center cursor-pointer gap-1 px-3 text-[14px] font-semibold transition-colors capitalize" style={{ color: "var(--text-primary)" }}>
@@ -208,12 +199,13 @@ export default function Header() {
             </ul>
           </nav>
 
+          {/* Actions */}
           <div className="flex-1 flex justify-end items-center gap-2">
             <ModeToggle />
 
             <a
               href={`mailto:${companyInfo.email}?subject=Book%20a%20Call`}
-              className="hidden lg:block px-6 py-2.5 border font-semibold text-sm rounded-lg transition-all active:scale-95 shadow-sm hover:shadow-md"
+              className="hidden lg:block px-6 py-2 border font-semibold text-sm rounded-lg transition-all active:scale-95 shadow-sm hover:shadow-md"
               style={{
                 borderColor: "var(--accent-primary)",
                 color: "var(--text-primary)",
@@ -224,7 +216,6 @@ export default function Header() {
 
             <button
               className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg cursor-pointer border border-[var(--border-default)] bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:bg-[var(--bg-primary)] transition-colors"
-              style={{ backgroundColor: "var(--bg-secondary)", color: "var(--text-primary)" }}
               onClick={toggleMobileMenu}>
               {isMobileMenuOpen ? <IoClose size={24} /> : <IoMenu size={24} />}
             </button>

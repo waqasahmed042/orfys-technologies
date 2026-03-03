@@ -2,12 +2,12 @@ import CustomCursor from "@/components/CustomCursor";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
+import Services from "@/components/services/page";
 import Products from "@/components/Products";
 import WhyOrfys from "@/components/WhyOrfys";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
-import ScrollToTop from "@/hooks/scrollToTop";
+import ScrollToTop from "@/hooks/userScrollToTop";
 
 export default function Home() {
   return (
