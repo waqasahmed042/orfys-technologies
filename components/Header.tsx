@@ -154,7 +154,7 @@ export default function Header() {
                     <span className="absolute bottom-[-2px] left-3 right-3 h-[2px] bg-[var(--accent-primary)] transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-center" />
                   </button>
 
-                  <div className="dropdown-pane absolute top-full inset-x-0 px-8 pt-4 hidden">
+                  <div className="dropdown-pane absolute top-full inset-x-0 px-8 hidden">
                     <div className="w-full border rounded-[2.5rem] p-8 shadow-2xl grid grid-cols-3 gap-8 overflow-y-auto custom-scrollbar"
                       style={{
                         backgroundColor: "var(--bg-primary)",
@@ -186,7 +186,7 @@ export default function Header() {
                     <span className="absolute bottom-[-2px] left-3 right-3 h-[2px] bg-[var(--accent-primary)] transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-center" />
                   </button>
 
-                  <div className="dropdown-pane absolute top-full inset-x-0 px-8 pt-4 hidden">
+                  <div className="dropdown-pane absolute top-full inset-x-0 px-8 hidden">
                     <div className="w-full border rounded-[2.5rem] p-6 shadow-lg grid grid-cols-4 gap-4 overflow-y-auto custom-scrollbar"
                       style={{
                         backgroundColor: "var(--bg-primary)",
