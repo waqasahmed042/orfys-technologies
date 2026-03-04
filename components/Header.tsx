@@ -159,7 +159,7 @@ export default function Header() {
                 className="block sm:hidden"
               />
               <h1
-                className="block sm:hidden text-2xl font-semibold tracking-[-0.04em] leading-none "
+                className="block sm:hidden text-2xl font-semibold tracking-[-0.04em] leading-none"
                 style={{ color: "var(--text-primary)" }}
               >
                 Orfys

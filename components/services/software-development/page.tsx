@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import {
-    FiArrowRight,
     FiCheckCircle,
     FiChevronDown,
     FiCode,
@@ -11,23 +10,24 @@ import {
     FiSmartphone,
     FiCpu,
     FiArrowUpRight,
-    FiStar
+    FiStar,
 } from "react-icons/fi";
 import { useGSAPAnimation } from "@/hooks/useGSAPAnimation";
 import { useGSAPStagger } from "@/hooks/useGSAPStagger";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PathSegments from "../pathSegments";
+import Hero from "../hero";
 
-// --- Reusable Section Header Component ---
+// Reusable Section Header Component
 const SectionHeader = ({ title, subtitle, centered = false }: { title: string; subtitle?: string; centered?: boolean }) => (
     <div className={`mb-12 ${centered ? "text-center" : "text-left"}`}>
         <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">{title}</h2>
         {subtitle && <p className="text-[var(--text-secondary)] text-lg max-w-2xl font-medium">{subtitle}</p>}
-        <div className={`mt-4 w-16 h-1 bg-[var(--accent-primary)] ${centered ? "mx-auto" : ""}`} />
     </div>
 );
 
-// --- Data Constants ---
+// Data for services, testimonials, and FAQs
 const servicesCovered = [
     {
         title: "Custom Web Apps",
@@ -51,6 +51,7 @@ const servicesCovered = [
     }
 ];
 
+// In a real application, these would likely come from a CMS or database
 const testimonials = [
     {
         name: "Alex Chen",
@@ -72,6 +73,7 @@ const testimonials = [
     }
 ];
 
+// FAQs would also typically be dynamic, but here we hardcode them for simplicity
 const faqs = [
     {
         q: "How long does the development process take?",
@@ -92,37 +94,10 @@ const SoftwareDevelopment: React.FC = () => {
             <Header />
             <main className="bg-[var(--bg-primary)] mt-20 min-h-screen">
 
-                {/* 1. HERO SECTION */}
-                <section
-                    ref={heroRef as React.RefObject<HTMLElement>}
-                    className="relative min-h-[550px] flex items-center w-full bg-cover bg-center overflow-hidden"
-                    style={{
-                        backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url('/services/hero-img.webp')"
-                    }}
-                >
-                    <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10 py-20">
-                        <div className="max-w-3xl space-y-8">
-                            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">
-                                Software <br />
-                                <span className="text-[var(--accent-primary)]">Development</span>
-                            </h1>
-                            <p className="text-xl text-gray-200 leading-relaxed max-w-2xl">
-                                Skyrocket Your Business Growth with Powerful Web and Mobile Apps.
-                                We engineer scalable, high-performance solutions tailored for the modern digital era.
-                            </p>
-                            <div className="flex flex-wrap gap-4 pt-4">
-                                <Link
-                                    href="#contact"
-                                    className="px-8 py-4 bg-[var(--accent-primary)] text-white font-bold rounded-xl flex items-center gap-2 hover:scale-105 transition-transform shadow-lg shadow-[var(--accent-primary)]/20"
-                                >
-                                    Talk to an expert <FiArrowRight />
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/* HERO SECTION */}
+                <Hero />
 
-                {/* 2. WHAT WE OFFER */}
+                {/* WHAT WE OFFER */}
                 <section className="py-24 bg-[var(--bg-secondary)]">
                     <div className="max-w-7xl mx-auto px-6 lg:px-12">
                         <SectionHeader
@@ -135,6 +110,7 @@ const SoftwareDevelopment: React.FC = () => {
                                     <div className="text-4xl text-[var(--accent-primary)] mb-6 group-hover:scale-110 transition-transform inline-block">
                                         {service.icon}
                                     </div>
+
                                     <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">{service.title}</h3>
                                     <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{service.desc}</p>
                                 </div>
