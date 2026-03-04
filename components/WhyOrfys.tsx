@@ -1,15 +1,34 @@
 "use client";
 
+import React from "react";
 import { trustFactors } from "@/lib/constants";
 import { useGSAPStagger } from "@/hooks/useGSAPStagger";
+import {
+  FaShieldAlt,
+  FaRocket,
+  FaUsers,
+  FaHeadset
+} from "react-icons/fa";
 
-export default function WhyOrfys() {
+const WhyOrfys: React.FC = () => {
   const containerRef = useGSAPStagger({
     stagger: 0.12,
     duration: 0.7,
     animationType: "scale",
     delay: 0.1,
   });
+
+  // Updated helper to match your screenshot titles exactly
+  const renderIcon = (title: string) => {
+    const normalizedTitle = title.toLowerCase();
+
+    if (normalizedTitle.includes("security")) return <FaShieldAlt />;
+    if (normalizedTitle.includes("implementation") || normalizedTitle.includes("fast")) return <FaRocket />;
+    if (normalizedTitle.includes("team") || normalizedTitle.includes("expert")) return <FaUsers />;
+    if (normalizedTitle.includes("support") || normalizedTitle.includes("24/7")) return <FaHeadset />;
+
+    return <FaRocket />; // Fallback
+  };
 
   return (
     <section
@@ -44,22 +63,11 @@ export default function WhyOrfys() {
               className="text-center"
             >
               <div
-                className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+                className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white transition-transform hover:scale-110"
                 style={{ backgroundColor: "var(--accent-primary)" }}
               >
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d={factor.iconPath}
-                  />
-                </svg>
+                {/* Now calls the helper that correctly identifies the title */}
+                {renderIcon(factor.title)}
               </div>
               <h3
                 className="text-xl font-bold mb-3"
@@ -67,12 +75,15 @@ export default function WhyOrfys() {
               >
                 {factor.title}
               </h3>
-              <p style={{ color: "var(--text-secondary)" }}>{factor.description}</p>
+              <p style={{ color: "var(--text-secondary)" }}>
+                {factor.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
 
+export default WhyOrfys;
