@@ -18,10 +18,8 @@ const Services: React.FC = () => {
         <section
             id="services"
             ref={containerRef as React.RefObject<HTMLElement>}
-            className="py-20 lg:py-32"
-            style={{
-                background: `linear-gradient(to bottom right, var(--bg-secondary), var(--bg-primary))`,
-            }}
+            className="py-12 relative overflow-hidden"
+            style={{ backgroundColor: "var(--bg-primary)" }}
         >
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
                 <div className="text-center mb-16">

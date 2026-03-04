@@ -15,14 +15,14 @@ export default function About() {
     <section
       id="about"
       ref={ref as React.RefObject<HTMLElement>}
-      className="py-20 lg:py-32 relative overflow-hidden"
+      className="py-12 relative overflow-hidden"
       style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Text Content */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h2
               className="text-xl md:text-2xl lg:text-4xl font-bold"
               style={{ color: "var(--text-primary)" }}
