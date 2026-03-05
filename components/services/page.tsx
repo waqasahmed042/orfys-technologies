@@ -71,7 +71,7 @@ const Services: React.FC = () => {
                                 </h3>
 
                                 <p
-                                    className="text-sm md:text-md lg:text-md leading-relaxed mb-12" // Increased bottom margin to make space for the link
+                                    className="text-sm md:text-md lg:text-md leading-relaxed mb-12"
                                     style={{ color: "var(--text-secondary)" }}
                                 >
                                     {service.description}

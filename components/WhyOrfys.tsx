@@ -34,21 +34,19 @@ const WhyOrfys: React.FC = () => {
     <section
       id="why-orfys"
       ref={containerRef as React.RefObject<HTMLElement>}
-      className="py-20 lg:py-32"
-      style={{
-        background: `linear-gradient(to bottom right, var(--bg-secondary), var(--bg-primary))`,
-      }}
+      className="py-8 lg:py-12"
+      style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
           <h2
-            className="text-4xl sm:text-5xl font-bold mb-4"
+            className="text-lg md:text-xl lg:text-2xl font-bold mb-3"
             style={{ color: "var(--text-primary)" }}
           >
             Why Choose Orfys?
           </h2>
           <p
-            className="text-xl max-w-2xl mx-auto"
+            className="text-sm md:text-md lg:text-md leading-relaxed mb-12"
             style={{ color: "var(--text-secondary)" }}
           >
             Technology-focused expertise you can trust
