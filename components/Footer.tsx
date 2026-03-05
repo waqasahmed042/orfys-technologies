@@ -2,88 +2,190 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { companyInfo, navigationLinks } from "@/lib/constants";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaYoutube,
+  FaChevronRight,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaPaperPlane,
+  FaGithub,
+} from "react-icons/fa";
+import { companyInfo } from "@/lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer
-      className="py-12 border-t border-gray-50"
+      className="border-t transition-colors duration-300"
       style={{
-        backgroundColor: "var(--bg-secondary)",
-        color: "var(--text-secondary)",
+        backgroundColor: "#111827",
+        borderColor: "var(--border-default)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <Link href="/" className="flex items-center gap-3 mb-4">
+      <div className="relative pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
+
+          {/* About & Socials */}
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="inline-block">
               <Image
                 src={companyInfo.desktopLogo}
                 alt={`${companyInfo.name} Logo`}
                 width={140}
                 height={40}
-                className="h-6 w-auto object-contain"
+                className="object-contain"
               />
             </Link>
-            <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+            <p className="leading-relaxed text-sm opacity-90" style={{ color: "var(--bg-primary)" }}>
               Building the future of software development and workflow automation.
             </p>
+
+            {/* Social Icons */}
+            <div className="flex gap-3 mt-2">
+              {[
+                { Icon: FaFacebookF, href: "#" },
+                { Icon: FaGithub, href: "#" },
+                { Icon: FaTwitter, href: "#" },
+                { Icon: FaYoutube, href: "#" },
+              ].map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.href}
+                  className="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:-translate-y-1 group"
+                  style={{ backgroundColor: "rgba(147, 51, 234, 0.1)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "var(--accent-primary)";
+                    const icon = e.currentTarget.querySelector('svg');
+                    if (icon) icon.style.color = "var(--bg-primary)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "rgba(147, 51, 234, 0.1)";
+                    const icon = e.currentTarget.querySelector('svg');
+                    if (icon) icon.style.color = "var(--bg-primary)";
+                  }}
+                >
+                  <social.Icon
+                    className="text-lg transition-colors"
+                    style={{ color: "var(--bg-primary)" }}
+                  />
+                </a>
+              ))}
+            </div>
           </div>
+
+          {/* Quick Links */}
           <div>
-            <h4
-              className="font-semibold mb-4"
-              style={{ color: "var(--text-primary)" }}
-            >
+            <h3 className="text-xl font-medium mb-6 border-b-2 pb-2 inline-block"
+              style={{ color: "#FFFFFF", borderColor: "var(--accent-primary)" }}>
               Quick Links
-            </h4>
-            <ul className="space-y-2 text-sm">
-              {navigationLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="theme-link"
+            </h3>
+            <ul className="space-y-3">
+              {["Home", "About", "Services", "Products", "Why Orfys"].map((item) => (
+                <li key={item}>
+                  <Link
+                    href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="group flex items-center gap-2 text-sm transition-all hover:translate-x-1 text-gray-300 hover:text-white"
                   >
-                    {link.label}
-                  </a>
+                    <FaChevronRight size={12} style={{ color: "var(--accent-primary)" }} />
+                    <span className="opacity-90 group-hover:opacity-100">{item}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Our Services */}
           <div>
-            <h4
-              className="font-semibold mb-4"
-              style={{ color: "var(--text-primary)" }}
-            >
-              Contact
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href={`mailto:${companyInfo.email}`}
-                  className="theme-link"
-                >
-                  {companyInfo.email}
-                </a>
-              </li>
-              <li style={{ color: "var(--text-secondary)" }}>{companyInfo.location}</li>
+            <h3 className="text-xl font-medium mb-6 border-b-2 pb-2 inline-block"
+              style={{ color: "#FFFFFF", borderColor: "var(--accent-primary)" }}>
+              Our Services
+            </h3>
+            <ul className="space-y-3">
+              {[
+                "Software Development",
+                "Workflow Automation",
+                "Integration Services",
+                "Data Analytics",
+                "Mobile Solutions",
+                "Security & Compliance"
+              ].map((service) => (
+                <li key={service}>
+                  <Link
+                    href={`/services/${service.toLowerCase().replace(/[&\s]+/g, "-").replace(/--/g, "-")}`}
+                    className="group flex items-center gap-2 text-sm transition-all hover:translate-x-1 text-gray-300 hover:text-white"
+                  >
+                    <FaChevronRight size={12} style={{ color: "var(--accent-primary)" }} />
+                    <span className="opacity-90 group-hover:opacity-100">{service}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* Column 4: Contact & Newsletter */}
+          <div className="flex flex-col gap-6">
+            <div>
+              <h3 className="text-xl font-medium mb-6 border-b-2 pb-2 inline-block"
+                style={{ color: "#FFFFFF", borderColor: "var(--accent-primary)" }}>
+                Contact Us
+              </h3>
+              <div className="space-y-4 text-sm text-gray-300">
+                <div className="flex items-start gap-4">
+                  <FaPhoneAlt className="mt-1" style={{ color: "var(--accent-primary)" }} />
+                  <a href={`tel:${companyInfo.phone}`} className="hover:underline opacity-90">{companyInfo.phone}</a>
+                </div>
+                <div className="flex items-start gap-4">
+                  <FaEnvelope className="mt-1" style={{ color: "var(--accent-primary)" }} />
+                  <a href={`mailto:${companyInfo.email}`} className="hover:underline opacity-90 break-all">
+                    {companyInfo.email}
+                  </a>
+                </div>
+                <div className="flex items-start gap-4">
+                  <FaMapMarkerAlt className="mt-1 text-lg" style={{ color: "var(--accent-primary)" }} />
+                  <span className="opacity-90">{companyInfo.location}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <h3 className="text-xl font-medium mb-2 border-b-2 pb-2 inline-block"
+                style={{ color: "#FFFFFF", borderColor: "var(--accent-primary)" }}>
+                Newsletter
+              </h3>
+              <p className="mb-4 text-xs opacity-70 text-gray-400">
+                Subscribe to get updates on our latest events and offers.
+              </p>
+              <form className="flex shadow-sm">
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="flex-1 p-2 text-sm rounded-l-md outline-none bg-gray-800 border-none text-white"
+                  style={{ borderColor: "var(--border-default)" }}
+                />
+                <button
+                  type="submit"
+                  className="p-3 rounded-r-md text-white transition-opacity hover:opacity-90 flex items-center justify-center"
+                  style={{ backgroundColor: "var(--accent-primary)" }}
+                >
+                  <FaPaperPlane size={14} />
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-        <div
-          className="border-t pt-8 text-center text-sm"
-          style={{
-            borderColor: "var(--border-default)",
-            color: "var(--text-secondary)",
-          }}
-        >
-          <p>
+
+        {/* Footer Bottom */}
+        <div className="mt-16 pt-8 border-t text-center text-xs opacity-70 border-gray-800">
+          <p className="flex items-center justify-center gap-1 text-gray-400">
             © {currentYear} {companyInfo.fullName}. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
   );
-}
-
+};

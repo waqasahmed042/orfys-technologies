@@ -81,7 +81,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
                 href={`mailto:${companyInfo.email}?subject=Book%20a%20Call`}
-                className="button inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white rounded-lg shadow-md transition"
+                className="button inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white rounded-lg transition hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)]"
                 style={{
                   background: `linear-gradient(to right, var(--accent-primary), var(--accent-secondary))`,
                 }}
@@ -91,7 +91,7 @@ export default function Hero() {
 
               <a
                 href={`mailto:${companyInfo.email}?subject=Get%20a%20Demo`}
-                className="button inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-lg border-2 transition"
+                className="button inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-lg border-2 transition hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)]"
                 style={{
                   borderColor: "var(--accent-primary)",
                   color: "var(--accent-primary)",

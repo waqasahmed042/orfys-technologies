@@ -18,6 +18,7 @@ export const companyInfo = {
   fullName: "ORFYS TECHNOLOGIES (PRIVATE) LIMITED",
   name: "Orfys Technologies",
   email: "noman@orfys.com",
+  phone: "+92 309 9999999",
   location: "Moazzamabad, Sargodha, Punjab, 40100, Pakistan",
   desktopLogo: "/o-full-logo.png",
   mobileLogo: "/o-logo.png",

@@ -2,8 +2,9 @@
 
 import { companyInfo } from "@/lib/constants";
 import { useGSAPAnimation } from "@/hooks/useGSAPAnimation";
+import React from "react";
 
-export default function CTA() {
+const CTA: React.FC = () => {
   const ref = useGSAPAnimation({
     animationType: "fadeIn",
     duration: 1.2,
@@ -13,29 +14,48 @@ export default function CTA() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className="py-20 lg:py-32"
+      className="relative py-8 overflow-hidden"
       style={{
-        background: `linear-gradient(to right, var(--accent-primary), var(--accent-secondary))`,
+        background: `linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)`,
       }}
     >
-      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div
+          className="absolute -top-[20%] -left-[10%] w-[500px] h-[500px] rounded-full opacity-20 blur-3xl"
+          style={{ backgroundColor: 'white' }}
+        />
+        <div
+          className="absolute -bottom-[20%] -right-[10%] w-[400px] h-[400px] rounded-full opacity-20 blur-3xl"
+          style={{ backgroundColor: 'var(--bg-primary)' }}
+        />
+      </div>
+
+      <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
+        <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-white text-sm font-medium tracking-wide uppercase">
+          Take the next step
+        </div>
+
         <h2
-          className="text-4xl sm:text-5xl font-bold mb-6"
+          className="text-lg md:text-2xl lg:text-4xl font-bold flex flex-row justify-center items-center mb-2"
           style={{ color: "#FFFFFF" }}
         >
-          Ready to Transform Your Business?
+          Ready to Transform <br className="hidden md:block" />
+          <span className="text-white/80">Your Business?</span>
         </h2>
+
         <p
-          className="text-xl mb-10 max-w-2xl mx-auto"
+          className="text-sm md:text-md lg:text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed"
           style={{ color: "#FFFFFF", opacity: 0.9 }}
         >
-          Let's discuss how our automation solutions can streamline your
-          operations and accelerate your growth.
+          Let&apos;s discuss how our automation solutions can streamline your
+          operations and accelerate your growth. Join the future of efficient workflow.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
           <a
             href={`mailto:${companyInfo.email}?subject=Book%20a%20Call`}
-            className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:opacity-90"
+            className="group relative inline-flex items-center justify-center px-10 py-4 font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)]"
             style={{
               backgroundColor: "#FFFFFF",
               color: "var(--accent-primary)",
@@ -43,19 +63,27 @@ export default function CTA() {
           >
             Book a Call
           </a>
+
           <a
             href={`mailto:${companyInfo.email}?subject=Get%20a%20Demo`}
-            className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 font-semibold rounded-lg transition-all duration-300 hover:bg-white/10"
+            className="inline-flex items-center justify-center px-10 py-3.5 border-2 font-bold rounded-xl transition-all duration-300 backdrop-blur-sm hover:bg-white hover:text-[#9333ea] hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)]"
             style={{
               borderColor: "#FFFFFF",
               color: "#FFFFFF",
             }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "var(--accent-primary)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "#FFFFFF";
+            }}
           >
-            Get Demo
+            Get a Demo
           </a>
         </div>
       </div>
     </section>
   );
-}
+};
 
+export default CTA;
