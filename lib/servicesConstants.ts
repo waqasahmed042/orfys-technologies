@@ -1,18 +1,13 @@
 export const contentMap: Record<string, { title: string; highlight: string; desc: string }> = {
+    "software-development": {
+        title: "Software",
+        highlight: "Development",
+        desc: "We build reliable and scalable software solutions that turn ideas into powerful web and mobile applications, helping businesses grow and succeed in the digital world."
+    },
     "workflow-automation": {
         title: "Workflow",
         highlight: "Automation",
         desc: "Eliminate manual bottlenecks and scale your operations. We build intelligent systems that connect your tools and automate your most complex business processes."
-    },
-    "software-development": {
-        title: "Software",
-        highlight: "Development",
-        desc: "Skyrocket your business growth with powerful web and mobile apps. We engineer scalable, high-performance solutions tailored for the modern digital era."
-    },
-    "mobile-solutions": {
-        title: "Mobile",
-        highlight: "Solutions",
-        desc: "Reach your customers anywhere with high-performance iOS and Android applications. We build native-feel experiences that drive engagement and loyalty."
     },
     "integration-services": {
         title: "Integration",
@@ -23,6 +18,11 @@ export const contentMap: Record<string, { title: string; highlight: string; desc
         title: "Data",
         highlight: "Analytics",
         desc: "Turn raw data into actionable business intelligence. Our advanced analytics and visualization tools help you make faster, smarter, and data-driven decisions."
+    },
+    "mobile-solutions": {
+        title: "Mobile",
+        highlight: "Solutions",
+        desc: "Reach your customers anywhere with high-performance iOS and Android applications. We build native-feel experiences that drive engagement and loyalty."
     },
     "security-compliance": {
         title: "Security &",

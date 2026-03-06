@@ -27,34 +27,34 @@ export const companyInfo = {
 export const navigationMenus = {
   "Services": {
     "Software Development": [
-      { title: "Web Development", desc: "Modern & scalable web apps", icon: "🌐" },
-      { title: "Mobile Apps", desc: "iOS and Android excellence", icon: "📱" },
-      { title: "Office Add-ins", desc: "Word, Outlook, Excel & PPT", icon: "🖇️" },
+      { title: "Web Applications", desc: "Modern, scalable web platforms", icon: "🌐" },
+      { title: "Custom Software", desc: "Tailored business solutions", icon: "💻" },
+      { title: "Enterprise Systems", desc: "Large-scale enterprise tools", icon: "🏢" },
     ],
-    "Web Services": [
-      { title: "Custom Software", desc: "Tailored enterprise tools", icon: "💻" },
-      { title: "API Integration", desc: "Seamless connectivity", icon: "🔌" },
-      { title: "Cloud Solutions", desc: "Azure & AWS deployment", icon: "☁️" },
+    "Workflow Automation": [
+      { title: "Business Automation", desc: "Streamline repetitive workflows", icon: "⚡" },
+      { title: "Office Add-ins", desc: "Word, Excel & Outlook automation", icon: "🖇️" },
+      { title: "Process Optimization", desc: "Improve operational efficiency", icon: "🔄" },
     ],
-    "Backend Services": [
-      { title: "Server Architecture", desc: "High-performance setups", icon: "⚙️" },
-      { title: "Database Design", desc: "MongoDB & SQL Expert", icon: "🗄️" },
-      { title: "Microservices", desc: "Scalable backend logic", icon: "🧩" },
+    "Integration Services": [
+      { title: "API Development", desc: "Secure & scalable APIs", icon: "🔌" },
+      { title: "Third-Party Integrations", desc: "Connect external platforms", icon: "🔗" },
+      { title: "Cloud Integrations", desc: "Azure, AWS & SaaS connectivity", icon: "☁️" },
     ],
-    "Expert Support": [
-      { title: "Consulting", desc: "Strategic tech roadmap", icon: "🤝" },
-      { title: "QA Testing", desc: "Zero-bug guarantee", icon: "🧪" },
-      { title: "Maintenance", desc: "24/7 reliability", icon: "🛠️" },
+    "Data Analytics": [
+      { title: "Data Visualization", desc: "Interactive dashboards & reports", icon: "📊" },
+      { title: "Business Intelligence", desc: "Insights for better decisions", icon: "📈" },
+      { title: "Data Processing", desc: "Transform and analyze datasets", icon: "🗄️" },
     ],
-    "Microsoft Add-ins": [
-      { title: "Outlook Plugins", desc: "Email automation", icon: "📧" },
-      { title: "Excel Solutions", desc: "Data processing", icon: "📊" },
-      { title: "Word/PPT Tools", desc: "Document plugins", icon: "📝" },
+    "Mobile Solutions": [
+      { title: "iOS Development", desc: "Native Apple applications", icon: "🍎" },
+      { title: "Android Development", desc: "Modern Android experiences", icon: "🤖" },
+      { title: "Cross-Platform Apps", desc: "Single codebase mobile apps", icon: "📱" },
     ],
-    "Google Workspace": [
-      { title: "Gmail Add-ons", desc: "Inbox extensions", icon: "✉️" },
-      { title: "Sheets & Docs", desc: "Productivity tools", icon: "📄" },
-      { title: "Drive & Calendar", desc: "Integrated ecosystem", icon: "🗓️" },
+    "Security & Compliance": [
+      { title: "Application Security", desc: "Protect apps from threats", icon: "🔐" },
+      { title: "Compliance Solutions", desc: "Meet industry standards", icon: "📜" },
+      { title: "Security Audits", desc: "Identify and fix vulnerabilities", icon: "🛡️" },
     ]
   },
   "Technologies": {

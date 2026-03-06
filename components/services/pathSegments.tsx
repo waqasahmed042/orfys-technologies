@@ -9,8 +9,12 @@ const PathSegments: React.FC = () => {
 
     return (
         <>
-            <nav className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 group transition-all hover:border-[var(--accent-primary)]/30">
-                <Link href="/" className="text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+            <nav className="inline-flex items-center gap-2 backdrop-blur-md group transition-all">
+                <Link
+                    href="/"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 text-[10px] md:text-xs font-bold uppercase tracking-widest"
+                    style={{ color: "var(--text-secondary)" }}
+                >
                     <FiHome className="text-sm" />
                     Home
                 </Link>
@@ -33,6 +37,7 @@ const PathSegments: React.FC = () => {
                                 <Link
                                     href={url}
                                     className="text-gray-400 hover:text-white transition-colors text-[10px] md:text-xs font-bold uppercase tracking-widest"
+                                    style={{ color: "var(--text-secondary)" }}
                                 >
                                     {formattedName}
                                 </Link>

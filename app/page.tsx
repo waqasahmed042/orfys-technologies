@@ -14,6 +14,7 @@ export default function Home() {
     <>
       <CustomCursor />
       <Header />
+
       <main>
         <Hero />
         <About />
@@ -22,8 +23,8 @@ export default function Home() {
         <WhyOrfys />
         <CTA />
       </main>
-      <Footer />
 
+      <Footer />
       <ScrollToTop />
     </>
   );

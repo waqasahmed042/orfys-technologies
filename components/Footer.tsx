@@ -87,7 +87,7 @@ export default function Footer() {
               {["Home", "About", "Services", "Products", "Why Orfys"].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`http://localhost:3000/#${item.toLowerCase().replace(/\s+/g, "-")}`}
                     className="group flex items-center gap-2 text-sm transition-all hover:translate-x-1 text-gray-300 hover:text-white"
                   >
                     <FaChevronRight size={12} style={{ color: "var(--accent-primary)" }} />

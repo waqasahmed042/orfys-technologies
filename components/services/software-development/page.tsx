@@ -12,19 +12,16 @@ import {
     FiArrowUpRight,
     FiStar,
 } from "react-icons/fi";
-import { useGSAPAnimation } from "@/hooks/useGSAPAnimation";
 import { useGSAPStagger } from "@/hooks/useGSAPStagger";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PathSegments from "../pathSegments";
 import Hero from "../hero";
 import { FaCheckCircle, FaMicrochip } from "react-icons/fa";
 
 // Reusable Section Header Component
 const SectionHeader = ({ title, subtitle, centered = false }: { title: string; subtitle?: string; centered?: boolean }) => (
     <div className={`mb-12 ${centered ? "text-center" : "text-left"}`}>
-        <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">{title}</h2>
-        {subtitle && <p className="text-[var(--text-secondary)] text-lg max-w-2xl font-medium">{subtitle}</p>}
+        <h2 className="text-2xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">{title}</h2>
+        {subtitle && <p className="text-sm md:text-md lg:text-lg text-[var(--text-secondary)] max-w-2xl font-medium">{subtitle}</p>}
     </div>
 );
 
@@ -87,14 +84,11 @@ const faqs = [
 ];
 
 const SoftwareDevelopment: React.FC = () => {
-    const heroRef = useGSAPAnimation({ animationType: "fadeIn", duration: 1 });
     const staggerRef = useGSAPStagger({ stagger: 0.1, animationType: "fadeIn" });
 
     return (
         <>
-            <Header />
             <main className="bg-[var(--bg-primary)] mt-20 min-h-screen">
-
                 {/* HERO SECTION */}
                 <Hero />
 

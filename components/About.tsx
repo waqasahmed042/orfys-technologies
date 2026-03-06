@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { useGSAPAnimation } from "@/hooks/useGSAPAnimation";
 import about_us from "@/public/about-us-collage.png";
+import React from "react";
 
-export default function About() {
-  const ref = useGSAPAnimation({
+const About: React.FC = () => {
+  const conatinerRef = useGSAPAnimation({
     animationType: "fadeIn",
     duration: 1,
     delay: 0.2,
@@ -14,7 +15,7 @@ export default function About() {
   return (
     <section
       id="about"
-      ref={ref as React.RefObject<HTMLElement>}
+      ref={conatinerRef}
       className="py-12 relative overflow-hidden"
       style={{ backgroundColor: "var(--bg-primary)" }}
     >
@@ -66,3 +67,5 @@ export default function About() {
     </section>
   );
 };
+
+export default About;
