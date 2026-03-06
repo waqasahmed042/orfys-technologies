@@ -88,12 +88,12 @@ const SoftwareDevelopment: React.FC = () => {
 
     return (
         <>
-            <main className="bg-[var(--bg-primary)] mt-20 min-h-screen">
+            <main className="bg-[var(--bg-primary)] min-h-screen">
                 {/* HERO SECTION */}
                 <Hero />
 
                 {/* WHAT WE OFFER */}
-                <section className="py-24 bg-[var(--bg-secondary)]">
+                <section>
                     <div className="max-w-7xl mx-auto px-6 lg:px-12">
                         <SectionHeader
                             title="What Does Our Service Cover?"
@@ -114,10 +114,10 @@ const SoftwareDevelopment: React.FC = () => {
                     </div>
                 </section>
 
-                {/* 3. WHEN & WHY */}
+                {/* WHEN & WHY */}
                 <section className="py-24">
                     <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-20">
-                        <div className="space-y-8">
+                        <div className="space-y-4">
                             <SectionHeader title="When do you need it?" />
                             <div className="space-y-4">
                                 {[
@@ -182,8 +182,8 @@ const SoftwareDevelopment: React.FC = () => {
                     </div>
                 </section>
 
-                {/* 4. Projects Overview */}
-                <section className="py-24 bg-[var(--bg-secondary)]">
+                {/* Projects Overview */}
+                <section>
                     <div className="max-w-7xl mx-auto px-6 lg:px-12">
                         <SectionHeader title="Case Studies" subtitle="Engineering excellence in action." />
                         <div className="grid md:grid-cols-2 gap-10">
@@ -209,7 +209,7 @@ const SoftwareDevelopment: React.FC = () => {
                     </div>
                 </section>
 
-                {/* 5. CLIENT TESTIMONIALS (Review Cards) */}
+                {/* CLIENT TESTIMONIALS (Review Cards) */}
                 <section className="py-24">
                     <div className="max-w-7xl mx-auto px-6 lg:px-12">
                         <SectionHeader title="What Our Customers Are Saying" centered />
@@ -230,8 +230,8 @@ const SoftwareDevelopment: React.FC = () => {
                     </div>
                 </section>
 
-                {/* 6. FAQS */}
-                <section className="py-24 bg-[var(--bg-secondary)]">
+                {/* FAQS */}
+                <section className="mb-8">
                     <div className="max-w-4xl mx-auto px-6 lg:px-12">
                         <SectionHeader title="Frequently Asked Questions" centered />
                         <div className="space-y-4">
