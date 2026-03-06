@@ -14,9 +14,15 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import { companyInfo } from "@/lib/constants";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const pathname = usePathname();
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const basePath = pathSegments[0] === "services" ? "/" : "";
+  console.log(basePath);
 
   return (
     <footer
@@ -87,7 +93,7 @@ export default function Footer() {
               {["Home", "About", "Services", "Products", "Why Orfys"].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`http://localhost:3000/#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`${basePath}#${item.toLowerCase().replace(/\s+/g, "-")}`}
                     className="group flex items-center gap-2 text-sm transition-all hover:translate-x-1 text-gray-300 hover:text-white"
                   >
                     <FaChevronRight size={12} style={{ color: "var(--accent-primary)" }} />
