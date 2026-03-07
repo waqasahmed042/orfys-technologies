@@ -53,7 +53,7 @@ const WhyOrfys: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {trustFactors.map((factor, index) => (
             <div
               key={index}

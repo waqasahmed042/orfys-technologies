@@ -64,20 +64,17 @@ export default function Footer() {
                   className="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:-translate-y-1 group"
                   style={{ backgroundColor: "rgba(147, 51, 234, 0.1)" }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "var(--accent-primary)";
+                    e.currentTarget.style.backgroundColor = "#9333ea";
                     const icon = e.currentTarget.querySelector('svg');
-                    if (icon) icon.style.color = "var(--bg-primary)";
+                    if (icon) icon.style.color = "#ffffff";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = "rgba(147, 51, 234, 0.1)";
                     const icon = e.currentTarget.querySelector('svg');
-                    if (icon) icon.style.color = "var(--bg-primary)";
+                    if (icon) icon.style.color = "#ffffff";
                   }}
                 >
-                  <social.Icon
-                    className="text-lg transition-colors"
-                    style={{ color: "var(--bg-primary)" }}
-                  />
+                  <social.Icon className="text-lg transition-colors hover:text-white" />
                 </a>
               ))}
             </div>

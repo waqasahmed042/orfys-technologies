@@ -10,12 +10,15 @@ import {
     FiSmartphone,
     FiCpu,
     FiArrowUpRight,
-    FiStar,
+    FiStar
 } from "react-icons/fi";
 import { useGSAPStagger } from "@/hooks/useGSAPStagger";
 import Footer from "@/components/Footer";
 import Hero from "../hero";
-import { FaCheckCircle, FaMicrochip } from "react-icons/fa";
+import WhyOrfys from "@/components/WhyOrfys";
+import Integrations from "../integrations";
+import WhatWeOffer from "../whatWeOffer";
+import Projects from "../projects";
 
 // Reusable Section Header Component
 const SectionHeader = ({ title, subtitle, centered = false }: { title: string; subtitle?: string; centered?: boolean }) => (
@@ -24,30 +27,6 @@ const SectionHeader = ({ title, subtitle, centered = false }: { title: string; s
         {subtitle && <p className="text-sm md:text-md lg:text-lg text-[var(--text-secondary)] max-w-2xl font-medium">{subtitle}</p>}
     </div>
 );
-
-// Data for services, testimonials, and FAQs
-const servicesCovered = [
-    {
-        title: "Custom Web Apps",
-        desc: "Tailored web platforms built with React and Next.js for maximum performance.",
-        icon: <FiCode />
-    },
-    {
-        title: "Mobile Solutions",
-        desc: "Native-feel iOS and Android applications using React Native and Flutter.",
-        icon: <FiSmartphone />
-    },
-    {
-        title: "Scalable Architecture",
-        desc: "Robust cloud-native backends designed to handle enterprise-level traffic.",
-        icon: <FiLayers />
-    },
-    {
-        title: "AI Integration",
-        desc: "Intelligent automation and AI-powered features for modern workflows.",
-        icon: <FiCpu />
-    }
-];
 
 // In a real application, these would likely come from a CMS or database
 const testimonials = [
@@ -84,130 +63,23 @@ const faqs = [
 ];
 
 const SoftwareDevelopment: React.FC = () => {
-    const staggerRef = useGSAPStagger({ stagger: 0.1, animationType: "fadeIn" });
-
     return (
         <>
             <main className="bg-[var(--bg-primary)] min-h-screen">
-                {/* HERO SECTION */}
+                {/* Hero section */}
                 <Hero />
 
-                {/* WHAT WE OFFER */}
-                <section>
-                    <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                        <SectionHeader
-                            title="What Does Our Service Cover?"
-                            subtitle="Comprehensive engineering solutions to build, deploy, and scale your digital vision."
-                        />
-                        <div ref={staggerRef as React.RefObject<HTMLDivElement>} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {servicesCovered.map((service, i) => (
-                                <div key={i} data-animate-item className="p-8 bg-[var(--bg-primary)] border border-white/5 rounded-2xl hover:border-[var(--accent-primary)] transition-all group shadow-sm hover:shadow-xl">
-                                    <div className="text-4xl text-[var(--accent-primary)] mb-6 group-hover:scale-110 transition-transform inline-block">
-                                        {service.icon}
-                                    </div>
+                {/* Why choose orfys technologies */}
+                <WhyOrfys />
 
-                                    <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">{service.title}</h3>
-                                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{service.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                {/* What we offer */}
+                <WhatWeOffer />
 
-                {/* WHEN & WHY */}
-                <section className="py-24">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-20">
-                        <div className="space-y-4">
-                            <SectionHeader title="When do you need it?" />
-                            <div className="space-y-4">
-                                {[
-                                    "When your legacy systems no longer support your growth.",
-                                    "When you need a custom solution that off-the-shelf software can't provide.",
-                                    "When you're launching a new product and need a robust MVP.",
-                                    "When you want to unify your brand experience across web and mobile."
-                                ].map((text, i) => (
-                                    <div key={i} className="flex gap-4 items-start p-5 rounded-xl bg-[var(--bg-secondary)] border border-white/5 hover:border-[var(--accent-primary)]/20 transition-colors">
-                                        <FiCheckCircle className="text-[var(--accent-primary)] text-xl mt-1 shrink-0" />
-                                        <p className="text-[var(--text-secondary)] font-medium">{text}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="space-y-8 flex flex-col justify-center">
-                            <SectionHeader title="Why choose Orfys?" />
-                            <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-                                In a digital-first world, your software is your business. We help you eliminate manual bottlenecks,
-                                increase operational speed, and provide your customers with a world-class interface.
-                            </p>
-                            <div className="grid grid-cols-2 gap-6">
-                                <div className="p-6 rounded-2xl border border-[var(--accent-primary)]/20 bg-[var(--accent-primary)]/5">
-                                    <h4 className="text-[var(--accent-primary)] font-bold text-3xl mb-1">100%</h4>
-                                    <p className="text-xs text-[var(--text-secondary)] uppercase tracking-widest font-bold">Custom Code</p>
-                                </div>
-                                <div className="p-6 rounded-2xl border border-[var(--accent-primary)]/20 bg-[var(--accent-primary)]/5">
-                                    <h4 className="text-[var(--accent-primary)] font-bold text-3xl mb-1">99.9%</h4>
-                                    <p className="text-xs text-[var(--text-secondary)] uppercase tracking-widest font-bold">Uptime Target</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* TECHNOLOGIES - Tool Logos & Stack */}
-                <section className="py-24 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-                    <div className="lg:w-1/2">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 text-[var(--accent-primary)] font-medium text-sm mb-6">
-                            <FaMicrochip /> Tech-Agnostic Solutions
-                        </div>
-                        <h2 className="text-4xl font-extrabold mb-6 tracking-tight">Native Integrations with the tools you already love.</h2>
-                        <p className="text-[var(--text-secondary)] mb-8 text-lg leading-relaxed">
-                            We don't force you into new software. We build bridges between your existing stack—CRM, ERP, Finance, and Communication tools.
-                        </p>
-                        <div className="grid grid-cols-2 gap-4">
-                            {['Python & Node.js', 'Zapier/Make Expert', 'OpenAI / LLMs', 'AWS Step Functions'].map(item => (
-                                <div key={item} className="flex items-center gap-2 text-sm font-semibold">
-                                    <FaCheckCircle className="text-[var(--accent-primary)]" /> {item}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="lg:w-1/2 grid grid-cols-3 gap-4 w-full">
-                        {/* Technology Placeholder Boxes */}
-                        {[1, 2, 3, 4, 5, 6].map(i => (
-                            <div key={i} className="h-24 bg-white border border-[var(--border-default)] rounded-2xl shadow-sm flex items-center justify-center hover:border-[var(--accent-primary)] transition-colors grayscale hover:grayscale-0">
-                                <div className="bg-gray-100 h-8 w-20 rounded animate-pulse"></div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                {/* Technologies */}
+                <Integrations />
 
                 {/* Projects Overview */}
-                <section>
-                    <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                        <SectionHeader title="Case Studies" subtitle="Engineering excellence in action." />
-                        <div className="grid md:grid-cols-2 gap-10">
-                            {[1, 2].map((item) => (
-                                <div key={item} className="group overflow-hidden rounded-2xl bg-[var(--bg-primary)] border border-white/5 shadow-md">
-                                    <div className="aspect-video bg-zinc-800 relative flex items-center justify-center">
-                                        <span className="text-zinc-600 font-bold uppercase tracking-widest">Project 0{item} Preview</span>
-                                    </div>
-                                    <div className="p-8">
-                                        <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-3">Enterprise Product 0{item}</h3>
-                                        <p className="text-[var(--text-secondary)] mb-6">A deep dive into custom-built automation and real-time visualization.</p>
-                                        <Link href="#" className="group/link inline-flex items-center gap-2 text-[var(--accent-primary)] font-bold uppercase text-xs tracking-widest">
-                                            <span className="relative">
-                                                View Case Study
-                                                <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[var(--accent-primary)] transition-all duration-300 group-hover/link:w-full" />
-                                            </span>
-                                            <FiArrowUpRight className="text-lg transition-all duration-300 group-hover/link:rotate-45" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <Projects />
 
                 {/* CLIENT TESTIMONIALS (Review Cards) */}
                 <section className="py-24">
