@@ -21,8 +21,8 @@ export default function Home() {
         <About />
         <Services />
         <Products />
-        <WhyOrfys />
         <Testimonials />
+        <WhyOrfys />
         <CTA />
       </main>
 

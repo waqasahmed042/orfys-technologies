@@ -156,14 +156,14 @@ const Testimonials: React.FC = () => {
         <section
             id="testimonials"
             ref={sectionRef}
-            className="px-6 py-16 md:py-24 mb-16 overflow-hidden"
+            className="px-6 md:py-24 mb-16 overflow-hidden"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
                     <div>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4" style={{ color: "var(--text-primary)" }}>
+                        <h2 className="text-xl md:text-4xl font-bold tracking-tight mb-2" style={{ color: "var(--text-primary)" }}>
                             What Clients Say
                         </h2>
                         <p className="text-lg" style={{ color: "var(--text-secondary)" }}>

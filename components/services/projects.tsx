@@ -69,13 +69,13 @@ const Projects: React.FC = () => {
         <section
             id="projects"
             ref={staggerRef as React.RefObject<HTMLElement>}
-            className="py-24"
+            className="py-12"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 {/* Dynamic Header */}
                 <div className="mb-16 flex justify-center items-center flex-col">
-                    <h2 className="text-lg md:text-2xl lg:text-5xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
+                    <h2 className="text-xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
                         Our Projects
                     </h2>
                     <p className="text-lg max-w-3xl" style={{ color: "var(--text-secondary)" }}>
@@ -99,8 +99,8 @@ const Projects: React.FC = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </div>
 
-                            <div className="p-8">
-                                <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-3">
+                            <div className="p-6">
+                                <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] mb-3">
                                     {project.title}
                                 </h3>
                                 <p className="text-[var(--text-secondary)] mb-6 text-sm leading-relaxed">

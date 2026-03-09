@@ -112,7 +112,7 @@ const Integrations: React.FC = () => {
         <section
             id="integrations"
             ref={staggerRef as React.RefObject<HTMLElement>}
-            className="py-24 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16"
+            className="py-12 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
             {/* Left Content */}
@@ -124,7 +124,7 @@ const Integrations: React.FC = () => {
                     <FaMicrochip /> {content.badge}
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
+                <h2 className="text-xl md:text-4xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
                     {content.title}
                 </h2>
 
