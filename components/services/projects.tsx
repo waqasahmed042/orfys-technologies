@@ -74,9 +74,9 @@ const Projects: React.FC = () => {
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 {/* Dynamic Header */}
-                <div className="mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
-                        Our <span style={{ color: "var(--accent-primary)" }}>{content.title}</span> Projects
+                <div className="mb-16 flex justify-center items-center flex-col">
+                    <h2 className="text-lg md:text-2xl lg:text-5xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
+                        Our Projects
                     </h2>
                     <p className="text-lg max-w-3xl" style={{ color: "var(--text-secondary)" }}>
                         {content.subtitle}

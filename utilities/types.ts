@@ -41,3 +41,17 @@ export interface ThemeContextType {
     setMode: (mode: ThemeMode) => void;
     toggleMode: () => void;
 };
+
+export interface TestimonialData {
+    id: number;
+    name: string;
+    role: string;
+    image: string;
+    rating: number;
+    text: string;
+};
+
+export interface FAQItem {
+    question: string;
+    answer: string;
+};

@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import PathSegments from './pathSegments';
 import Header from '../Header';
-import { contentMap } from '@/lib/servicesConstants';
+import { contentMap } from '@/lib/constants';
 import hero_bg_img from '@/public/services/hero-bg-img.png';
 
 const SoftwareDevelopment = () => {

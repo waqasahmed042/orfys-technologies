@@ -88,9 +88,9 @@ const WhatWeOffer: React.FC = () => {
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
             {/* Dynamic Header */}
-            <div className="mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
-                    Our <span style={{ color: "var(--accent-primary)" }}>{content.title}</span> Services
+            <div className="mb-16 flex justify-center items-center flex-col">
+                <h2 className="text-lg md:text-2xl lg:text-5xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
+                    Our Services
                 </h2>
                 <p className="text-lg max-w-3xl" style={{ color: "var(--text-secondary)" }}>
                     {content.subtitle}

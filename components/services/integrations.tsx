@@ -105,7 +105,7 @@ const Integrations: React.FC = () => {
     const pathname = usePathname();
     const staggerRef = useGSAPStagger({ stagger: 0.1, animationType: "fadeIn" });
 
-    const currentKey = Object.keys(integrationContent).find(key => pathname.includes(key)) || "software-development";
+    const currentKey = Object.keys(integrationContent).find(key => pathname.includes(key));
     const content = integrationContent[currentKey as keyof typeof integrationContent];
 
     return (

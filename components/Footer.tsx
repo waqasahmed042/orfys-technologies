@@ -74,7 +74,7 @@ export default function Footer() {
                     if (icon) icon.style.color = "#ffffff";
                   }}
                 >
-                  <social.Icon className="text-lg transition-colors hover:text-white" />
+                  <social.Icon className="text-lg transition-colors text-white" />
                 </a>
               ))}
             </div>
@@ -87,7 +87,7 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {["Home", "About", "Services", "Products", "Why Orfys"].map((item) => (
+              {["Home", "About", "Services", "Products", "Why Orfys", "Testimonials"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`${basePath}#${item.toLowerCase().replace(/\s+/g, "-")}`}

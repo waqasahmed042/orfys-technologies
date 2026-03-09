@@ -40,7 +40,7 @@ const WhyOrfys: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
           <h2
-            className="text-lg md:text-xl lg:text-2xl font-bold mb-3"
+            className="text-lg md:text-2xl lg:text-4xl font-bold mb-3"
             style={{ color: "var(--text-primary)" }}
           >
             Why Choose Orfys?

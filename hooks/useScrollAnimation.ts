@@ -8,7 +8,7 @@ interface UseScrollAnimationOptions {
   triggerOnce?: boolean;
 }
 
-export function useScrollAnimation(
+export function useScrollAnimation<T extends HTMLElement>(
   options: UseScrollAnimationOptions = {}
 ) {
   const {
@@ -18,7 +18,7 @@ export function useScrollAnimation(
   } = options;
 
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<T>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,6 +50,6 @@ export function useScrollAnimation(
     };
   }, [threshold, rootMargin, triggerOnce]);
 
+  // Return the ref and visibility state
   return { ref: elementRef, isVisible };
 }
-
