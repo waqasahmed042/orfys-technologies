@@ -54,7 +54,7 @@ const Products: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <h2
-            className="text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight"
+            className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight"
             style={{ color: "var(--text-primary)" }}
           >
             Our Products

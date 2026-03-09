@@ -9,6 +9,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/hooks/userScrollToTop";
 import Testimonials from "@/components/Testimonials";
+import TrustedCompanies from "@/components/TrustedCompanies";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <About />
         <Services />
         <Products />
+        <TrustedCompanies />
         <Testimonials />
         <WhyOrfys />
         <CTA />
