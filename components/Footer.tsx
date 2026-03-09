@@ -87,7 +87,7 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {["Home", "About", "Services", "Products", "Testimonials", "Why Orfys"].map((item) => (
+              {["Home", "About", "Services", "Products", "Trusted Companies", "Testimonials", "Why Orfys"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`${basePath}#${item.toLowerCase().replace(/\s+/g, "-")}`}

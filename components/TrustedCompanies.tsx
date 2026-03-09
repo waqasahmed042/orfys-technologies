@@ -65,6 +65,7 @@ const TrustedCompanies: React.FC = () => {
     return (
         <section
             ref={sectionRef}
+            id="trusted-companies"
             className="mb-16 overflow-hidden"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
