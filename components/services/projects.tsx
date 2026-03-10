@@ -69,7 +69,7 @@ const Projects: React.FC = () => {
         <section
             id="projects"
             ref={staggerRef as React.RefObject<HTMLElement>}
-            className="py-12"
+            className="my-24"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-12">

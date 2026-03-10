@@ -34,7 +34,7 @@ const WhyOrfys: React.FC = () => {
     <section
       id="why-orfys"
       ref={containerRef as React.RefObject<HTMLElement>}
-      className="py-8 lg:py-12"
+      className="mb-24"
       style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

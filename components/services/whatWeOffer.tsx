@@ -84,7 +84,7 @@ const WhatWeOffer: React.FC = () => {
         <section
             id="services-covered"
             ref={staggerRef as React.RefObject<HTMLElement>}
-            className="py-24 px-6 max-w-7xl mx-auto"
+            className="mb-24 px-6 max-w-7xl mx-auto"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
             {/* Dynamic Header */}
