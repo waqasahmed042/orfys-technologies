@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/hooks/userScrollToTop";
 import Testimonials from "@/components/Testimonials";
 import TrustedCompanies from "@/components/TrustedCompanies";
+import Process from "@/components/Process";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
+        <Process />
         <Products />
         <TrustedCompanies />
         <Testimonials />

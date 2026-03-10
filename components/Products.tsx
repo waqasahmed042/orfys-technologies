@@ -54,13 +54,13 @@ const Products: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <h2
-            className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight"
+            className="text-4xl sm:text-5xl font-bold mb-2 tracking-tight"
             style={{ color: "var(--text-primary)" }}
           >
             Our Products
           </h2>
           <p
-            className="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed"
+            className="text-sm md:text-md lg:text-lg max-w-2xl mx-auto leading-relaxed"
             style={{ color: "var(--text-secondary)" }}
           >
             Custom software solutions and automation platforms designed for
@@ -110,14 +110,14 @@ const Products: React.FC = () => {
               </div>
 
               <h3
-                className="text-3xl font-bold mb-4 tracking-tight"
+                className="text-lg md:text-xl lg:text-3xl font-bold mb-2 tracking-tight"
                 style={{ color: "var(--text-primary)" }}
               >
                 {product.title}
               </h3>
 
               <p
-                className="text-base leading-relaxed mb-8"
+                className="text-sm md:text-md lg:text-lg leading-relaxed mb-8"
                 style={{ color: "var(--text-secondary)" }}
               >
                 {product.description}

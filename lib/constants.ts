@@ -13,6 +13,9 @@ import {
   IoPhonePortraitOutline,
   IoShieldCheckmarkSharp
 } from "react-icons/io5";
+import { HiOutlineLightBulb, HiOutlineRectangleGroup, HiOutlineCpuChip, HiOutlineBeaker } from "react-icons/hi2";
+import { IoRocketOutline } from "react-icons/io5";
+import { LuShieldCheck } from "react-icons/lu";
 
 export const companyInfo = {
   fullName: "ORFYS TECHNOLOGIES (PRIVATE) LIMITED",
@@ -316,3 +319,12 @@ export const contentMap: Record<string, { title: string; highlight: string; desc
     desc: "Explore our range of professional digital solutions designed to help your business thrive in the competitive market."
   }
 };
+
+export const developmentProcess = [
+  { title: "Planning", desc: "Design first, with real content in mind but do-drop in the real content.", icon: HiOutlineLightBulb },
+  { title: "Design", desc: "Use filler text where it helps your design process, but use real content.", icon: HiOutlineRectangleGroup },
+  { title: "Development", desc: "We propose a compromise. Only use filler text that has been edited.", icon: HiOutlineCpuChip },
+  { title: "Testing", desc: "Using filler text avoids the inevitable argumentation accompanies.", icon: HiOutlineBeaker },
+  { title: "Launch", desc: "Surprisingly, there is a very vocal faction of the design community.", icon: IoRocketOutline },
+  { title: "Support", desc: "Equally vocal contingent of designers leaping to defend time-honored.", icon: LuShieldCheck },
+];

@@ -66,7 +66,7 @@ const TrustedCompanies: React.FC = () => {
         <section
             ref={sectionRef}
             id="trusted-companies"
-            className="mb-16 overflow-hidden"
+            className="mb-24 overflow-hidden"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
             <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -74,13 +74,13 @@ const TrustedCompanies: React.FC = () => {
                 {/* Header */}
                 <div className="text-center mb-8">
                     <h2
-                        className="text-xl sm:text-4xl font-bold mb-6 tracking-tight"
+                        className="text-xl md:text-3xl lg:text-5xl font-bold mb-2 tracking-tight"
                         style={{ color: "var(--text-primary)" }}
                     >
                         Trusted Companies
                     </h2>
                     <p
-                        className="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed"
+                        className="text-sm md:text-md lg:text-lg max-w-2xl mx-auto leading-relaxed"
                         style={{ color: "var(--text-secondary)" }}
                     >
                         We’ve partnered with fast-growing startups and established enterprises
