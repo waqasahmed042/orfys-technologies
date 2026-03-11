@@ -87,7 +87,7 @@ const WhatWeOffer: React.FC = () => {
             className="mb-24 px-6 max-w-7xl mx-auto"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
-            {/* Dynamic Header */}
+            {/* Header */}
             <div className="mb-16 flex justify-center items-center flex-col">
                 <h2 className="text-lg md:text-2xl lg:text-5xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
                     Our Services

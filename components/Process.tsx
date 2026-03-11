@@ -78,16 +78,26 @@ const Process: React.FC = () => {
 
                                     {/* Icon Circle */}
                                     <div
-                                        className={`relative flex items-center justify-center w-24 h-24 rounded-full border transition-all duration-700
-                                        ${isGlowing ? 'scale-110 z-20' : 'z-10'}`}
+                                        className={`group relative flex items-center justify-center w-20 h-20 rounded-full border 
+                                            transition-all duration-500 ease-out ${isGlowing
+                                                ? "scale-110 hover:scale-115 z-20"
+                                                : "z-10 hover:scale-110"}`
+                                        }
                                         style={{
-                                            // The key fix: Background matches page bg to hide the line behind it
                                             backgroundColor: "var(--bg-primary)",
                                             borderColor: isGlowing ? "var(--accent-primary)" : "#e5e7eb",
-                                            boxShadow: isGlowing ? "0 0 30px rgba(147, 51, 234, 0.4)" : "none"
+                                            boxShadow: isGlowing
+                                                ? "0 0 30px rgba(147, 51, 234, 0.4)"
+                                                : "none",
                                         }}
                                     >
-                                        <div style={{ color: isGlowing ? "var(--accent-primary)" : "var(--text-secondary)" }}>
+                                        <div
+                                            className={`transition-all duration-300 group-hover:scale-110
+                                                ${isGlowing
+                                                    ? "text-[var(--accent-primary)] group-hover:text-[var(--text-secondary)]"
+                                                    : "text-[var(--text-secondary)] group-hover:text-[var(--accent-primary)]"
+                                                }`}
+                                        >
                                             <process.icon size={40} />
                                         </div>
                                     </div>

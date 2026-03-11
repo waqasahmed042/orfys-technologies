@@ -6,6 +6,7 @@ export type MenuItem = {
     title: string;
     desc?: string;
     icon: string;
+    path?: string;
 };
 
 export interface Service {

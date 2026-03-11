@@ -112,21 +112,25 @@ export default function Header() {
     </Link>
   );
 
-  const CardItem = ({ item }: { item: MenuItem }) => (
-    <div className="group/card cursor-pointer p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-primary)]/40 bg-[var(--bg-secondary)]/30 border-[var(--bg-secondary)]">
-      <div className="aspect-video rounded-xl mb-4 flex items-center justify-center text-4xl transition-transform group-hover/card:scale-105 bg-[var(--bg-secondary)]/50 shadow-inner border border-[var(--bg-secondary)]">
-        {item.icon}
+  const CardItem = ({ item }: { item: MenuItem }) => {
+    const content = (
+      <div className="group/card cursor-pointer p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-primary)]/40 bg-[var(--bg-secondary)]/30 border-[var(--bg-secondary)]">
+        <div className="aspect-video rounded-xl mb-4 flex items-center justify-center text-4xl transition-transform group-hover/card:scale-105 bg-[var(--bg-secondary)]/50 shadow-inner border border-[var(--bg-secondary)]">
+          {item.icon}
+        </div>
+
+        <h4 className="text-[11px] font-bold uppercase tracking-widest mb-2 transition-colors text-[var(--text-primary)] group-hover/card:text-[var(--accent-primary)]">
+          {item.title}
+        </h4>
+
+        <p className="text-[12px] leading-relaxed transition-colors text-[var(--text-secondary)] opacity-80">
+          {item.desc}
+        </p>
       </div>
+    );
 
-      <h4 className="text-[11px] font-bold uppercase tracking-widest mb-2 transition-colors text-[var(--text-primary)] group-hover/card:text-[var(--accent-primary)]">
-        {item.title}
-      </h4>
-
-      <p className="text-[12px] leading-relaxed transition-colors text-[var(--text-secondary)] opacity-80">
-        {item.desc}
-      </p>
-    </div>
-  );
+    return item.path ? <Link href={item.path}>{content}</Link> : content;
+  };
 
   return (
     <>

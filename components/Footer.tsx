@@ -21,8 +21,10 @@ export default function Footer() {
 
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter(Boolean);
-  const basePath = pathSegments[0] === "services" ? "/" : "";
-  console.log(basePath);
+  const basePath =
+    pathSegments[0] === "services" || pathSegments[0] === "portfolio"
+      ? "/"
+      : "";
 
   return (
     <footer

@@ -4,7 +4,7 @@ import blob3 from "@/public/services/blob3.png";
 import blob4 from "@/public/services/blob4.png";
 import blob5 from "@/public/services/blob5.png";
 import blob6 from "@/public/services/blob6.png";
-import { Product, Service, TrustFactor } from "@/utilities/types";
+import { MenuItem, Product, Service, TrustFactor } from "@/utilities/types";
 import {
   IoCodeSlash,
   IoSettingsSharp,
@@ -145,11 +145,31 @@ export const navigationMenus = {
 } as const;
 export const dropdownKeys = ["Services", "Technologies", "Industries", "Expertise"] as const;
 
-export const portfolioMenu = [
-  { title: "CASE STUDIES", desc: "Full range of custom software development services.", icon: "📊" },
-  { title: "R&D WORKS", desc: "Keeping pace with the latest trends and API ecosystems.", icon: "🔬" },
-  { title: "PRODUCTS", desc: "Custom software development projects and add-ons.", icon: "📦" },
-  { title: "E-PUBLISHING SOLUTIONS", desc: "Tools for secure digital publishing and management.", icon: "🛡️" }
+export const portfolioMenu: MenuItem[] = [
+  {
+    title: "CASE STUDIES",
+    desc: "Full range of custom software development services.",
+    icon: "📊",
+    path: "/portfolio/case-studies"
+  },
+  {
+    title: "R&D WORKS",
+    desc: "Keeping pace with the latest trends and API ecosystems.",
+    icon: "🔬",
+    path: "/portfolio/rd-works"
+  },
+  {
+    title: "PRODUCTS",
+    desc: "Custom software development projects and add-ons.",
+    icon: "📦",
+    path: "/portfolio/products"
+  },
+  {
+    title: "E-PUBLISHING SOLUTIONS",
+    desc: "Tools for secure digital publishing and management.",
+    icon: "🛡️",
+    path: "/portfolio/e-publishing-solutions"
+  }
 ];
 
 export const companyMenu = [
@@ -282,7 +302,7 @@ export const trustFactors: TrustFactor[] = [
   },
 ];
 
-export const contentMap: Record<string, { title: string; highlight: string; desc: string }> = {
+export const servicesContentMap: Record<string, { title: string; highlight: string; desc: string }> = {
   "software-development": {
     title: "Software",
     highlight: "Development",
@@ -317,6 +337,34 @@ export const contentMap: Record<string, { title: string; highlight: string; desc
     title: "Our",
     highlight: "Services",
     desc: "Explore our range of professional digital solutions designed to help your business thrive in the competitive market."
+  }
+};
+
+export const portfolioContentMap: Record<string, { title: string; highlight: string; desc: string }> = {
+  "case-studies": {
+    title: "Case",
+    highlight: "Studies",
+    desc: "Explore real-world success stories where our technology solutions helped businesses overcome challenges, improve efficiency, and achieve measurable growth."
+  },
+  "rd-works": {
+    title: "R&D",
+    highlight: "Works",
+    desc: "Discover our research and development initiatives where we experiment with emerging technologies, APIs, and innovative ideas to create future-ready solutions."
+  },
+  "products": {
+    title: "Our",
+    highlight: "Products",
+    desc: "Browse our collection of software products and tools designed to simplify workflows, improve productivity, and deliver reliable digital experiences."
+  },
+  "e-publishing-solutions": {
+    title: "E-Publishing",
+    highlight: "Solutions",
+    desc: "Secure digital publishing tools that enable organizations to manage, distribute, and protect their digital publications efficiently."
+  },
+  "default": {
+    title: "Our",
+    highlight: "Portfolio",
+    desc: "Explore our portfolio of case studies, innovative products, and research initiatives that showcase our expertise in building impactful digital solutions."
   }
 };
 

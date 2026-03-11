@@ -7,8 +7,8 @@ import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import PathSegments from '../pathSegments';
 import Header from '../Header';
-import { servicesContentMap } from '@/lib/constants';
-import hero_bg_img from '@/public/services/hero-bg-img.png';
+import { portfolioContentMap } from '@/lib/constants';
+import case_studies from '@/public/portfolio/case-studies.png';
 
 const SoftwareDevelopment = () => {
     const pathname = usePathname();
@@ -19,7 +19,8 @@ const SoftwareDevelopment = () => {
 
     // Content mapping
     const currentSegment = pathname.split("/").filter(Boolean).pop() || "default";
-    const content = servicesContentMap[currentSegment] || servicesContentMap["default"];
+    const content = portfolioContentMap[currentSegment] || portfolioContentMap["default"];
+    console.log(content);
 
     // Animation refs
     const leftContentRef = useRef<HTMLDivElement>(null);
@@ -59,8 +60,8 @@ const SoftwareDevelopment = () => {
             <Header />
 
             <section
-                id="software-development"
-                className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"
+                id="case-studies"
+                className="relative w-full flex items-center mt-20 mb-12 overflow-hidden"
                 style={{ backgroundColor: "var(--bg-primary)" }}
             >
                 <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -99,8 +100,8 @@ const SoftwareDevelopment = () => {
                             className="relative w-full hidden lg:flex items-center justify-center"
                         >
                             <Image
-                                src={hero_bg_img}
-                                alt='Service Illustration'
+                                src={case_studies}
+                                alt='Case Studies'
                                 priority
                                 className="w-full h-auto object-contain"
                             />

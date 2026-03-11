@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                {/* Dynamic Header */}
+                {/* Header */}
                 <div className="mb-16 flex justify-center items-center flex-col">
                     <h2 className="text-xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
                         Our Projects
