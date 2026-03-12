@@ -3,14 +3,13 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/services/page";
-import Products from "@/components/Products";
+import Process from "@/components/Process";
+import TrustedCompanies from "@/components/TrustedCompanies";
+import Testimonials from "@/components/Testimonials";
 import WhyOrfys from "@/components/WhyOrfys";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/hooks/userScrollToTop";
-import Testimonials from "@/components/Testimonials";
-import TrustedCompanies from "@/components/TrustedCompanies";
-import Process from "@/components/Process";
 
 export default function Home() {
   return (
@@ -23,7 +22,6 @@ export default function Home() {
         <About />
         <Services />
         <Process />
-        <Products />
         <TrustedCompanies />
         <Testimonials />
         <WhyOrfys />

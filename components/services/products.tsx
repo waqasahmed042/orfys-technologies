@@ -1,69 +1,18 @@
 "use client";
-
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import { useGSAPStagger } from '@/hooks/useGSAPStagger';
 import Link from 'next/link';
 import { FiArrowUpRight } from 'react-icons/fi';
-
-const serviceProjects = {
-    "software-development": {
-        title: "Software Development",
-        subtitle: "Custom-built applications focused on scalability and engineering excellence.",
-        cases: [
-            { title: "SaaS Analytics Engine", desc: "A high-scale multi-tenant platform with real-time collaboration features.", link: "#" },
-            { title: "Enterprise ERP Portal", desc: "Tailored resource planning system that unified three separate business units.", link: "#" }
-        ]
-    },
-    "workflow-automation": {
-        title: "Workflow Automation",
-        subtitle: "Streamlining operations through intelligent process automation and logic.",
-        cases: [
-            { title: "HR Pipeline Automator", desc: "Automated the entire hiring pipeline from application to digital contract signing.", link: "#" },
-            { title: "Financial Logic Engine", desc: "Excel-to-Dashboard automation reducing weekly reporting time by 80%.", link: "#" }
-        ]
-    },
-    "integration-services": {
-        title: "Integration Services",
-        subtitle: "Connecting disparate systems into a unified, high-performance ecosystem.",
-        cases: [
-            { title: "Omnichannel API Bridge", desc: "Unified API layer for consistent customer data across web, mobile, and physical retail.", link: "#" },
-            { title: "Global Payment Gateway", desc: "Multi-currency payment integration with advanced real-time fraud detection.", link: "#" }
-        ]
-    },
-    "data-analytics": {
-        title: "Data Analytics",
-        subtitle: "Turning raw data into actionable insights through advanced visualization.",
-        cases: [
-            { title: "Predictive Revenue Model", desc: "ML models that predict seasonal sales trends with 94% accuracy for retail.", link: "#" },
-            { title: "BI Executive Dashboard", desc: "Visualized complex KPI data into a single, real-time command center for stakeholders.", link: "#" }
-        ]
-    },
-    "mobile-solutions": {
-        title: "Mobile Solutions",
-        subtitle: "Native and cross-platform mobile apps designed for reach and performance.",
-        cases: [
-            { title: "Health & Fitness Native", desc: "High-performance iOS app with wearable device integration and live vitals tracking.", link: "#" },
-            { title: "Field Tech Support Tool", desc: "Cross-platform tablet app for engineers working in zero-connectivity environments.", link: "#" }
-        ]
-    },
-    "security-compliance": {
-        title: "Security & Compliance",
-        subtitle: "Protecting digital assets with industry-leading security protocols.",
-        cases: [
-            { title: "HIPAA Data Vault", desc: "Securing patient data for healthcare providers with zero-knowledge encryption.", link: "#" },
-            { title: "Zero Trust Architecture", desc: "Implementing MFA and identity management for 50k+ corporate endpoints.", link: "#" }
-        ]
-    }
-};
+import { ourProducts } from '@/lib/constants';
 
 const Projects: React.FC = () => {
     const pathname = usePathname();
     const staggerRef = useGSAPStagger({ stagger: 0.2, animationType: "fadeIn" });
 
     // Finds current key or defaults to software-development
-    const currentKey = Object.keys(serviceProjects).find(key => pathname.toLowerCase().includes(key));
-    const content = serviceProjects[currentKey as keyof typeof serviceProjects];
+    const currentKey = Object.keys(ourProducts).find(key => pathname.toLowerCase().includes(key));
+    const content = ourProducts[currentKey as keyof typeof ourProducts];
 
     return (
         <section

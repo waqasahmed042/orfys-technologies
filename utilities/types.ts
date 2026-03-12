@@ -17,6 +17,14 @@ export interface Service {
     description: string;
 };
 
+export interface contentMap {
+    title: string;
+    highlight: string;
+    desc: string;
+    img: StaticImageData | string;
+    alt: string;
+};
+
 export interface Product {
     iconPath: string;
     badge: string;

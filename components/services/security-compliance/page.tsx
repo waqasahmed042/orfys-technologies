@@ -5,7 +5,7 @@ import Hero from "@/components/services/hero";
 import WhyOrfys from "@/components/WhyOrfys";
 import Integrations from "@/components/services/integrations";
 import WhatWeOffer from "@/components/services/whatWeOffer";
-import Projects from "@/components/services/projects";
+import Projects from "@/components/services/products";
 import Testimonials from "@/components/Testimonials";
 import Faqs from "../faqs";
 

@@ -4,7 +4,7 @@ import blob3 from "@/public/services/blob3.png";
 import blob4 from "@/public/services/blob4.png";
 import blob5 from "@/public/services/blob5.png";
 import blob6 from "@/public/services/blob6.png";
-import { MenuItem, Product, Service, TrustFactor } from "@/utilities/types";
+import { MenuItem, Product, Service, contentMap, TrustFactor } from "@/utilities/types";
 import {
   IoCodeSlash,
   IoSettingsSharp,
@@ -16,6 +16,14 @@ import {
 import { HiOutlineLightBulb, HiOutlineRectangleGroup, HiOutlineCpuChip, HiOutlineBeaker } from "react-icons/hi2";
 import { IoRocketOutline } from "react-icons/io5";
 import { LuShieldCheck } from "react-icons/lu";
+import software_development from "@/public/services/software-development.svg";
+import workflow_automation from "@/public/services/workflow-automation.svg";
+import integration_services from "@/public/services/integration-services.svg";
+import data_analysis from "@/public/services/data-analysis.svg";
+import mobile_solution from "@/public/services/mobile-solution.svg";
+import security_compliance from "@/public/services/security-compliance.svg";
+import case_studies from "@/public/portfolio/case-studies.svg";
+import our_products from "@/public/portfolio/our-products.svg";
 
 export const companyInfo = {
   fullName: "ORFYS TECHNOLOGIES (PRIVATE) LIMITED",
@@ -302,69 +310,79 @@ export const trustFactors: TrustFactor[] = [
   },
 ];
 
-export const servicesContentMap: Record<string, { title: string; highlight: string; desc: string }> = {
+export const servicesContentMap: Record<string, contentMap> = {
   "software-development": {
     title: "Software",
     highlight: "Development",
-    desc: "We build reliable and scalable software solutions that turn ideas into powerful web and mobile applications, helping businesses grow and succeed in the digital world."
+    desc: "We build reliable and scalable software solutions that turn ideas into powerful web and mobile applications, helping businesses grow and succeed in the digital world.",
+    img: software_development,
+    alt: "Software Development"
   },
   "workflow-automation": {
     title: "Workflow",
     highlight: "Automation",
-    desc: "Eliminate manual bottlenecks and scale your operations. We build intelligent systems that connect your tools and automate your most complex business processes."
+    desc: "Eliminate manual bottlenecks and scale your operations. We build intelligent systems that connect your tools and automate your most complex business processes.",
+    img: workflow_automation,
+    alt: "Workflow Automation"
   },
   "integration-services": {
     title: "Integration",
     highlight: "Services",
-    desc: "Bridge the gap between your software silos. We synchronize your CRM, ERP, and third-party APIs into a unified, high-efficiency digital ecosystem."
+    desc: "Bridge the gap between your software silos. We synchronize your CRM, ERP, and third-party APIs into a unified, high-efficiency digital ecosystem.",
+    img: integration_services,
+    alt: "Integration Services"
   },
   "data-analytics": {
     title: "Data",
-    highlight: "Analytics",
-    desc: "Turn raw data into actionable business intelligence. Our advanced analytics and visualization tools help you make faster, smarter, and data-driven decisions."
+    highlight: "Analysis",
+    desc: "Turn raw data into actionable business intelligence. Our advanced analytics and visualization tools help you make faster, smarter, and data-driven decisions.",
+    img: data_analysis,
+    alt: "Data Analytics"
   },
   "mobile-solutions": {
     title: "Mobile",
     highlight: "Solutions",
-    desc: "Reach your customers anywhere with high-performance iOS and Android applications. We build native-feel experiences that drive engagement and loyalty."
+    desc: "Reach your customers anywhere with high-performance iOS and Android applications. We build native-feel experiences that drive engagement and loyalty.",
+    img: mobile_solution,
+    alt: "Mobile Solutions"
   },
   "security-compliance": {
     title: "Security &",
     highlight: "Compliance",
-    desc: "Protect your digital assets and maintain trust. We implement robust security frameworks and ensure your systems meet global regulatory standards."
-  },
-  "default": {
-    title: "Our",
-    highlight: "Services",
-    desc: "Explore our range of professional digital solutions designed to help your business thrive in the competitive market."
+    desc: "Protect your digital assets and maintain trust. We implement robust security frameworks and ensure your systems meet global regulatory standards.",
+    img: security_compliance,
+    alt: "Security & Compliance"
   }
 };
 
-export const portfolioContentMap: Record<string, { title: string; highlight: string; desc: string }> = {
+export const portfolioContentMap: Record<string, contentMap> = {
   "case-studies": {
     title: "Case",
     highlight: "Studies",
-    desc: "Explore real-world success stories where our technology solutions helped businesses overcome challenges, improve efficiency, and achieve measurable growth."
+    desc: "Explore real-world success stories where our technology solutions helped businesses overcome challenges, improve efficiency, and achieve measurable growth.",
+    img: case_studies,
+    alt: "Case Studies"
   },
   "rd-works": {
     title: "R&D",
     highlight: "Works",
-    desc: "Discover our research and development initiatives where we experiment with emerging technologies, APIs, and innovative ideas to create future-ready solutions."
+    desc: "Discover our research and development initiatives where we experiment with emerging technologies, APIs, and innovative ideas to create future-ready solutions.",
+    img: case_studies,
+    alt: "R&D Works"
   },
   "products": {
     title: "Our",
     highlight: "Products",
-    desc: "Browse our collection of software products and tools designed to simplify workflows, improve productivity, and deliver reliable digital experiences."
+    desc: "Browse our collection of software products and tools designed to simplify workflows, improve productivity, and deliver reliable digital experiences.",
+    img: our_products,
+    alt: "Our Products"
   },
   "e-publishing-solutions": {
     title: "E-Publishing",
     highlight: "Solutions",
-    desc: "Secure digital publishing tools that enable organizations to manage, distribute, and protect their digital publications efficiently."
-  },
-  "default": {
-    title: "Our",
-    highlight: "Portfolio",
-    desc: "Explore our portfolio of case studies, innovative products, and research initiatives that showcase our expertise in building impactful digital solutions."
+    desc: "Secure digital publishing tools that enable organizations to manage, distribute, and protect their digital publications efficiently.",
+    img: our_products,
+    alt: "E Publishing Solutions"
   }
 };
 
@@ -376,3 +394,54 @@ export const developmentProcess = [
   { title: "Launch", desc: "Surprisingly, there is a very vocal faction of the design community.", icon: IoRocketOutline },
   { title: "Support", desc: "Equally vocal contingent of designers leaping to defend time-honored.", icon: LuShieldCheck },
 ];
+
+export const ourProducts = {
+  "software-development": {
+    title: "Software Development",
+    subtitle: "Custom-built applications focused on scalability and engineering excellence.",
+    cases: [
+      { title: "SaaS Analytics Engine", desc: "A high-scale multi-tenant platform with real-time collaboration features.", link: "#" },
+      { title: "Enterprise ERP Portal", desc: "Tailored resource planning system that unified three separate business units.", link: "#" },
+    ],
+  },
+  "workflow-automation": {
+    title: "Workflow Automation",
+    subtitle: "Streamlining operations through intelligent process automation and logic.",
+    cases: [
+      { title: "HR Pipeline Automator", desc: "Automated the entire hiring pipeline from application to digital contract signing.", link: "#" },
+      { title: "Financial Logic Engine", desc: "Excel-to-Dashboard automation reducing weekly reporting time by 80%.", link: "#" },
+    ],
+  },
+  "integration-services": {
+    title: "Integration Services",
+    subtitle: "Connecting disparate systems into a unified, high-performance ecosystem.",
+    cases: [
+      { title: "Omnichannel API Bridge", desc: "Unified API layer for consistent customer data across web, mobile, and physical retail.", link: "#" },
+      { title: "Global Payment Gateway", desc: "Multi-currency payment integration with advanced real-time fraud detection.", link: "#" },
+    ],
+  },
+  "data-analytics": {
+    title: "Data Analytics",
+    subtitle: "Turning raw data into actionable insights through advanced visualization.",
+    cases: [
+      { title: "Predictive Revenue Model", desc: "ML models that predict seasonal sales trends with 94% accuracy for retail.", link: "#" },
+      { title: "BI Executive Dashboard", desc: "Visualized complex KPI data into a single, real-time command center for stakeholders.", link: "#" },
+    ],
+  },
+  "mobile-solutions": {
+    title: "Mobile Solutions",
+    subtitle: "Native and cross-platform mobile apps designed for reach and performance.",
+    cases: [
+      { title: "Health & Fitness Native", desc: "High-performance iOS app with wearable device integration and live vitals tracking.", link: "#" },
+      { title: "Field Tech Support Tool", desc: "Cross-platform tablet app for engineers working in zero-connectivity environments.", link: "#" },
+    ],
+  },
+  "security-compliance": {
+    title: "Security & Compliance",
+    subtitle: "Protecting digital assets with industry-leading security protocols.",
+    cases: [
+      { title: "HIPAA Data Vault", desc: "Securing patient data for healthcare providers with zero-knowledge encryption.", link: "#" },
+      { title: "Zero Trust Architecture", desc: "Implementing MFA and identity management for 50k+ corporate endpoints.", link: "#" },
+    ],
+  },
+};

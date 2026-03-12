@@ -8,7 +8,7 @@ import gsap from 'gsap';
 import PathSegments from '../pathSegments';
 import Header from '../Header';
 import { portfolioContentMap } from '@/lib/constants';
-import case_studies from '@/public/portfolio/case-studies.png';
+import case_studies from '@/public/portfolio/case-studies.svg';
 
 const SoftwareDevelopment = () => {
     const pathname = usePathname();
@@ -61,7 +61,7 @@ const SoftwareDevelopment = () => {
 
             <section
                 id="case-studies"
-                className="relative w-full flex items-center mt-20 mb-12 overflow-hidden"
+                className="relative w-full flex items-center mt-32 mb-12 overflow-hidden"
                 style={{ backgroundColor: "var(--bg-primary)" }}
             >
                 <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -100,8 +100,8 @@ const SoftwareDevelopment = () => {
                             className="relative w-full hidden lg:flex items-center justify-center"
                         >
                             <Image
-                                src={case_studies}
-                                alt='Case Studies'
+                                src={content.img}
+                                alt={content.alt}
                                 priority
                                 className="w-full h-auto object-contain"
                             />

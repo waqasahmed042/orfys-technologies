@@ -8,7 +8,6 @@ import gsap from 'gsap';
 import PathSegments from '../pathSegments';
 import Header from '../Header';
 import { servicesContentMap } from '@/lib/constants';
-import hero_bg_img from '@/public/services/hero-bg-img.png';
 
 const SoftwareDevelopment = () => {
     const pathname = usePathname();
@@ -99,8 +98,8 @@ const SoftwareDevelopment = () => {
                             className="relative w-full hidden lg:flex items-center justify-center"
                         >
                             <Image
-                                src={hero_bg_img}
-                                alt='Service Illustration'
+                                src={content.img}
+                                alt='Software Development'
                                 priority
                                 className="w-full h-auto object-contain"
                             />
