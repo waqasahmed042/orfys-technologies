@@ -38,34 +38,34 @@ export const companyInfo = {
 export const navigationMenus = {
   "Services": {
     "Software Development": [
-      { title: "Web Applications", desc: "Modern, scalable web platforms", icon: "🌐" },
-      { title: "Custom Software", desc: "Tailored business solutions", icon: "💻" },
-      { title: "Enterprise Systems", desc: "Large-scale enterprise tools", icon: "🏢" },
+      { title: "Web Applications", desc: "Modern, scalable web platforms", icon: "🌐", path: "/services/software-development" },
+      { title: "Custom Software", desc: "Tailored business solutions", icon: "💻", path: "/services/software-development" },
+      { title: "Enterprise Systems", desc: "Large-scale enterprise tools", icon: "🏢", path: "/services/software-development" },
     ],
     "Workflow Automation": [
-      { title: "Business Automation", desc: "Streamline repetitive workflows", icon: "⚡" },
-      { title: "Office Add-ins", desc: "Word, Excel & Outlook automation", icon: "🖇️" },
-      { title: "Process Optimization", desc: "Improve operational efficiency", icon: "🔄" },
+      { title: "Business Automation", desc: "Streamline repetitive workflows", icon: "⚡", path: "/services/workflow-automation" },
+      { title: "Office Add-ins", desc: "Word, Excel & Outlook automation", icon: "🖇️", path: "/services/workflow-automation" },
+      { title: "Process Optimization", desc: "Improve operational efficiency", icon: "🔄", path: "/services/workflow-automation" },
     ],
     "Integration Services": [
-      { title: "API Development", desc: "Secure & scalable APIs", icon: "🔌" },
-      { title: "Third-Party Integrations", desc: "Connect external platforms", icon: "🔗" },
-      { title: "Cloud Integrations", desc: "Azure, AWS & SaaS connectivity", icon: "☁️" },
+      { title: "API Development", desc: "Secure & scalable APIs", icon: "🔌", path: "/services/integration-services" },
+      { title: "Third-Party Integrations", desc: "Connect external platforms", icon: "🔗", path: "/services/integration-services" },
+      { title: "Cloud Integrations", desc: "Azure, AWS & SaaS connectivity", icon: "☁️", path: "/services/integration-services" },
     ],
     "Data Analytics": [
-      { title: "Data Visualization", desc: "Interactive dashboards & reports", icon: "📊" },
-      { title: "Business Intelligence", desc: "Insights for better decisions", icon: "📈" },
-      { title: "Data Processing", desc: "Transform and analyze datasets", icon: "🗄️" },
+      { title: "Data Visualization", desc: "Interactive dashboards & reports", icon: "📊", path: "/services/data-analytics" },
+      { title: "Business Intelligence", desc: "Insights for better decisions", icon: "📈", path: "/services/data-analytics" },
+      { title: "Data Processing", desc: "Transform and analyze datasets", icon: "🗄️", path: "/services/data-analytics" },
     ],
     "Mobile Solutions": [
-      { title: "iOS Development", desc: "Native Apple applications", icon: "🍎" },
-      { title: "Android Development", desc: "Modern Android experiences", icon: "🤖" },
-      { title: "Cross-Platform Apps", desc: "Single codebase mobile apps", icon: "📱" },
+      { title: "iOS Development", desc: "Native Apple applications", icon: "🍎", path: "/services/mobile-solutions" },
+      { title: "Android Development", desc: "Modern Android experiences", icon: "🤖", path: "/services/mobile-solutions" },
+      { title: "Cross-Platform Apps", desc: "Single codebase mobile apps", icon: "📱", path: "/services/mobile-solutions" },
     ],
     "Security & Compliance": [
-      { title: "Application Security", desc: "Protect apps from threats", icon: "🔐" },
-      { title: "Compliance Solutions", desc: "Meet industry standards", icon: "📜" },
-      { title: "Security Audits", desc: "Identify and fix vulnerabilities", icon: "🛡️" },
+      { title: "Application Security", desc: "Protect apps from threats", icon: "🔐", path: "/services/security-compliance" },
+      { title: "Compliance Solutions", desc: "Meet industry standards", icon: "📜", path: "/services/security-compliance" },
+      { title: "Security Audits", desc: "Identify and fix vulnerabilities", icon: "🛡️", path: "/services/security-compliance" },
     ]
   },
   "Technologies": {
@@ -190,11 +190,11 @@ export const companyMenu = [
 ];
 
 export const navigationLinks = [
-  { label: "HOME", href: "#home" },
-  { label: "ABOUT", href: "#about" },
-  { label: "SERVICES", href: "#services" },
-  { label: "PRODUCTS", href: "#products" },
-  { label: "WHY ORFYS", href: "#why-orfys" },
+  { label: "HOME", path: "#home" },
+  { label: "ABOUT", path: "#about" },
+  { label: "SERVICES", path: "#services" },
+  { label: "PRODUCTS", path: "#products" },
+  { label: "WHY ORFYS", path: "#why-orfys" },
 ];
 
 export const services: Service[] = [
@@ -400,48 +400,131 @@ export const ourProducts = {
     title: "Software Development",
     subtitle: "Custom-built applications focused on scalability and engineering excellence.",
     cases: [
-      { title: "SaaS Analytics Engine", desc: "A high-scale multi-tenant platform with real-time collaboration features.", link: "#" },
-      { title: "Enterprise ERP Portal", desc: "Tailored resource planning system that unified three separate business units.", link: "#" },
+      {
+        title: "SaaS Analytics Engine",
+        desc: "A high-scale multi-tenant platform with real-time collaboration and advanced reporting features.",
+        link: "#",
+      },
+      {
+        title: "Enterprise ERP Portal",
+        desc: "Custom ERP system integrating finance, HR, and inventory management across multiple business units.",
+        link: "#",
+      },
+      {
+        title: "AI Document Processing",
+        desc: "Automated document classification and data extraction platform using machine learning.",
+        link: "#",
+      },
     ],
   },
+
   "workflow-automation": {
     title: "Workflow Automation",
     subtitle: "Streamlining operations through intelligent process automation and logic.",
     cases: [
-      { title: "HR Pipeline Automator", desc: "Automated the entire hiring pipeline from application to digital contract signing.", link: "#" },
-      { title: "Financial Logic Engine", desc: "Excel-to-Dashboard automation reducing weekly reporting time by 80%.", link: "#" },
+      {
+        title: "HR Pipeline Automator",
+        desc: "Automated recruitment workflow from job application to onboarding and digital contract signing.",
+        link: "#",
+      },
+      {
+        title: "Financial Logic Engine",
+        desc: "Automated financial reporting system transforming Excel workflows into real-time dashboards.",
+        link: "#",
+      },
+      {
+        title: "Customer Support Ticket Automation",
+        desc: "AI-powered ticket routing and escalation workflow improving support response time.",
+        link: "#",
+      },
     ],
   },
+
   "integration-services": {
     title: "Integration Services",
     subtitle: "Connecting disparate systems into a unified, high-performance ecosystem.",
     cases: [
-      { title: "Omnichannel API Bridge", desc: "Unified API layer for consistent customer data across web, mobile, and physical retail.", link: "#" },
-      { title: "Global Payment Gateway", desc: "Multi-currency payment integration with advanced real-time fraud detection.", link: "#" },
+      {
+        title: "Omnichannel API Bridge",
+        desc: "Unified API gateway synchronizing customer data across web, mobile, and retail systems.",
+        link: "#",
+      },
+      {
+        title: "Global Payment Gateway",
+        desc: "Integrated multiple international payment providers with real-time fraud detection.",
+        link: "#",
+      },
+      {
+        title: "CRM + ERP Data Sync",
+        desc: "Bi-directional integration syncing sales data between Salesforce CRM and SAP ERP.",
+        link: "#",
+      },
     ],
   },
+
   "data-analytics": {
     title: "Data Analytics",
     subtitle: "Turning raw data into actionable insights through advanced visualization.",
     cases: [
-      { title: "Predictive Revenue Model", desc: "ML models that predict seasonal sales trends with 94% accuracy for retail.", link: "#" },
-      { title: "BI Executive Dashboard", desc: "Visualized complex KPI data into a single, real-time command center for stakeholders.", link: "#" },
+      {
+        title: "Predictive Revenue Model",
+        desc: "Machine learning model predicting seasonal demand and revenue trends for retailers.",
+        link: "#",
+      },
+      {
+        title: "BI Executive Dashboard",
+        desc: "Real-time business intelligence dashboard consolidating KPIs from multiple data sources.",
+        link: "#",
+      },
+      {
+        title: "Customer Behavior Analytics",
+        desc: "Advanced analytics platform tracking user journeys and conversion funnels.",
+        link: "#",
+      },
     ],
   },
+
   "mobile-solutions": {
     title: "Mobile Solutions",
     subtitle: "Native and cross-platform mobile apps designed for reach and performance.",
     cases: [
-      { title: "Health & Fitness Native", desc: "High-performance iOS app with wearable device integration and live vitals tracking.", link: "#" },
-      { title: "Field Tech Support Tool", desc: "Cross-platform tablet app for engineers working in zero-connectivity environments.", link: "#" },
+      {
+        title: "Health & Fitness Native App",
+        desc: "iOS and Android app with wearable integration and live health tracking.",
+        link: "#",
+      },
+      {
+        title: "Field Technician Support App",
+        desc: "Offline-capable mobile app for engineers working in remote locations.",
+        link: "#",
+      },
+      {
+        title: "E-commerce Shopping App",
+        desc: "High-performance shopping app with secure payments and real-time order tracking.",
+        link: "#",
+      },
     ],
   },
+
   "security-compliance": {
     title: "Security & Compliance",
     subtitle: "Protecting digital assets with industry-leading security protocols.",
     cases: [
-      { title: "HIPAA Data Vault", desc: "Securing patient data for healthcare providers with zero-knowledge encryption.", link: "#" },
-      { title: "Zero Trust Architecture", desc: "Implementing MFA and identity management for 50k+ corporate endpoints.", link: "#" },
+      {
+        title: "HIPAA Data Vault",
+        desc: "Encrypted healthcare data storage platform ensuring strict HIPAA compliance.",
+        link: "#",
+      },
+      {
+        title: "Zero Trust Security Architecture",
+        desc: "Enterprise identity management with MFA and device-level access policies.",
+        link: "#",
+      },
+      {
+        title: "GDPR Compliance Monitoring System",
+        desc: "Automated compliance monitoring and data privacy auditing platform.",
+        link: "#",
+      },
     ],
   },
 };

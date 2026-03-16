@@ -106,7 +106,7 @@ const Products: React.FC = () => {
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-8">
+                                <div className="p-4">
                                     <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-3 group-hover:text-[var(--accent-primary)] transition-colors">
                                         {project.title}
                                     </h3>
@@ -127,9 +127,7 @@ const Products: React.FC = () => {
                                     </Link>
                                 </div>
                             </div>
-
                         ))}
-
                     </div>
                 </section>
             </main>

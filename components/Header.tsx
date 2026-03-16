@@ -95,7 +95,10 @@ export default function Header() {
   };
 
   const StandardItem = ({ item }: { item: MenuItem }) => (
-    <Link href="#" className="group/item flex items-start p-3 rounded-xl transition-all duration-200 hover:bg-[var(--bg-secondary)] cursor-pointer">
+    <Link
+      href={item.path ?? "#"}
+      className="group/item flex items-start p-3 rounded-xl transition-all duration-200 hover:bg-[var(--bg-secondary)] cursor-pointer"
+    >
       <div className="flex-shrink-0 w-9 h-9 border rounded-lg flex items-center justify-center text-lg transition-colors bg-[var(--bg-primary)] border-[var(--bg-secondary)] group-hover/item:border-[var(--accent-primary)]">
         <span style={{ color: "var(--accent-primary)" }}>{item.icon}</span>
       </div>
