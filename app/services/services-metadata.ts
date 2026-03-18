@@ -35,3 +35,12 @@ export const securityCompliance: Metadata = {
     description:
         "Protect your digital assets with enterprise-grade security. We implement robust compliance measures and secure architectures to safeguard your data.",
 };
+
+export const servicesMetadataMap: Record<string, Metadata> = {
+    "software-development": softwareDevelopment,
+    "workflow-automation": workflowAutomation,
+    "integration-services": integrationServices,
+    "data-analytics": dataAnalytics,
+    "mobile-solutions": mobileSolutions,
+    "security-compliance": securityCompliance,
+};

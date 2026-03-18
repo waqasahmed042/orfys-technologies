@@ -7,9 +7,9 @@ import Integrations from "@/components/services/integrations";
 import WhatWeOffer from "@/components/services/whatWeOffer";
 import Projects from "@/components/services/products";
 import Testimonials from "@/components/Testimonials";
-import Faqs from "../faqs";
+import Faqs from "@/components/services/faqs";
 
-const MobileSolutions: React.FC = () => {
+const ServiceTemplate: React.FC = () => {
   return (
     <>
       <main className="bg-[var(--bg-primary)] min-h-screen">
@@ -40,4 +40,4 @@ const MobileSolutions: React.FC = () => {
   );
 };
 
-export default MobileSolutions;
+export default ServiceTemplate;

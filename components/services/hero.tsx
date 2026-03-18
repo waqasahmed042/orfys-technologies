@@ -9,7 +9,7 @@ import PathSegments from '../pathSegments';
 import Header from '../Header';
 import { servicesContentMap } from '@/lib/constants';
 
-const SoftwareDevelopment = () => {
+const ServicesHero = () => {
     const pathname = usePathname();
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const SoftwareDevelopment = () => {
 
     // Content mapping
     const currentSegment = pathname.split("/").filter(Boolean).pop() || "default";
-    const content = servicesContentMap[currentSegment] || servicesContentMap["default"];
+    const content = servicesContentMap[currentSegment];
 
     // Animation refs
     const leftContentRef = useRef<HTMLDivElement>(null);
@@ -111,4 +111,4 @@ const SoftwareDevelopment = () => {
     );
 };
 
-export default SoftwareDevelopment;
+export default ServicesHero;

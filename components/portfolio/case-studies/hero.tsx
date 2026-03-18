@@ -1,13 +1,15 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import gsap from 'gsap';
-import PathSegments from '../pathSegments';
-import Header from '../Header';
-import { portfolioContentMap } from '@/lib/constants';
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import gsap from "gsap";
+import { projectsData } from "@/lib/portfolioConstants";
+import case_studies from "@/public/portfolio/case-studies.svg"
+import NotFound from "@/app/not-found";
+import Header from "@/components/Header";
+import PathSegments from "@/components/pathSegments";
 
 const PortfolioHero = () => {
     const pathname = usePathname();
@@ -16,11 +18,13 @@ const PortfolioHero = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    // Content mapping
-    const currentSegment = pathname.split("/").filter(Boolean).pop() || "";
-    const content = portfolioContentMap[currentSegment];
+    const currentSegment =
+        pathname.split("/").filter(Boolean).pop() || "";
 
-    // Animation refs
+    const content = projectsData.find(
+        (item) => item.slug === currentSegment
+    );
+
     const leftContentRef = useRef<HTMLDivElement>(null);
     const rightContentRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +34,6 @@ const PortfolioHero = () => {
 
         if (!left) return;
 
-        // Set initial states
         gsap.set(left, { opacity: 0, x: -30 });
         if (right) gsap.set(right, { opacity: 0, x: 30, scale: 0.95 });
 
@@ -40,18 +43,29 @@ const PortfolioHero = () => {
             opacity: 1,
             x: 0,
             duration: 0.9,
-        })
-            .to(right, {
+        }).to(
+            right,
+            {
                 opacity: 1,
                 x: 0,
                 scale: 1,
                 duration: 1,
-            }, "-=0.6");
+            },
+            "-=0.6"
+        );
 
         return () => {
             tl.kill();
         };
     }, []);
+
+    if (!content) {
+        return (
+            <>
+                <NotFound />
+            </>
+        );
+    };
 
     return (
         <>
@@ -64,23 +78,23 @@ const PortfolioHero = () => {
             >
                 <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                        {/* LEFT CONTENT */}
                         <div ref={leftContentRef} className="space-y-4">
-                            {/* Breadcrumbs  */}
                             <PathSegments />
 
                             <h1
-                                className="text-2xl md:text-5xl font-bold leading-tight text-white flex flex-row items-center gap-2"
+                                className="text-2xl md:text-5xl font-bold leading-tight flex flex-col gap-2"
                                 style={{ color: "var(--text-primary)" }}
                             >
-                                {content.title} <br />
-                                <span className="text-[var(--accent-primary)]">{content.highlight}</span>
+                                {content.title}
                             </h1>
 
                             <p
-                                className="text-sm md:text-md lg:text-lg text-gray-200 leading-relaxed max-w-2xl"
+                                className="text-sm md:text-md lg:text-lg leading-relaxed max-w-2xl"
                                 style={{ color: "var(--text-secondary)" }}
                             >
-                                {content.desc}
+                                {content.description}
                             </p>
 
                             <div className="flex flex-wrap gap-4">
@@ -93,13 +107,16 @@ const PortfolioHero = () => {
                             </div>
                         </div>
 
+                        {/* RIGHT IMAGE */}
                         <div
                             ref={rightContentRef}
                             className="relative w-full hidden lg:flex items-center justify-center"
                         >
                             <Image
-                                src={content.img}
-                                alt={content.alt}
+                                src={case_studies}
+                                alt="case studies"
+                                width={600}
+                                height={400}
                                 priority
                                 className="w-full h-auto object-contain"
                             />

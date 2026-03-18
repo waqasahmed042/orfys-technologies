@@ -1,4 +1,5 @@
 import { Theme, ThemeName, ThemeMode } from "@/lib/themes";
+import { Metadata } from "next";
 import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 
@@ -63,4 +64,10 @@ export interface TestimonialData {
 export interface FAQItem {
     question: string;
     answer: string;
+};
+
+export type FilterKeys = "service" | "tech" | "industry" | "expertise";
+
+export interface SlugProps {
+    params: Promise<{ slug: string }>;
 };

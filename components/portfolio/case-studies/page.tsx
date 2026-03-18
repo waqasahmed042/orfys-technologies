@@ -2,54 +2,71 @@
 import React, { useState, useMemo } from "react";
 import Hero from "@/components/portfolio/hero";
 import Image from "next/image";
-import services from '@/public/portfolio/services.png';
+import Link from "next/link";
+import services from "@/public/portfolio/services.png";
 import Footer from "@/components/Footer";
 import { useGSAPStagger } from "@/hooks/useGSAPStagger";
 import { IoIosArrowDown } from "react-icons/io";
-
-const navigationMenus = {
-    "Services": ["Software Development", "Workflow Automation", "Integration Services", "Data Analytics", "Mobile Solutions", "Security & Compliance"],
-    "Technologies": ["Frontend", "Backend", "Database", "Mobile", "Cloud", "Tools"],
-    "Industries": ["Healthcare & Finance", "E-Commerce & Logistics", "Gaming, Edu & Energy", "Crypto & Blockchain", "Media & Emerging"],
-    "Expertise": ["Business Solutions", "Management Software", "Advanced Tech"]
-};
-
-const projectsData = [
-    { title: "Cocktail Recipes Bot", tags: ["Mobile Solutions", "Mobile", "Cloud"] },
-    { title: "AI Blockchain Consultant for Real-Time Market Analysis", tags: ["Data Analytics", "Crypto & Blockchain", "Backend"] },
-    { title: "AI-Powered News Scanning and Reporting Agent", tags: ["Workflow Automation", "Media & Emerging", "Tools"] },
-    { title: "Custom PIM System for Spare Parts Management", tags: ["Software Development", "Business Solutions", "Database"] },
-    { title: "AI-Assisted Multi-lingual PIM in Manufacturing", tags: ["Software Development", "Advanced Tech", "Frontend"] },
-    { title: "Infrastructure & Database Migration to AWS", tags: ["Integration Services", "Management Software", "Cloud"] },
-];
+import { filterKeyMap, navigationMenus, projectsData } from "@/lib/portfolioConstants";
+import { FilterKeys } from "@/utilities/types";
 
 const CaseStudies: React.FC = () => {
     const [hoveredBtn, setHoveredBtn] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<keyof typeof navigationMenus | null>(null);
-    const [selectedFilters, setSelectedFilters] = useState<Record<string, string>>({
-        Services: "",
-        Technologies: "",
-        Industries: "",
-        Expertise: ""
+    const [selectedFilters, setSelectedFilters] = useState<Record<FilterKeys, string>>({
+        service: "",
+        tech: "",
+        industry: "",
+        expertise: "",
     });
 
-    const handleSelectChange = (key: string, value: string) => {
-        setSelectedFilters((prev) => ({ ...prev, [key]: value }));
+    const handleSelectChange = (key: keyof typeof navigationMenus, value: string) => {
+        const mappedKey = filterKeyMap[key];
+        setSelectedFilters((prev) => ({
+            ...prev,
+            [mappedKey]: value,
+        }));
     };
 
     const clearFilters = () => {
-        setSelectedFilters({ Services: "", Technologies: "", Industries: "", Expertise: "" });
+        setSelectedFilters({
+            service: "",
+            tech: "",
+            industry: "",
+            expertise: "",
+        });
     };
 
+    // Filter Logic
     const filteredProjects = useMemo(() => {
         return projectsData.filter((project) => {
-            const activeFilters = Object.values(selectedFilters).filter(val => val !== "");
-            if (activeFilters.length === 0) return true;
-            return activeFilters.every(filterValue => project.tags.includes(filterValue));
+            const matchesService =
+                !selectedFilters.service || project.service === selectedFilters.service;
+
+            const matchesIndustry =
+                !selectedFilters.industry || project.industry === selectedFilters.industry;
+
+            const matchesTech =
+                !selectedFilters.tech ||
+                project.tech.some((t) =>
+                    t.toLowerCase().includes(selectedFilters.tech.toLowerCase())
+                );
+
+            const matchesExpertise =
+                !selectedFilters.expertise ||
+                project.hiddenTags.some((tag) =>
+                    tag.toLowerCase().includes(selectedFilters.expertise.toLowerCase())
+                );
+
+            return (
+                matchesService &&
+                matchesIndustry &&
+                matchesTech &&
+                matchesExpertise
+            );
         });
     }, [selectedFilters]);
 
-    // Apply the GSAP Hook to the grid container
     const containerRef = useGSAPStagger({
         stagger: 0.12,
         duration: 0.7,
@@ -57,7 +74,6 @@ const CaseStudies: React.FC = () => {
         delay: 0.1,
     });
 
-    // Generate a unique string based on current filters to force hook reset
     const filterKey = useMemo(() => {
         return Object.values(selectedFilters).join("-") || "all";
     }, [selectedFilters]);
@@ -74,7 +90,7 @@ const CaseStudies: React.FC = () => {
                         {(Object.keys(navigationMenus) as Array<keyof typeof navigationMenus>).map((key) => (
                             <div key={key} className="relative group">
                                 <select
-                                    value={selectedFilters[key]}
+                                    value={selectedFilters[filterKeyMap[key]]}
                                     onChange={(e) => handleSelectChange(key, e.target.value)}
                                     onFocus={() => setOpenDropdown(key)}
                                     onBlur={() => setOpenDropdown(null)}
@@ -127,46 +143,51 @@ const CaseStudies: React.FC = () => {
                             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-start"
                         >
                             {filteredProjects.map((item, idx) => (
-                                <div
+                                <Link
                                     key={`${filterKey}-${idx}`}
+                                    href={`/portfolio/case-studies/${item.slug}`}
+                                    className="group cursor-pointer"
                                     data-animate-item
-                                    className="group cursor-pointer border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[var(--accent-primary)] relative"
-                                    style={{ backgroundColor: "var(--bg-secondary)", borderColor: "var(--border-default)" }}
                                 >
-                                    {/* Image Area */}
                                     <div
-                                        className="h-40 flex items-center justify-center bg-[#f0f4f8] border-b relative overflow-hidden"
-                                        style={{ borderColor: "var(--border-default)" }}
+                                        className="group cursor-pointer border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[var(--accent-primary)] relative"
+                                        style={{ backgroundColor: "var(--bg-secondary)", borderColor: "var(--border-default)" }}
                                     >
-                                        <Image
-                                            src={services}
-                                            alt="Services"
-                                            className="transform transition-transform duration-500 ease-out group-hover:scale-110 z-0"
-                                        />
-                                    </div>
-
-                                    {/* Content Area */}
-                                    <div className="p-5 pt-0 relative z-10">
-                                        <div className="flex flex-wrap gap-1.5 -mt-3.5 mb-3">
-                                            {item.tags.map((tag) => (
-                                                <span
-                                                    key={tag}
-                                                    className="text-[9px] uppercase tracking-tighter font-bold px-2 py-0.5 rounded text-white shadow-sm"
-                                                    style={{ backgroundColor: "var(--accent-primary)" }}
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
+                                        {/* Image Area */}
+                                        <div
+                                            className="h-40 flex items-center justify-center bg-[#f0f4f8] border-b relative overflow-hidden"
+                                            style={{ borderColor: "var(--border-default)" }}
+                                        >
+                                            <Image
+                                                src={services}
+                                                alt="Services"
+                                                className="transform transition-transform duration-500 ease-out group-hover:scale-110 z-0"
+                                            />
                                         </div>
 
-                                        <h3
-                                            className="text-sm font-bold leading-tight group-hover:text-[var(--accent-primary)] transition-colors duration-300"
-                                            style={{ color: "var(--text-primary)" }}
-                                        >
-                                            {item.title}
-                                        </h3>
+                                        {/* Content Area */}
+                                        <div className="p-5 pt-0 relative z-10">
+                                            <div className="flex flex-wrap gap-1.5 -mt-3.5 mb-3">
+                                                {item.tech.map((t) => (
+                                                    <span
+                                                        key={t}
+                                                        className="text-[9px] uppercase tracking-tighter font-bold px-2 py-0.5 rounded text-white shadow-sm"
+                                                        style={{ backgroundColor: "var(--accent-primary)" }}
+                                                    >
+                                                        {t}
+                                                    </span>
+                                                ))}
+                                            </div>
+
+                                            <h3
+                                                className="text-sm font-bold leading-tight group-hover:text-[var(--accent-primary)] transition-colors duration-300"
+                                                style={{ color: "var(--text-primary)" }}
+                                            >
+                                                {item.title}
+                                            </h3>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
 

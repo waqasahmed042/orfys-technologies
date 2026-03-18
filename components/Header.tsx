@@ -135,6 +135,22 @@ export default function Header() {
     return item.path ? <Link href={item.path}>{content}</Link> : content;
   };
 
+  const ServiceItem = ({ item }: { item: MenuItem }) => (
+    <Link
+      href={item.path ?? "#"}
+      className="group/service flex items-center justify-between p-4 rounded-xl border transition-all duration-300 bg-[var(--bg-secondary)]/20 border-[var(--bg-secondary)] hover:border-[var(--accent-primary)]/50 hover:bg-[var(--bg-secondary)]/40"
+      onClick={() => setIsMobileMenuOpen(false)}
+    >
+      <div className="flex items-center gap-3">
+        <span className="text-xl text-[var(--accent-primary)]">{item.icon}</span>
+        <span className="text-sm font-medium text-[var(--text-primary)]">{item.title}</span>
+      </div>
+      <div className="w-6 h-6 rounded-full bg-[var(--bg-primary)] flex items-center justify-center border border-[var(--bg-secondary)] group-hover/service:border-[var(--accent-primary)] transition-colors">
+        <IoIosArrowUp className="rotate-90 text-[10px] text-[var(--text-secondary)] group-hover/service:text-[var(--accent-primary)]" />
+      </div>
+    </Link>
+  );
+
   return (
     <>
       <header className={`fixed top-0 z-50 w-full transition-all duration-500 mt-4 px-2 flex justify-center ${isScrolled ? "pt-2 px-4" : "pt-0 px-0"}`}>
@@ -260,6 +276,10 @@ export default function Header() {
             <nav className="flex flex-col p-6 gap-2">
               {[...dropdownKeys, "Portfolio", "Company"].map((key) => {
                 const isMainKey = dropdownKeys.includes(key as keyof typeof navigationMenus);
+
+                // Define which keys should use the ServiceItem layout
+                const useServiceLayout = key.toLowerCase().includes("service") || key.toLowerCase().includes("solution");
+
                 const menuData = isMainKey
                   ? navigationMenus[key as keyof typeof navigationMenus]
                   : (key === "Portfolio" ? portfolioMenu : companyMenu);
@@ -283,13 +303,19 @@ export default function Header() {
                               <p className="text-[10px] uppercase mb-3 tracking-widest font-bold border-b pb-1"
                                 style={{ color: "var(--text-secondary)", borderColor: "var(--bg-secondary)" }}>{sub}</p>
                               <div className="space-y-2">
-                                {(items as MenuItem[]).map((item) => <StandardItem key={item.title} item={item} />)}
+                                {(items as MenuItem[]).map((item) => (
+                                  // Toggle between ServiceItem and StandardItem based on layout needs
+                                  useServiceLayout ? <ServiceItem key={item.title} item={item} /> : <StandardItem key={item.title} item={item} />
+                                ))}
                               </div>
                             </div>
                           ))
                         ) : (
                           <div className="space-y-2">
-                            {(menuData as MenuItem[]).map((item) => <StandardItem key={item.title} item={item} />)}
+                            {(menuData as MenuItem[]).map((item) => (
+                              // Portfolio and Company usually use Standard or Card items, but you can swap here too
+                              <StandardItem key={item.title} item={item} />
+                            ))}
                           </div>
                         )}
                       </div>
