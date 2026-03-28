@@ -71,3 +71,20 @@ export type FilterKeys = "service" | "tech" | "industry" | "expertise";
 export interface SlugProps {
     params: Promise<{ slug: string }>;
 };
+
+export type TechCategory = 'frontend' | 'backend' | 'broker' | 'database' | 'architecture' | 'protocol';
+
+export interface TechCard {
+    title: string;
+    description: string;
+    icon: string;
+};
+
+export interface ProjectDataProps {
+    data: {
+        illustration?: string;
+        title?: string;
+        paragraphs: string[];
+        bulletin?: string[];
+    };
+};

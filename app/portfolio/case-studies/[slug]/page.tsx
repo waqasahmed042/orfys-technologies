@@ -1,23 +1,27 @@
-import { notFound } from "next/navigation";
 import { caseStudiesMetadataMap } from "../../portfolios-metadata";
 import CaseStudiesTemplate from "@/components/portfolio/case-studies/case-studies-template";
-import { projectsData } from "@/lib/portfolioConstants";
+import { SlugProps } from "@/utilities/types";
+import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-    const decodedSlug = decodeURIComponent(params.slug);
-    const metadata = caseStudiesMetadataMap[decodedSlug];
+export async function generateMetadata({ params }: SlugProps) {
+    const { slug } = await params;
+    const metadata = caseStudiesMetadataMap[slug];
 
-    if (!metadata) {
-        return { title: "Case Study Not Found | Orfys" };
+    if (!metadata) return { title: "Case Study Not Found" };
+
+    return {
+        title: metadata.title,
+        description: metadata.description,
     };
-
-    return metadata;
 };
 
-export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
-    const decodedSlug = decodeURIComponent(params.slug);
-    const project = projectsData.find((p) => p.slug === decodedSlug);
-    console.log(project);
+export default async function CaseStudyPage({ params }: SlugProps) {
+    const { slug } = await params;
+    const data = caseStudiesMetadataMap[slug];
+
+    if (!data) {
+        return notFound();
+    };
 
     return <CaseStudiesTemplate />;
 };

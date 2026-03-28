@@ -9,7 +9,6 @@ import { projectsData } from "@/lib/portfolioConstants";
 import case_studies from "@/public/portfolio/case-studies.svg"
 import NotFound from "@/app/not-found";
 import Header from "@/components/Header";
-import PathSegments from "@/components/pathSegments";
 
 const PortfolioHero = () => {
     const pathname = usePathname();
@@ -81,8 +80,6 @@ const PortfolioHero = () => {
 
                         {/* LEFT CONTENT */}
                         <div ref={leftContentRef} className="space-y-4">
-                            <PathSegments />
-
                             <h1
                                 className="text-2xl md:text-5xl font-bold leading-tight flex flex-col gap-2"
                                 style={{ color: "var(--text-primary)" }}
