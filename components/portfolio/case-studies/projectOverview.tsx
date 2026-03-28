@@ -23,7 +23,7 @@ const ProjectOverview: React.FC<ProjectDataProps> = ({ data }) => {
                 </div>
 
                 {/* Right Side: Illustration */}
-                <div className="flex justify-center bg-blue-50 rounded-3xl p-10">
+                <div className="flex justify-center bg-blue-50 rounded-3xl p-10 order-first lg:order-last">
                     <div className="w-full aspect-video bg-blue-100 rounded-xl flex items-center justify-center text-blue-400 italic">
                         {data.illustration}
                     </div>

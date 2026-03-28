@@ -46,7 +46,7 @@ const TechnologyStack: React.FC = () => {
                 top: activeElement.offsetTop,
                 height: activeElement.offsetHeight
             });
-        }
+        };
     }, [activeId]);
 
     return (
