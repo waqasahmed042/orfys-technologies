@@ -329,7 +329,7 @@ const Technologies = () => {
                                     currentTechs.map((tech, index) => (
                                         <div
                                             key={index}
-                                            className="bg-white border border-gray-200 hover:border-[var(--accent-primary)] rounded-2xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md hover:-translate-y-1"
+                                            className="border border-[var(--border-default)] text-[var(--text-secondary)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] rounded-2xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md hover:-translate-y-1"
                                         >
                                             <div
                                                 className="w-14 h-14 rounded-2xl mb-4 flex items-center justify-center text-3xl font-bold"

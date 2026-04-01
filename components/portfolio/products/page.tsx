@@ -39,8 +39,7 @@ const Products: React.FC = () => {
             <main className="bg-[var(--bg-primary)] min-h-screen">
                 <Hero />
 
-                <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-
+                <section className="py-20 px-6 lg:px-12 max-w-[1400px] mx-auto">
                     <div className="mb-8">
                         {/* Mobile Filter Navigation */}
                         <div className="md:hidden">
@@ -116,7 +115,10 @@ const Products: React.FC = () => {
                                     </p>
 
                                     <Link
-                                        href={project.link}
+                                        href={`/portfolio/products/${project.title
+                                            .toLowerCase()
+                                            .replace(/[^a-z0-9]+/g, "-")
+                                            .replace(/^-|-$/g, "")}`}
                                         className="group/link inline-flex items-center gap-2 text-[var(--accent-primary)] font-bold uppercase text-[10px] tracking-[0.15em]"
                                     >
                                         <span className="relative">

@@ -401,19 +401,142 @@ export const ourProducts = {
     subtitle: "Custom-built applications focused on scalability and engineering excellence.",
     cases: [
       {
+        slug: "saas-analytics-engine",
         title: "SaaS Analytics Engine",
         desc: "A high-scale multi-tenant platform with real-time collaboration and advanced reporting features.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The SaaS Analytics Engine is a scalable platform enabling real-time collaboration and advanced reporting. With customizable dashboards and intuitive data visualization, it helps enterprises make informed, data-driven decisions quickly and efficiently.",
+            "Built for performance and security, it supports thousands of users concurrently, integrates seamlessly with existing tools, and offers flexible modules to adapt to evolving business needs while maintaining reliability."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "enterprise-erp-portal",
         title: "Enterprise ERP Portal",
         desc: "Custom ERP system integrating finance, HR, and inventory management across multiple business units.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The Enterprise ERP Portal consolidates core business functions like finance, HR, and inventory into a unified system. It streamlines workflows, provides interactive dashboards, and enables cross-departmental visibility to improve operational efficiency.",
+            "Designed for scalability and security, the portal supports multiple business units, integrates with existing enterprise applications, and allows customization of processes, ensuring seamless adaptation to organizational needs."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "ai-document-processing",
         title: "AI Document Processing",
         desc: "Automated document classification and data extraction platform using machine learning.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The AI Document Processing platform automates document classification, data extraction, and validation, reducing manual work while improving accuracy. It converts unstructured data into actionable insights for faster decision-making.",
+            "Engineered for enterprise use, it includes robust security, integrates with document management systems, and supports large-scale operations, offering a reliable solution for automating complex document workflows."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
     ],
   },
@@ -423,19 +546,142 @@ export const ourProducts = {
     subtitle: "Streamlining operations through intelligent process automation and logic.",
     cases: [
       {
+        slug: "hr-pipeline-automator",
         title: "HR Pipeline Automator",
         desc: "Automated recruitment workflow from job application to onboarding and digital contract signing.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The HR Pipeline Automator streamlines recruitment from application to onboarding, automating workflows and digital contract signing. It reduces repetitive tasks and accelerates hiring cycles.",
+            "With analytics dashboards and enterprise-grade security, it provides insights into recruitment trends while integrating with HR systems for customizable and efficient hiring processes."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "financial-logic-engine",
         title: "Financial Logic Engine",
         desc: "Automated financial reporting system transforming Excel workflows into real-time dashboards.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The Financial Logic Engine transforms Excel-based financial workflows into real-time dashboards, consolidating data and applying business logic for accurate reporting.",
+            "It ensures secure, scalable, and efficient financial operations, integrates with ERP systems, and automates repetitive tasks to improve decision-making speed and accuracy."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "customer-support-ticket-automation",
         title: "Customer Support Ticket Automation",
         desc: "AI-powered ticket routing and escalation workflow improving support response time.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "This system leverages AI to prioritize and route support tickets, reducing response time and improving customer satisfaction. It minimizes manual intervention through intelligent automation.",
+            "Designed for large support teams, it integrates with CRM and helpdesk tools, providing real-time analytics to optimize workflows and maintain operational efficiency."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
     ],
   },
@@ -445,19 +691,142 @@ export const ourProducts = {
     subtitle: "Connecting disparate systems into a unified, high-performance ecosystem.",
     cases: [
       {
+        slug: "omnichannel-api-bridge",
         title: "Omnichannel API Bridge",
         desc: "Unified API gateway synchronizing customer data across web, mobile, and retail systems.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The Omnichannel API Bridge synchronizes data across web, mobile, and retail systems, ensuring consistent customer experiences. Its API gateway architecture supports reliable and secure real-time exchanges.",
+            "Highly scalable and configurable, it enables seamless integration of additional services, robust monitoring, and error handling to maintain operational efficiency across complex environments."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "global-payment-gateway",
         title: "Global Payment Gateway",
         desc: "Integrated multiple international payment providers with real-time fraud detection.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The Global Payment Gateway integrates multiple international payment providers, offering secure transactions, fraud detection, and real-time reconciliation.",
+            "Its scalable design supports high transaction volumes, regulatory compliance, and analytics to monitor performance and optimize revenue across global operations."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "crm-erp-data-sync",
         title: "CRM + ERP Data Sync",
         desc: "Bi-directional integration syncing sales data between Salesforce CRM and SAP ERP.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The CRM + ERP Data Sync ensures consistent data flow between Salesforce CRM and SAP ERP, reducing errors and improving operational efficiency.",
+            "It offers secure, real-time integration with configurable mapping and monitoring tools, keeping enterprise data accurate and actionable."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
     ],
   },
@@ -467,19 +836,142 @@ export const ourProducts = {
     subtitle: "Turning raw data into actionable insights through advanced visualization.",
     cases: [
       {
+        slug: "predictive-revenue-model",
         title: "Predictive Revenue Model",
         desc: "Machine learning model predicting seasonal demand and revenue trends for retailers.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The Predictive Revenue Model uses machine learning to forecast seasonal demand and revenue trends, helping retailers optimize inventory and pricing strategies.",
+            "It integrates multiple data sources, visualizes insights in interactive dashboards, and allows scenario planning for proactive, data-driven decisions."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "bi-executive-dashboard",
         title: "BI Executive Dashboard",
         desc: "Real-time business intelligence dashboard consolidating KPIs from multiple data sources.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The BI Executive Dashboard consolidates KPIs from multiple sources into a single platform for real-time performance monitoring.",
+            "Scalable and secure, it integrates with ERP and CRM systems, offering customizable reporting and alerts to support strategic decision-making."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "customer-behavior-analytics",
         title: "Customer Behavior Analytics",
         desc: "Advanced analytics platform tracking user journeys and conversion funnels.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "Customer Behavior Analytics tracks user journeys and engagement patterns to provide insights into preferences and retention drivers.",
+            "It integrates with marketing and CRM tools, using predictive models and reporting to optimize campaigns and enhance customer experience."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
     ],
   },
@@ -489,19 +981,142 @@ export const ourProducts = {
     subtitle: "Native and cross-platform mobile apps designed for reach and performance.",
     cases: [
       {
+        slug: "health-fitness-native-app",
         title: "Health & Fitness Native App",
         desc: "iOS and Android app with wearable integration and live health tracking.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The Health & Fitness Native App tracks wellness and fitness metrics, integrating with wearables for real-time insights and personalized recommendations.",
+            "It supports large-scale usage, ensures secure data storage, and integrates third-party health services for a holistic monitoring ecosystem."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "field-technician-support-app",
         title: "Field Technician Support App",
         desc: "Offline-capable mobile app for engineers working in remote locations.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The Field Technician Support App enables field personnel to manage work orders, track assets, and resolve issues efficiently, even offline.",
+            "It maintains secure data synchronization, provides real-time reporting, and allows managers to monitor field operations and optimize performance."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "ecommerce-shopping-app",
         title: "E-commerce Shopping App",
         desc: "High-performance shopping app with secure payments and real-time order tracking.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The E-commerce Shopping App offers a secure, high-performance shopping experience with real-time inventory updates and seamless checkout.",
+            "It handles large product catalogs, integrates with ERP systems, and provides analytics to improve engagement, operational efficiency, and customer satisfaction."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
     ],
   },
@@ -511,20 +1126,143 @@ export const ourProducts = {
     subtitle: "Protecting digital assets with industry-leading security protocols.",
     cases: [
       {
+        slug: "hipaa-data-vault",
         title: "HIPAA Data Vault",
         desc: "Encrypted healthcare data storage platform ensuring strict HIPAA compliance.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The HIPAA Data Vault secures sensitive healthcare data with encryption and compliance features, including audit trails and controlled access.",
+            "It supports large data volumes, integrates with healthcare systems, and offers real-time monitoring and reporting to maintain transparency and regulatory compliance."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "zero-trust-security-architecture",
         title: "Zero Trust Security Architecture",
         desc: "Enterprise identity management with MFA and device-level access policies.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The Zero Trust Security Architecture enforces identity verification, MFA, and device-level policies to protect enterprise assets.",
+            "With centralized monitoring and integration with IT infrastructure, it provides scalable, real-time threat detection and secure access to critical resources."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
       {
+        slug: "gdpr-compliance-monitoring-system",
         title: "GDPR Compliance Monitoring System",
         desc: "Automated compliance monitoring and data privacy auditing platform.",
-        link: "#",
+        description: {
+          illustration: "Description Illustration",
+          title: "Description",
+          paragraphs: [
+            "The GDPR Compliance Monitoring System automates data privacy auditing and tracks compliance activities to mitigate risks.",
+            "It integrates with enterprise platforms, providing dashboards, alerts, and audit logs to enforce policies and ensure consistent regulatory adherence."
+          ],
+          bulletin: []
+        },
+        mainFunctions: {
+          illustration: "Main Functions Illustration",
+          title: "Main Functions",
+          paragraphs: [
+            "Quickly develop and prototype enterprise applications with minimal coding.",
+            "Build comprehensive UIs with support for lists, grids, property sheets, forms, and charts.",
+            "Easily integrate with existing applications and environments, incorporating deep security models.",
+            "Customize every component and field to fit specific application needs.",
+            "Handle large and complex data sets with viewing, editing, searching, and filtering capabilities.",
+            "Integrate server-side business logic and support for charts and reports."
+          ],
+          bulletin: [
+            "Rapid Enterprise-Level Software Development",
+            "User Interface Creation",
+            "Integration",
+            "Customization",
+            "Data Management",
+            "Business Logic Integration"
+          ]
+        },
+        mainFeatures: {
+          illustration: "Main Features Illustration",
+          title: "Main Features",
+          paragraphs: [],
+          bulletin: [
+            "SPA Application: CRUD UI generator uses the Webix application development toolset for a single-page application (SPA) interface.",
+            "Component Support: CRUD tool includes all Webix components, both open source and commercial, with extensive integration options.",
+            "Backend Flexibility: CRUD app generator supports .NET code, C# Script, server-side JavaScript, and IronPython for a variety of backend tasks.",
+            "Modern UI Design: CRUD application builder features themes, material design, and declarative descriptions for complex data structures.",
+            "Automated Bindings: Provides automated bindings between the database and user interface."
+          ]
+        }
       },
     ],
   },
-};
+} as const;

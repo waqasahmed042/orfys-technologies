@@ -5,27 +5,47 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
-import { projectsData } from "@/lib/portfolioConstants";
-import case_studies from "@/public/portfolio/case-studies.svg"
+import { ourProducts } from "@/lib/constants";
+import case_studies from "@/public/portfolio/case-studies.svg";
 import NotFound from "@/app/not-found";
 import Header from "@/components/Header";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/hooks/userScrollToTop";
-import Footer from "@/components/Footer";
 
-const CaseStudiesHero = () => {
+const PortfolioHero = () => {
     const pathname = usePathname();
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    const currentSegment =
-        pathname.split("/").filter(Boolean).pop() || "";
+    const currentSlug = pathname.split("/").filter(Boolean).pop() || "";
 
-    const content = projectsData.find(
-        (item) => item.slug === currentSegment
-    );
+    // Helper function to generate slug from title (consistent with your earlier approach)
+    const generateSlug = (title: string): string => {
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/-+/g, "-")
+            .replace(/^-|-$/g, "");
+    };
+
+    // Find the correct case across all categories
+    let content = null;
+
+    for (const category of Object.values(ourProducts)) {
+        const foundCase = category.cases.find((caseItem) =>
+            generateSlug(caseItem.title) === currentSlug
+        );
+        if (foundCase) {
+            content = {
+                ...foundCase,
+                categoryTitle: category.title,
+            };
+            break;
+        };
+    };
 
     const leftContentRef = useRef<HTMLDivElement>(null);
     const rightContentRef = useRef<HTMLDivElement>(null);
@@ -95,7 +115,7 @@ const CaseStudiesHero = () => {
                                 className="text-sm md:text-md lg:text-lg leading-relaxed max-w-2xl"
                                 style={{ color: "var(--text-secondary)" }}
                             >
-                                {content.description}
+                                {content.desc}
                             </p>
 
                             <div className="flex flex-wrap gap-4">
@@ -131,4 +151,4 @@ const CaseStudiesHero = () => {
     );
 };
 
-export default CaseStudiesHero;
+export default PortfolioHero;

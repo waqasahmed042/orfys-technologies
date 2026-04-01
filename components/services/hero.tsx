@@ -8,6 +8,8 @@ import gsap from 'gsap';
 import PathSegments from '../pathSegments';
 import Header from '../Header';
 import { servicesContentMap } from '@/lib/constants';
+import CustomCursor from "@/components/CustomCursor";
+import ScrollToTop from "@/hooks/userScrollToTop";
 
 const ServicesHero = () => {
     const pathname = usePathname();
@@ -55,6 +57,7 @@ const ServicesHero = () => {
 
     return (
         <>
+            <CustomCursor />
             <Header />
 
             <section
@@ -107,6 +110,8 @@ const ServicesHero = () => {
                     </div>
                 </div>
             </section>
+
+            <ScrollToTop />
         </>
     );
 };

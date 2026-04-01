@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
                                 </p>
 
                                 <Link
-                                    href={project.link}
+                                    href={`/portfolio/products/${project.slug}`}
                                     className="group/link inline-flex items-center gap-2 text-[var(--accent-primary)] font-bold uppercase text-[10px] tracking-[0.15em]"
                                 >
                                     <span className="relative">

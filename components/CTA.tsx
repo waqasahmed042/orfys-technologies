@@ -14,7 +14,7 @@ const CTA: React.FC = () => {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative py-8 overflow-hidden"
+      className="relative max-w-[1400px] mx-auto px-6 py-8 overflow-hidden"
       style={{
         background: `linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)`,
       }}

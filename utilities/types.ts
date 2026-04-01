@@ -84,7 +84,7 @@ export interface ProjectDataProps {
     data: {
         illustration?: string;
         title?: string;
-        paragraphs: string[];
-        bulletin?: string[];
+        paragraphs: readonly string[];
+        bulletin?: readonly string[];
     };
 };

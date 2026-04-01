@@ -156,7 +156,7 @@ const Testimonials: React.FC = () => {
         <section
             id="testimonials"
             ref={sectionRef}
-            className="px-6 md:py-12 mb-12 overflow-hidden"
+            className="max-w-[1400px] mx-auto px-6 md:py-12 mb-12 overflow-hidden"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
             <div className="max-w-7xl mx-auto">
