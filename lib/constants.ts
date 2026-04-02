@@ -24,6 +24,8 @@ import mobile_solution from "@/public/services/mobile-solution.svg";
 import security_compliance from "@/public/services/security-compliance.svg";
 import case_studies from "@/public/portfolio/case-studies.svg";
 import our_products from "@/public/portfolio/our-products.svg";
+import { desc, image } from "framer-motion/client";
+import { title } from "process";
 
 export const companyInfo = {
   fullName: "ORFYS TECHNOLOGIES (PRIVATE) LIMITED",
@@ -180,13 +182,92 @@ export const portfolioMenu: MenuItem[] = [
   }
 ];
 
+import about_us from "@/public/company/about-us.svg";
+import blogs from "@/public/company/blogs.svg";
+import news from "@/public/company/news.svg";
+import people from "@/public/company/people.svg";
+import careers from "@/public/company/careers.svg";
+import engagement_models from "@/public/company/engagement-models.svg";
+
 export const companyMenu = [
-  { title: "ABOUT US", desc: "Our history, mission, and the values that drive our innovation.", icon: "🏢" },
-  { title: "BLOG", desc: "Insights, tutorials, and latest trends from our tech experts.", icon: "✍️" },
-  { title: "NEWS", desc: "Stay updated with our latest company milestones and events.", icon: "📰" },
-  { title: "PEOPLE", desc: "Meet the brilliant minds behind our successful solutions.", icon: "👥" },
-  { title: "CAREERS", desc: "Join our team and build the future of technology with us.", icon: "🚀" },
-  { title: "ENGAGEMENT MODELS", desc: "Flexible partnership models including dedicated teams.", icon: "🤝" }
+  {
+    title: "ABOUT US",
+    desc: "Our history, mission, and the values that drive our innovation.",
+    icon: "🏢",
+    path: "/company/about-us",
+    aboutUS: {
+      title: "About US",
+      description: "Discover our company's mission, vision, and values. Learn about our team, culture, and commitment to innovation. Explore our history, achievements, and future goals as we strive to make a positive impact in our industry and community.",
+      button: "Get A Quote",
+      image: about_us,
+      imageAlt: "About US"
+    }
+  },
+  {
+    title: "BLOG",
+    desc: "Insights, tutorials, and latest trends from our tech experts.",
+    icon: "✍️",
+    path: "/company/blogs",
+    blogs: {
+      title: "Blogs",
+      description: "Read the latest insights, articles, and thought leadership from our team. Stay informed about industry trends and company updates.",
+      button: "Get A Quote",
+      image: blogs,
+      imageAlt: "Blogs"
+    }
+  },
+  {
+    title: "NEWS",
+    desc: "Stay updated with our latest company milestones and events.",
+    icon: "📰",
+    path: "/company/news",
+    news: {
+      title: "News",
+      description: "Stay updated with our latest news, announcements, and media coverage. Get all the important company updates in one place.",
+      button: "Get A Quote",
+      image: news,
+      imageAlt: "News"
+    }
+  },
+  {
+    title: "PEOPLE",
+    desc: "Meet the brilliant minds behind our successful solutions.",
+    icon: "👥",
+    path: "/company/people",
+    people: {
+      title: "People",
+      description: "Meet the talented individuals behind our success. Learn about our leadership team and our diverse workforce driving innovation.",
+      button: "Get A Quote",
+      image: people,
+      imageAlt: "People"
+    }
+  },
+  {
+    title: "CAREERS",
+    desc: "Join our team and build the future of technology with us.",
+    icon: "🚀",
+    path: "/company/careers",
+    careers: {
+      title: "Careers",
+      description: "Explore exciting career opportunities with our company. Join our team and grow your career in a dynamic and innovative environment.",
+      button: "Get A Quote",
+      image: careers,
+      imageAlt: "Careers"
+    }
+  },
+  {
+    title: "ENGAGEMENT MODELS",
+    desc: "Flexible partnership models including dedicated teams.",
+    icon: "🤝",
+    path: "/company/engagement-models",
+    engagementModels: {
+      title: "Engagments Models",
+      description: "Discover the various engagement models we offer to our clients, ensuring flexibility, efficiency, and tailored solutions for every project.",
+      button: "Get A Quote",
+      image: engagement_models,
+      imageAlt: "Engagement Models"
+    }
+  }
 ];
 
 export const navigationLinks = [

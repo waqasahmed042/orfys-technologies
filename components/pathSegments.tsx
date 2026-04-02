@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FiHome, FiChevronRight } from 'react-icons/fi';
@@ -25,7 +25,12 @@ const PathSegments: React.FC = () => {
 
                     const isServices = segment.toLowerCase() === "services";
                     const isPortfolio = segment.toLowerCase() === "portfolio";
+                    const isCompany = segment.toLowerCase() === "company";
 
+                    // For Company and Portfolio: show as non-clickable text (disabled)
+                    const shouldDisableLink = isCompany || isPortfolio;
+
+                    // Build URL only for clickable segments
                     const url = isServices
                         ? "/#services"
                         : `/${pathSegments.slice(0, index + 1).join("/")}`;
@@ -34,14 +39,17 @@ const PathSegments: React.FC = () => {
                         <React.Fragment key={index}>
                             <FiChevronRight className="text-gray-600 text-xs" />
 
-                            {isLast ? (
-                                <span className="text-[var(--accent-primary)] font-extrabold text-[10px] md:text-xs uppercase tracking-widest">
-                                    {formattedName}
-                                </span>
-                            ) : isPortfolio ? (
+                            {isLast || shouldDisableLink ? (
                                 <span
-                                    className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-widest"
-                                    style={{ color: "var(--text-secondary)" }}
+                                    className={`text-[10px] md:text-xs font-bold uppercase tracking-widest ${isLast
+                                        ? "text-[var(--accent-primary)] font-extrabold"
+                                        : "text-gray-400"
+                                        }`}
+                                    style={{
+                                        color: isLast
+                                            ? "var(--accent-primary)"
+                                            : "var(--text-secondary)"
+                                    }}
                                 >
                                     {formattedName}
                                 </span>
@@ -59,7 +67,7 @@ const PathSegments: React.FC = () => {
                 })}
             </nav>
         </>
-    )
+    );
 };
 
 export default PathSegments;

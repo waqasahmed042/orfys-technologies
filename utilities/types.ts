@@ -1,5 +1,4 @@
 import { Theme, ThemeName, ThemeMode } from "@/lib/themes";
-import { Metadata } from "next";
 import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 
@@ -88,3 +87,11 @@ export interface ProjectDataProps {
         bulletin?: readonly string[];
     };
 };
+
+export interface CompanyHeroProps {
+    title: string;
+    description: string;
+    buttonText: string;
+    image: StaticImageData | string;
+    imageAlt: string;
+}

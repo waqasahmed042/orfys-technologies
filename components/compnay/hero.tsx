@@ -1,40 +1,34 @@
 "use client";
-
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 import gsap from "gsap";
-import { projectsData } from "@/lib/portfolioConstants";
-import case_studies from "@/public/portfolio/case-studies.svg"
-import NotFound from "@/app/not-found";
-import Header from "@/components/Header";
-import CustomCursor from "@/components/CustomCursor";
+import PathSegments from "../pathSegments";
+import { CompanyHeroProps } from "@/utilities/types";
+import CustomCursor from "../CustomCursor";
+import Header from "../Header";
 import ScrollToTop from "@/hooks/userScrollToTop";
 
-const CaseStudiesHero = () => {
-    const pathname = usePathname();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
-    const currentSegment =
-        pathname.split("/").filter(Boolean).pop() || "";
-
-    const content = projectsData.find(
-        (item) => item.slug === currentSegment
-    );
-
+const Hero = ({
+    title,
+    description,
+    buttonText,
+    image,
+    imageAlt,
+}: CompanyHeroProps) => {
     const leftContentRef = useRef<HTMLDivElement>(null);
     const rightContentRef = useRef<HTMLDivElement>(null);
 
+
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         const left = leftContentRef.current;
         const right = rightContentRef.current;
 
         if (!left) return;
 
+        // Initial state
         gsap.set(left, { opacity: 0, x: -30 });
         if (right) gsap.set(right, { opacity: 0, x: 30, scale: 0.95 });
 
@@ -43,7 +37,7 @@ const CaseStudiesHero = () => {
         tl.to(left, {
             opacity: 1,
             x: 0,
-            duration: 0.9,
+            duration: 0.9
         }).to(
             right,
             {
@@ -60,41 +54,33 @@ const CaseStudiesHero = () => {
         };
     }, []);
 
-    if (!content) {
-        return (
-            <>
-                <NotFound />
-            </>
-        );
-    };
-
     return (
         <>
             <CustomCursor />
             <Header />
 
             <section
-                id="case-studies"
-                className="relative w-full flex items-center mt-32 mb-12 overflow-hidden"
+                className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"
                 style={{ backgroundColor: "var(--bg-primary)" }}
             >
                 <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-                        {/* LEFT CONTENT */}
+                        {/* Left Content */}
                         <div ref={leftContentRef} className="space-y-4">
+                            <PathSegments />
+
                             <h1
-                                className="text-2xl md:text-5xl font-bold leading-tight flex flex-col gap-2"
+                                className="text-2xl md:text-5xl font-bold leading-tight text-white flex flex-row items-center gap-2"
                                 style={{ color: "var(--text-primary)" }}
                             >
-                                {content.title}
+                                {title}
                             </h1>
 
                             <p
-                                className="text-sm md:text-md lg:text-lg leading-relaxed max-w-2xl"
+                                className="text-sm md:text-md lg:text-lg text-gray-200 leading-relaxed max-w-2xl"
                                 style={{ color: "var(--text-secondary)" }}
                             >
-                                {content.description}
+                                {description}
                             </p>
 
                             <div className="flex flex-wrap gap-4">
@@ -102,23 +88,23 @@ const CaseStudiesHero = () => {
                                     href="#"
                                     className="px-8 py-4 bg-[var(--accent-primary)] text-white font-bold rounded-xl flex items-center gap-2 hover:scale-105 transition-transform shadow-lg shadow-[var(--accent-primary)]/20"
                                 >
-                                    Get a Quote
+                                    {buttonText}
                                 </Link>
                             </div>
                         </div>
 
-                        {/* RIGHT IMAGE */}
+                        {/* Right Image */}
                         <div
                             ref={rightContentRef}
                             className="relative w-full hidden lg:flex items-center justify-center"
                         >
                             <Image
-                                src={case_studies}
-                                alt="case studies"
-                                width={600}
-                                height={400}
+                                src={image}
+                                alt={imageAlt}
                                 priority
                                 className="w-full h-auto object-contain"
+                                width={600}
+                                height={500}
                             />
                         </div>
                     </div>
@@ -130,4 +116,4 @@ const CaseStudiesHero = () => {
     );
 };
 
-export default CaseStudiesHero;
+export default Hero;
