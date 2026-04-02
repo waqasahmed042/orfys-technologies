@@ -85,7 +85,7 @@ const Hero = ({
 
                             <div className="flex flex-wrap gap-4">
                                 <Link
-                                    href="#"
+                                    href="/contact-us"
                                     className="px-8 py-4 bg-[var(--accent-primary)] text-white font-bold rounded-xl flex items-center gap-2 hover:scale-105 transition-transform shadow-lg shadow-[var(--accent-primary)]/20"
                                 >
                                     {buttonText}
