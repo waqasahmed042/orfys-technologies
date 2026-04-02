@@ -182,7 +182,7 @@ export const portfolioMenu: MenuItem[] = [
   }
 ];
 
-import about_us from "@/public/company/about-us.svg";
+import about_us from "@/public/company/about-us/about-us.svg";
 import blogs from "@/public/company/blogs.svg";
 import news from "@/public/company/news.svg";
 import people from "@/public/company/people.svg";

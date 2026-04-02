@@ -61,7 +61,6 @@ const About: React.FC = () => {
               priority
             />
           </div>
-
         </div>
       </div>
     </section>
