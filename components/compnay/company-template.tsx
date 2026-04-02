@@ -37,8 +37,6 @@ const CompanyTemplate = () => {
   // Fallback if no data found
   if (!content) {
     return <NotFound />;
-  } else {
-    console.log("content: ", content);
   };
 
   return (
