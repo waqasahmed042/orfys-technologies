@@ -192,7 +192,7 @@ const Blogs: React.FC = () => {
                             <input
                                 type="text"
                                 placeholder="Search keyword..."
-                                className="w-full p-4 pr-12 bg-[var(--bg-primary)] border border-[var(--border-default)] rounded-xl text-[var(--text-primary)] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0284c7]/50 transition-all"
+                                className="w-full p-4 pr-12 bg-[var(--bg-primary)] border border-[var(--border-default)] rounded-xl text-[var(--text-primary)] placeholder:text-slate-400 focus:outline focus:ring-1 focus:ring-[var(--accent-primary)]/50 transition-all"
                             />
                             <div className="absolute right-4 top-4 text-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
