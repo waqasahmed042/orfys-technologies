@@ -5,6 +5,9 @@ import { companyMenu } from "@/lib/constants";
 import Hero from "./hero";
 import Footer from "@/components/Footer";
 import NotFound from "@/app/not-found";
+import ScrollToTop from "@/hooks/userScrollToTop";
+import CustomCursor from "../CustomCursor";
+import Header from "../Header";
 
 const CompanyTemplate = () => {
   const pathname = usePathname();
@@ -28,7 +31,7 @@ const CompanyTemplate = () => {
   if (menuItem) {
     if (currentSegment === "about-us") content = menuItem.aboutUS;
     else if (currentSegment === "blogs") content = menuItem.blogs;
-    else if (currentSegment === "news") content = menuItem.news;
+    // else if (currentSegment === "news") content = menuItem.news;
     else if (currentSegment === "people") content = menuItem.people;
     else if (currentSegment === "careers") content = menuItem.careers;
     else if (currentSegment === "engagement-models") content = menuItem.engagementModels;
@@ -41,6 +44,9 @@ const CompanyTemplate = () => {
 
   return (
     <>
+      <CustomCursor />
+      <Header />
+
       <main className="bg-[var(--bg-primary)] min-h-screen">
         {/* Hero Section - Passing data from companyMenu */}
         <Hero
@@ -53,6 +59,7 @@ const CompanyTemplate = () => {
 
         {/* Footer Section */}
         <Footer />
+        <ScrollToTop />
       </main>
     </>
   );

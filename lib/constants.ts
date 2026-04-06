@@ -209,26 +209,26 @@ export const companyMenu = [
     icon: "✍️",
     path: "/company/blogs",
     blogs: {
-      title: "Blogs",
+      title: "Corporate Blog",
       description: "Read the latest insights, articles, and thought leadership from our team. Stay informed about industry trends and company updates.",
       button: "Get A Quote",
       image: blogs,
       imageAlt: "Blogs"
     }
   },
-  {
-    title: "NEWS",
-    desc: "Stay updated with our latest company milestones and events.",
-    icon: "📰",
-    path: "/company/news",
-    news: {
-      title: "News",
-      description: "Stay updated with our latest news, announcements, and media coverage. Get all the important company updates in one place.",
-      button: "Get A Quote",
-      image: news,
-      imageAlt: "News"
-    }
-  },
+  // {
+  //   title: "NEWS",
+  //   desc: "Stay updated with our latest company milestones and events.",
+  //   icon: "📰",
+  //   path: "/company/news",
+  //   news: {
+  //     title: "News",
+  //     description: "Stay updated with our latest news, announcements, and media coverage. Get all the important company updates in one place.",
+  //     button: "Get A Quote",
+  //     image: news,
+  //     imageAlt: "News"
+  //   }
+  // },
   {
     title: "PEOPLE",
     desc: "Meet the brilliant minds behind our successful solutions.",

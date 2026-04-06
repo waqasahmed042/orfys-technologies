@@ -261,15 +261,15 @@ const AboutUS: React.FC = () => {
                 <div className="max-w-7xl mx-auto">
                     {/* Header */}
                     <h2
-                        className="text-3xl md:text-4xl font-normal mb-8"
-                        style={{ color: "var(--accent-primary)" }}
+                        className="text-xl md:text-2xl lg:text-4xl font-bold leading-tight mb-4"
+                        style={{ color: "var(--text-primary)" }}
                     >
                         Orfys Technologies Overview
                     </h2>
 
                     {/* Description Text */}
                     <p
-                        className="max-w-6xl text-sm leading-relaxed mb-20"
+                        className="text-sm md:text-md lg:text-lg text-gray-200 leading-relaxed mb-20"
                         style={{ color: "var(--text-secondary)" }}
                     >
                         Orfys Technologies is a software development company in Warsaw, Poland. The company is focused on custom software development outsourcing across multiple

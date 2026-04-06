@@ -9,6 +9,7 @@ import CustomCursor from "../CustomCursor";
 import Header from "../Header";
 import ScrollToTop from "@/hooks/userScrollToTop";
 import AboutUS from "@/components/compnay/about-us";
+import Blogs from "./blogs";
 
 const Hero = ({
     title,
@@ -111,10 +112,10 @@ const Hero = ({
                 </div>
             </section>
 
-            {title === "About US" && (
-                <>
-                    <AboutUS />
-                </>
+            {title === "About US" ? (
+                <AboutUS />
+            ) : (
+                <Blogs />
             )}
 
             <ScrollToTop />
