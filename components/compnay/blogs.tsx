@@ -106,12 +106,12 @@ const Blogs: React.FC = () => {
                                 </div>
                                 <div className="w-full md:w-2/3 flex flex-col">
                                     <span className="text-xs font-semibold text-[var(--text-secondary)] opacity-70 uppercase tracking-widest mb-2">{post.date}</span>
-                                    <h2 className="text-xl md:text-2xl font-bold text-[#0284c7] hover:text-[#0369a1] cursor-pointer leading-tight mb-3">{post.title}</h2>
+                                    <h2 className="text-xl md:text-2xl font-bold text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] cursor-pointer leading-tight mb-3">{post.title}</h2>
                                     <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-6 flex-grow">{post.excerpt}</p>
                                     <div className="flex flex-wrap gap-2 items-center pt-4 border-t border-[var(--border-default)]">
                                         <span className="text-[10px] font-bold text-[var(--text-secondary)] opacity-50 uppercase">Tags:</span>
                                         {post.tags.map((tag, idx) => (
-                                            <span key={idx} className="text-xs text-[#0284c7] hover:underline cursor-pointer">
+                                            <span key={idx} className="text-xs text-[var(--accent-primary)] hover:underline cursor-pointer">
                                                 {tag}{idx < post.tags.length - 1 ? ',' : ''}
                                             </span>
                                         ))}
@@ -202,16 +202,16 @@ const Blogs: React.FC = () => {
                         </div>
 
                         {/* "Custom Fix" Card - This stays blue in both modes for brand consistency */}
-                        <div className="bg-[#0284c7] text-white p-8 rounded-2xl shadow-xl text-center relative overflow-hidden group">
+                        <div className="bg-[var(--accent-primary)] text-white p-8 rounded-2xl shadow-xl text-center relative overflow-hidden group">
                             <div className="relative z-10">
                                 <h3 className="text-xl font-bold mb-4">Looking for a Custom Fix?</h3>
                                 <p className="text-sm opacity-90 mb-6">
                                     SCAND’s the company to call for smart solutions and easy-going consulting.
                                 </p>
                                 <p className="text-sm font-semibold mb-8">
-                                    Shoot us a message <br /> and let's get started!
+                                    Shoot us a message and let's get started!
                                 </p>
-                                <button className="w-full bg-white text-[#0284c7] font-bold py-3 rounded-xl hover:bg-slate-100 transition-colors shadow-lg">
+                                <button className="w-full bg-white text-[var(--accent-primary)] cursor-pointer font-semibold py-3 rounded-xl hover:bg-slate-100 transition-colors shadow-lg">
                                     Contact us
                                 </button>
                             </div>
