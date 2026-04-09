@@ -1,6 +1,5 @@
 import ScrollToTop from '@/hooks/userScrollToTop';
 import React from 'react';
-import { BsArrowRight } from 'react-icons/bs';
 import { CgLayoutGrid } from 'react-icons/cg';
 import { CiMonitor } from 'react-icons/ci';
 import { FaUserSecret } from 'react-icons/fa';
