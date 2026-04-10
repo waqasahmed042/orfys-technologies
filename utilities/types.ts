@@ -94,4 +94,9 @@ export interface CompanyHeroProps {
     buttonText: string;
     image: StaticImageData | string;
     imageAlt: string;
-}
+};
+
+export interface NoDataFoundProps {
+    category?: string;
+    clearCategory?: () => void;
+};
