@@ -15,7 +15,7 @@ export const companyMetadataMap: Record<string, Metadata> = {
     },
 
     "blogs": {
-        title: "Blogs",
+        title: "Corporate Blog",
         description: "Read the latest insights, articles, and thought leadership from our team. Stay informed about industry trends and company updates.",
     },
 

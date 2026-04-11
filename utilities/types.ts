@@ -88,7 +88,7 @@ export interface ProjectDataProps {
     };
 };
 
-export interface CompanyHeroProps {
+export interface HeroProps {
     title: string;
     description: string;
     buttonText: string;
@@ -99,4 +99,20 @@ export interface CompanyHeroProps {
 export interface NoDataFoundProps {
     category?: string;
     clearCategory?: () => void;
+};
+
+export interface CounterProps {
+    target: number;
+    duration?: number;
+};
+
+export interface UploadFilesProps {
+    onFilesChange: (files: FilePreviewProps[]) => void;
+};
+
+export interface FilePreviewProps {
+    name: string;
+    type: string;
+    size: number;
+    base64?: string;
 };

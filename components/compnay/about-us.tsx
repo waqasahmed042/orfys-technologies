@@ -10,11 +10,7 @@ import Testimonials from "../Testimonials";
 import TrustedCompanies from "../TrustedCompanies";
 import WhyOrfys from "../WhyOrfys";
 import Link from 'next/link';
-
-interface CounterProps {
-    target: number;
-    duration?: number;
-}
+import { CounterProps } from '@/utilities/types';
 
 const Counter: React.FC<CounterProps> = ({ target, duration = 2000 }) => {
     const [count, setCount] = useState(0);

@@ -1,13 +1,15 @@
+"use client";
 import ScrollToTop from '@/hooks/userScrollToTop';
-import React from 'react';
+import React, { useState } from 'react';
 import { CgLayoutGrid } from 'react-icons/cg';
 import { CiMonitor } from 'react-icons/ci';
 import { FaUserSecret } from 'react-icons/fa';
 import { FiFileText } from 'react-icons/fi';
-import { GiPaperClip } from 'react-icons/gi';
 import Footer from './Footer';
 import CustomCursor from './CustomCursor';
 import Header from './Header';
+import Attachments from './Attachments';
+import { FilePreviewProps } from '@/utilities/types';
 
 const steps = [
     {
@@ -37,6 +39,9 @@ const steps = [
 ];
 
 const Contact: React.FC = () => {
+    const [uploadedFiles, setUploadedFiles] = useState<FilePreviewProps[]>([]);
+    console.log(uploadedFiles);
+
     return (
         <>
             <CustomCursor />
@@ -59,7 +64,7 @@ const Contact: React.FC = () => {
 
                         <div className="relative">
                             {/* Vertical Dashed Line */}
-                            <div className="absolute left-[22px] top-2 bottom-0 w-px border-l-2 border-dashed border-gray-200 z-0"></div>
+                            <div className="absolute left-[22px] top-2 bottom-0 w-px border-l-2 border-dashed border-[var(--border-default)] z-0"></div>
 
                             {steps.map((step, index) => (
                                 <div key={step.id} className={`relative flex gap-6 ${index !== steps.length - 1 ? 'mb-12' : ''} z-10`}>
@@ -110,37 +115,40 @@ const Contact: React.FC = () => {
                                     <input
                                         type="text"
                                         placeholder="Your Full Name"
-                                        className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 transition-all"
+                                        className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transition-all"
                                         style={{ borderColor: "var(--border-default)" }}
                                     />
                                 </div>
+
                                 {/* Company */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium" style={{ color: "var(--text-secondary)" }}>Company</label>
                                     <input
                                         type="text"
                                         placeholder="Your Company Name"
-                                        className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 transition-all"
+                                        className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transition-all"
                                         style={{ borderColor: "var(--border-default)" }}
                                     />
                                 </div>
+
                                 {/* Email */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium" style={{ color: "var(--text-secondary)" }}>Email</label>
                                     <input
                                         type="email"
                                         placeholder="Your Email"
-                                        className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 transition-all"
+                                        className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transition-all"
                                         style={{ borderColor: "var(--border-default)" }}
                                     />
                                 </div>
+
                                 {/* Phone */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium" style={{ color: "var(--text-secondary)" }}>Phone Number</label>
                                     <input
                                         type="text"
                                         placeholder="+92098989787"
-                                        className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 transition-all"
+                                        className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transition-all"
                                         style={{ borderColor: "var(--border-default)" }}
                                     />
                                 </div>
@@ -152,27 +160,18 @@ const Contact: React.FC = () => {
                                 <textarea
                                     rows={5}
                                     placeholder="Tell us about your project"
-                                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 transition-all"
+                                    className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transition-all"
                                     style={{ borderColor: "var(--border-default)" }}
                                 ></textarea>
                             </div>
 
-                            {/* Attachment Button */}
-                            <button
-                                type="button"
-                                className="flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-medium transition-colors"
-                                style={{ borderColor: "var(--border-default)", color: "var(--text-secondary)" }}
-                            >
-                                <div className="p-1 rounded bg-blue-50 text-blue-600">
-                                    <GiPaperClip size={16} />
-                                </div>
-                                Attachment
-                            </button>
+                            {/* upload files as an attachment */}
+                            <Attachments onFilesChange={setUploadedFiles} />
 
                             {/* Checkboxes */}
                             <div className="space-y-3 pt-2">
                                 <label className="flex items-start gap-3 cursor-pointer group">
-                                    <input type="checkbox" className="mt-1 w-4 h-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500" />
+                                    <input type="checkbox" className="mt-1 w-4 h-4 rounded border-gray-300 text-[var(--accent-primary)] focus:ring-[var(--accent-primary)]" />
                                     <span className="text-sm leading-tight" style={{ color: "var(--text-secondary)" }}>
                                         I agree with the collection & processing of my personal data in the Privacy Policy and Terms & Conditions.
                                     </span>
@@ -181,7 +180,7 @@ const Contact: React.FC = () => {
 
                             {/* Submit Button */}
                             <button
-                                className="button inline-flex items-center justify-center cursor-pointer px-7 py-3.5 text-base font-semibold rounded-lg border-2 transition hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)]"
+                                className="button w-full inline-flex items-center justify-center cursor-pointer px-7 py-3.5 text-base font-semibold rounded-lg border-2 transition hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)]"
                                 style={{
                                     borderColor: "var(--accent-primary)",
                                     color: "var(--accent-primary)",

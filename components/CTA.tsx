@@ -20,7 +20,7 @@ const CTA: React.FC = () => {
       }}
     >
       {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div className="absolute top-0 left-0 h-full overflow-hidden pointer-events-none">
         <div
           className="absolute -top-[20%] -left-[10%] w-[500px] h-[500px] rounded-full opacity-20 blur-3xl"
           style={{ backgroundColor: 'white' }}

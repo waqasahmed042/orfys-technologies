@@ -1,23 +1,18 @@
 "use client";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import PathSegments from "../pathSegments";
-import { HeroProps } from "@/utilities/types";
-import CustomCursor from "../CustomCursor";
-import Header from "../Header";
 import ScrollToTop from "@/hooks/userScrollToTop";
-import AboutUS from "@/components/compnay/about-us";
-import Blogs from "./blogs/page";
+import { HeroProps } from "@/utilities/types";
 
-const Hero = ({
+const Hero: React.FC<HeroProps> = ({
     title,
     description,
     buttonText,
     image,
     imageAlt,
-}: HeroProps) => {
+}) => {
     const leftContentRef = useRef<HTMLDivElement>(null);
     const rightContentRef = useRef<HTMLDivElement>(null);
 
@@ -57,9 +52,6 @@ const Hero = ({
 
     return (
         <>
-            <CustomCursor />
-            <Header />
-
             <section
                 className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"
                 style={{ backgroundColor: "var(--bg-primary)" }}
@@ -68,10 +60,8 @@ const Hero = ({
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         {/* Left Content */}
                         <div ref={leftContentRef} className="space-y-4">
-                            <PathSegments />
-
                             <h1
-                                className="text-2xl md:text-5xl font-bold leading-tight text-white flex flex-row items-center gap-2"
+                                className="text-xl md:text-2xl lg:text-4xl font-bold leading-tight text-white flex flex-row items-center gap-2"
                                 style={{ color: "var(--text-primary)" }}
                             >
                                 {title}
@@ -111,14 +101,6 @@ const Hero = ({
                     </div>
                 </div>
             </section>
-
-            {title === "About US" ? (
-                <AboutUS />
-            ) : title === "Corporate Blog" ? (
-                <Blogs />
-            ) : (
-                <></>
-            )}
 
             <ScrollToTop />
         </>
