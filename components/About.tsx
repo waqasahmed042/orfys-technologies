@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { useGSAPAnimation } from "@/hooks/useGSAPAnimation";
 import about_us from "@/public/about-us-collage.png";

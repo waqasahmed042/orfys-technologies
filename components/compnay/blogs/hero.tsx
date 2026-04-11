@@ -101,8 +101,6 @@ const Hero: React.FC<HeroProps> = ({
                     </div>
                 </div>
             </section>
-
-            <ScrollToTop />
         </>
     );
 };

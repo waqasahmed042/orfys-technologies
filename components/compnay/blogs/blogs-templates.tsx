@@ -1,7 +1,6 @@
 "use client";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { companyMenu } from "@/lib/constants";
 import Hero from "./hero";
 import Footer from "@/components/Footer";
 import NotFound from "@/app/not-found";

@@ -24,8 +24,6 @@ import mobile_solution from "@/public/services/mobile-solution.svg";
 import security_compliance from "@/public/services/security-compliance.svg";
 import case_studies from "@/public/portfolio/case-studies.svg";
 import our_products from "@/public/portfolio/our-products.svg";
-import { desc, image } from "framer-motion/client";
-import { title } from "process";
 
 export const companyInfo = {
   fullName: "ORFYS TECHNOLOGIES (PRIVATE) LIMITED",
@@ -133,25 +131,90 @@ export const navigationMenus = {
   },
   "Expertise": {
     "Business Solutions": [
-      { title: "Documents Management Systems (DMS)", desc: "Organized digital filing", icon: "📁" },
-      { title: "Business Process Management (BPM)", desc: "Workflow automation", icon: "📈" },
-      { title: "Enterprise Asset Management (EAM)", desc: "Asset tracking & lifecycle", icon: "🏗️" },
-      { title: "Facility Management Software (FM)", desc: "Infrastructure maintenance", icon: "🏢" },
+      {
+        title: "Documents Management Systems (DMS)",
+        desc: "Organized digital filing",
+        icon: "📁",
+        path: "/experties/documents-management-systems-dms"
+      },
+      {
+        title: "Business Process Management (BPM)",
+        desc: "Workflow automation",
+        icon: "📈",
+        path: "/experties/business-process-management-bpm"
+      },
+      {
+        title: "Enterprise Asset Management (EAM)",
+        desc: "Asset tracking & lifecycle",
+        icon: "🏗️",
+        path: "/experties/enterprise-asset-management-eam"
+      },
+      {
+        title: "Facility Management Software (FM)",
+        desc: "Infrastructure maintenance",
+        icon: "🏢",
+        path: "/experties/facility-management-software-fm"
+      },
     ],
     "Management Software": [
-      { title: "Human Resource Management (HRM)", desc: "Staff & payroll tools", icon: "👥" },
-      { title: "Digital Publishing Software (DPS)", desc: "Content distribution", icon: "📖" },
-      { title: "Digital Rights Management (DRM)", desc: "Content protection", icon: "🔐" },
-      { title: "Product Lifecycle Management (PLM)", desc: "Product roadmap tech", icon: "🔄" },
+      {
+        title: "Human Resource Management (HRM)",
+        desc: "Staff & payroll tools",
+        icon: "👥",
+        path: "/experties/human-resource-management-hrm"
+      },
+      {
+        title: "Digital Publishing Software (DPS)",
+        desc: "Content distribution",
+        icon: "📖",
+        path: "/experties/digital-publishing-software-dps"
+      },
+      {
+        title: "Digital Rights Management (DRM)",
+        desc: "Content protection",
+        icon: "🔐",
+        path: "/experties/digital-rights-management-drm"
+      },
+      {
+        title: "Product Lifecycle Management (PLM)",
+        desc: "Product roadmap tech",
+        icon: "🔄",
+        path: "/experties/product-lifecycle-management-plm"
+      },
     ],
     "Advanced Tech": [
-      { title: "AR/VR Solutions", desc: "Immersive experiences", icon: "🕶️" },
-      { title: "Big Data Software", desc: "Large scale analytics", icon: "📉" },
-      { title: "CAD Software", desc: "Engineering design tools", icon: "📐" },
-      { title: "Customer Relationship (CRM)", desc: "Client management", icon: "🤝" },
-      { title: "Enterprise Resource Planning (ERP)", desc: "Unified business logic", icon: "💼" },
+      {
+        title: "AR/VR Solutions",
+        desc: "Immersive experiences",
+        icon: "🕶️",
+        path: "/experties/ar-vr-solutions"
+      },
+      {
+        title: "Big Data Software",
+        desc: "Large scale analytics",
+        icon: "📉",
+        path: "/experties/big-data-software"
+      },
+      {
+        title: "CAD Software",
+        desc: "Engineering design tools",
+        icon: "📐",
+        path: "/experties/cad-software"
+      },
+      {
+        title: "Customer Relationship (CRM)",
+        desc: "Client management",
+        icon: "🤝",
+        path: "/experties/customer-relationship-crm"
+      },
+      {
+        title: "Enterprise Resource Planning (ERP)",
+        desc: "Unified business logic",
+        icon: "💼",
+        path: "/experties/enterprise-resource-planning-erp"
+      },
     ]
-  },
+  }
 } as const;
 export const dropdownKeys = ["Services", "Technologies", "Industries", "Expertise"] as const;
 

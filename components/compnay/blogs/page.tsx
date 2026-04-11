@@ -6,6 +6,7 @@ import { useGSAPStagger } from '@/hooks/useGSAPStagger';
 import { CiSearch } from 'react-icons/ci';
 import { IoIosArrowDown } from 'react-icons/io';
 import { blogPosts, categoryNames } from '@/lib/companyConstant';
+import Footer from '@/components/Footer';
 
 const Blogs: React.FC = () => {
     const pageSize = 4;
