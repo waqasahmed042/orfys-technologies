@@ -290,7 +290,7 @@ const Blogs: React.FC = () => {
                                                 onClick={() => handleCategoryClick(cat.name)}
                                                 className={`p-4 flex justify-between text-sm cursor-pointer transition-all group ${selectedCategory === cat.name
                                                     ? "bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] font-semibold"
-                                                    : "text-[var(--text-secondary)] hover:bg-slate-50 dark:hover:bg-slate-800/50"
+                                                    : "text-[var(--text-secondary)] hover:bg-[var(--accent-primary)]/10 hover:text-[var(--accent-primary)]"
                                                     }`}
                                             >
                                                 <span className="group-hover:text-[var(--accent-primary)] transition-colors">
