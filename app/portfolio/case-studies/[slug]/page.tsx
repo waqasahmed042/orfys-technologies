@@ -3,7 +3,7 @@ import CaseStudiesTemplate from "@/components/portfolio/case-studies/case-studie
 import { SlugProps } from "@/utilities/types";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: SlugProps) {
+export const generateMetadata = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const metadata = caseStudiesMetadataMap[slug];
 
@@ -15,7 +15,8 @@ export async function generateMetadata({ params }: SlugProps) {
     };
 };
 
-export default async function CaseStudyPage({ params }: SlugProps) {
+
+const CaseStudyPage = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const data = caseStudiesMetadataMap[slug];
 
@@ -25,3 +26,5 @@ export default async function CaseStudyPage({ params }: SlugProps) {
 
     return <CaseStudiesTemplate />;
 };
+
+export default CaseStudyPage;

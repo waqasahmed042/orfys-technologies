@@ -102,31 +102,119 @@ export const navigationMenus = {
   },
   "Industries": {
     "Healthcare & Finance": [
-      { title: "Healthcare", desc: "Medical software systems", icon: "🏥", path: "/technologies" },
-      { title: "FinTech", desc: "Financial technology", icon: "💳", path: "/technologies" },
-      { title: "Banking", desc: "Core banking solutions", icon: "🏦", path: "/technologies" },
+      {
+        title: "Healthcare",
+        desc: "Medical software systems",
+        icon: "🏥",
+        path: "/industries/healthcare-software-solutions"
+      },
+      {
+        title: "FinTech",
+        desc: "Financial technology",
+        icon: "💳",
+        path: "/industries/fintech-software-solutions"
+      },
+      {
+        title: "Banking",
+        desc: "Core banking solutions",
+        icon: "🏦",
+        path: "/industries/banking-software-solutions"
+      },
     ],
+
     "E-Commerce & Logistics": [
-      { title: "E-Commerce", desc: "Retail & Online stores", icon: "🛍️", path: "/technologies" },
-      { title: "Product Information", desc: "Management Software (PIM)", icon: "🏷️", path: "/technologies" },
-      { title: "Logistics", desc: "Fleet & Supply Chain", icon: "🚛", path: "/technologies" },
-      { title: "Warehouse", desc: "Inventory Management", icon: "📦", path: "/technologies" },
+      {
+        title: "E-Commerce",
+        desc: "Retail & Online stores",
+        icon: "🛍️",
+        path: "/industries/ecommerce-software-solutions"
+      },
+      {
+        title: "Product Information",
+        desc: "Management Software (PIM)",
+        icon: "🏷️", path: "/industries/product-information-management-pim"
+      },
+      {
+        title: "Logistics",
+        desc: "Fleet & Supply Chain",
+        icon: "🚛",
+        path: "/industries/logistics-supply-chain-software-solutions"
+      },
+      {
+        title: "Warehouse",
+        desc: "Inventory Management",
+        icon: "📦",
+        path: "/industries/warehouse-management-software-solutions"
+      },
     ],
+
     "Gaming, Edu & Energy": [
-      { title: "Gaming & Sports", desc: "Gambling & Sports Betting", icon: "🎮", path: "/technologies" },
-      { title: "Education", desc: "School Management Software", icon: "🎓", path: "/technologies" },
-      { title: "Telecom", desc: "Connectivity solutions", icon: "📞", path: "/technologies" },
-      { title: "Energy & Utilities", desc: "Renewable & Traditional", icon: "⚡", path: "/technologies" },
+      {
+        title: "Gaming & Sports",
+        desc: "Gambling & Sports Betting",
+        icon: "🎮",
+        path: "/industries/gaming-sports-software-solutions"
+      },
+      {
+        title: "Education",
+        desc: "School Management Software",
+        icon: "🎓",
+        path: "/industries/education-software-solutions"
+      },
+      {
+        title: "Telecom",
+        desc: "Connectivity solutions",
+        icon: "📞",
+        path: "/industries/telecom-software-solutions"
+      },
+      {
+        title: "Energy & Utilities",
+        desc: "Renewable & Traditional",
+        icon: "⚡",
+        path: "/industries/energy-utilities-software-solutions"
+      },
     ],
+
     "Crypto & Blockchain": [
-      { title: "Cryptocurrency", desc: "Exchanges, Wallets & Bots", icon: "🪙", path: "/technologies" },
-      { title: "Blockchain", desc: "DAO, DApp & DeFi", icon: "🔗", path: "/technologies" },
-      { title: "Web3", desc: "Metaverse & NFT Development", icon: "🌐", path: "/technologies" },
+      {
+        title: "Cryptocurrency",
+        desc: "Exchanges, Wallets & Bots",
+        icon: "🪙",
+        path: "/industries/cryptocurrency-software-solutions"
+      },
+      {
+        title: "Blockchain",
+        desc: "DAO, DApp & DeFi",
+        icon: "🔗",
+        path: "/industries/blockchain-software-solutions"
+      },
+      {
+        title: "Web3",
+        desc: "Metaverse & NFT Development",
+        icon: "🌐",
+        path: "/industries/web3-software-solutions"
+      },
     ],
+
     "Media & Emerging": [
-      { title: "Media & Entertainment", desc: "Content & Streaming", icon: "🎬", path: "/technologies" },
-      { title: "IoT", desc: "Connected devices", icon: "📡", path: "/technologies" },
-      { title: "Advertising", desc: "AdTech solutions", icon: "📢", path: "/technologies" },
+      {
+        title: "Media & Entertainment",
+        desc: "Content & Streaming",
+        icon: "🎬",
+        path: "/industries/media-entertainment-software-solutions"
+      },
+      {
+        title: "IoT",
+        desc: "Connected devices",
+        icon: "📡",
+        path: "/industries/iot-software-solutions"
+      },
+      {
+        title: "Advertising",
+        desc: "AdTech solutions",
+        icon: "📢",
+        path: "/industries/advertising-adtech-software-solutions"
+      },
     ]
   },
   "Expertise": {

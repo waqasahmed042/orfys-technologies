@@ -3,7 +3,7 @@ import CompanyTemplate from "@/components/compnay/company-template";
 import { SlugProps } from "@/utilities/types";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: SlugProps) {
+export const generateMetadata = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const metadata = companyMetadataMap[slug];
 
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: SlugProps) {
     };
 };
 
-export default async function CompanyPage({ params }: SlugProps) {
+const CompanyPage = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const data = companyMetadataMap[slug];
 
@@ -25,3 +25,5 @@ export default async function CompanyPage({ params }: SlugProps) {
 
     return <CompanyTemplate />;
 };
+
+export default CompanyPage;

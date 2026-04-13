@@ -1,13 +1,13 @@
-import { expertiesMetadataMap } from "../experties-metadata";
-import ExpertiesTemplate from "@/components/experties/experties-template";
+import { expertiseMetadataMap } from "../expertise-metadata";
+import ExpertiesTemplate from "@/components/experties/expertise-template";
 import { SlugProps } from "@/utilities/types";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: SlugProps) {
+export const generateMetadata = async ({ params }: SlugProps) => {
     const { slug } = await params;
-    const metadata = expertiesMetadataMap[slug];
+    const metadata = expertiseMetadataMap[slug];
 
-    if (!metadata) return { title: "Case Study Not Found" };
+    if (!metadata) return { title: "Expertise Not Found" };
 
     return {
         title: metadata.title,
@@ -15,9 +15,9 @@ export async function generateMetadata({ params }: SlugProps) {
     };
 };
 
-export default async function CaseStudyPage({ params }: SlugProps) {
+const ExpertiesPage = async ({ params }: SlugProps) => {
     const { slug } = await params;
-    const data = expertiesMetadataMap[slug];
+    const data = expertiseMetadataMap[slug];
 
     if (!data) {
         return notFound();
@@ -25,3 +25,5 @@ export default async function CaseStudyPage({ params }: SlugProps) {
 
     return <ExpertiesTemplate />;
 };
+
+export default ExpertiesPage;

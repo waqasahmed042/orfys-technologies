@@ -3,11 +3,11 @@ import BlogsTemplate from "@/components/compnay/blogs/blogs-templates";
 import { SlugProps } from "@/utilities/types";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: SlugProps) {
+export const generateMetadata = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const metadata = blogMetadataMap[slug];
 
-    if (!metadata) return { title: "Company Not Found" };
+    if (!metadata) return { title: "Blogs Not Found" };
 
     return {
         title: metadata.title,
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: SlugProps) {
     };
 };
 
-export default async function CompanyPage({ params }: SlugProps) {
+const BlogsPage = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const data = blogMetadataMap[slug];
 
@@ -25,3 +25,5 @@ export default async function CompanyPage({ params }: SlugProps) {
 
     return <BlogsTemplate />;
 };
+
+export default BlogsPage;

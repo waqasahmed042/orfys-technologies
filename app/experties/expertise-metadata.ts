@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
-export const experties: Metadata = {
+export const expertise: Metadata = {
     title: "Our Expertise | Specialized Software Solutions",
     description:
         "Explore our specialized expertise in DMS, BPM, ERP, and advanced technologies like AR/VR and Big Data. We build high-performance software tailored for complex business needs.",
 };
 
-export const expertiesMetadataMap: Record<string, Metadata> = {
-    "case-studies": experties,
+export const expertiseMetadataMap: Record<string, Metadata> = {
+    "case-studies": expertise,
 
     // Business Solutions
     "documents-management-systems-dms": {

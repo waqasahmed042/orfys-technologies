@@ -1,8 +1,9 @@
 import { productsMetadataMap } from "../../portfolios-metadata";
 import ProductsTemplate from "@/components/portfolio/products/products-template";
+import { SlugProps } from "@/utilities/types";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export const generateMetadata = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const metadata = productsMetadataMap[slug];
 
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
 };
 
-export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+const ProductsPage = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const data = productsMetadataMap[slug];
 
@@ -29,3 +30,5 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
     return <ProductsTemplate />;
 };
+
+export default ProductsPage;

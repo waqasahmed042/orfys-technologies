@@ -3,7 +3,7 @@ import ServiceTemplate from "@/components/services/services-template";
 import { SlugProps } from "@/utilities/types";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: SlugProps) {
+export const generateMetadata = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const metadata = servicesMetadataMap[slug];
 
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: SlugProps) {
     };
 };
 
-export default async function ServicePage({ params }: SlugProps) {
+const ServicePage = async ({ params }: SlugProps) => {
     const { slug } = await params;
     const data = servicesMetadataMap[slug];
 
@@ -25,3 +25,5 @@ export default async function ServicePage({ params }: SlugProps) {
 
     return <ServiceTemplate />;
 };
+
+export default ServicePage;
