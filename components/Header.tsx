@@ -42,7 +42,7 @@ export default function Header() {
     if (dropdown) {
       gsap.killTweensOf(dropdown);
       gsap.fromTo(dropdown,
-        { opacity: 0, y: 10, display: "none" },
+        { opacity: 0, y: 15, display: "none" },
         { opacity: 1, y: 0, display: "block", duration: 0.4, ease: "power2.out" }
       );
     };
@@ -54,7 +54,7 @@ export default function Header() {
 
     if (dropdown) {
       gsap.to(dropdown, {
-        opacity: 0, y: 5, duration: 0.4, ease: "power2.in",
+        opacity: 0, y: 10, duration: 0.3, ease: "power2.in",
         onComplete: () => { gsap.set(dropdown, { display: "none" }); },
       });
     };
@@ -197,7 +197,7 @@ export default function Header() {
                     <span className="absolute bottom-[-2px] left-3 right-3 h-[2px] bg-[var(--accent-primary)] transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-center" />
                   </button>
 
-                  <div className="dropdown-pane absolute top-full inset-x-0 px-8 hidden">
+                  <div className="dropdown-pane absolute top-[80%] inset-x-0 px-8 hidden pt-4">
                     <div className="w-full border rounded-[2.5rem] p-8 shadow-2xl grid grid-cols-3 gap-8 overflow-y-auto custom-scrollbar"
                       style={{
                         backgroundColor: "var(--bg-primary)",
@@ -229,7 +229,7 @@ export default function Header() {
                     <span className="absolute bottom-[-2px] left-3 right-3 h-[2px] bg-[var(--accent-primary)] transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-center" />
                   </button>
 
-                  <div className="dropdown-pane absolute top-full inset-x-0 px-8 hidden">
+                  <div className="dropdown-pane absolute top-[80%] inset-x-0 px-8 hidden pt-4">
                     <div className="w-full border rounded-[2.5rem] p-6 shadow-lg grid grid-cols-4 gap-4 overflow-y-auto custom-scrollbar"
                       style={{
                         backgroundColor: "var(--bg-primary)",

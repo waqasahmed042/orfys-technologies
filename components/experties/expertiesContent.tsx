@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGSAPStagger } from '@/hooks/useGSAPStagger';
 
-const IndustriesContent: React.FC = () => {
+const ExpertiesContent: React.FC = () => {
     const containerRef = useGSAPStagger({
         stagger: 0.15,
         duration: 0.8,
@@ -95,4 +95,4 @@ const IndustriesContent: React.FC = () => {
     )
 };
 
-export default IndustriesContent;
+export default ExpertiesContent;

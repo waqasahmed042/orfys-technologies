@@ -8,6 +8,11 @@ import Header from "../Header";
 import ScrollToTop from "@/hooks/userScrollToTop";
 import Footer from "@/components/Footer";
 import { expertiesContent } from "@/lib/expertiesConstant";
+import ExpertiesContent from "./expertiesContent";
+import TrustedCompanies from "../TrustedCompanies";
+import Testimonials from "../Testimonials";
+import WhyOrfys from "../WhyOrfys";
+import CTA from "../CTA";
 
 const ExpertiesTemplate: React.FC = () => {
   const pathname = usePathname();
@@ -41,7 +46,11 @@ const ExpertiesTemplate: React.FC = () => {
           imageAlt={content.hero.imageAlt}
         />
 
-        {/* You can add more sections here that use the content object */}
+        <ExpertiesContent />
+        <TrustedCompanies />
+        <Testimonials />
+        <WhyOrfys />
+        <CTA />
       </main>
 
       <Footer />
