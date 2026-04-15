@@ -65,10 +65,10 @@ const ServicesHero = () => {
                 className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"
                 style={{ backgroundColor: "var(--bg-primary)" }}
             >
-                <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="w-full max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div ref={leftContentRef} className="space-y-4">
-                            {/* Breadcrumbs  */}
+                            {/* Breadcrumbs */}
                             <PathSegments />
 
                             <h1

@@ -112,58 +112,60 @@ const Integrations: React.FC = () => {
         <section
             id="integrations"
             ref={staggerRef as React.RefObject<HTMLElement>}
-            className="py-12 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16"
-            style={{ backgroundColor: "var(--bg-primary)" }}
+            className="py-12 px-6 gap-16"
+            style={{ backgroundColor: "var(--border-default)" }}
         >
-            {/* Left Content */}
-            <div className="lg:w-1/2">
-                <div
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-medium text-sm mb-6"
-                    style={{ backgroundColor: "rgba(147, 51, 234, 0.1)", color: "var(--accent-primary)" }}
-                >
-                    <FaMicrochip /> {content.badge}
+            <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center">
+                {/* Left Content */}
+                <div className="lg:w-1/">
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-medium text-sm mb-6"
+                        style={{ backgroundColor: "rgba(147, 51, 234, 0.1)", color: "var(--accent-primary)" }}
+                    >
+                        <FaMicrochip /> {content.badge}
+                    </div>
+
+                    <h2 className="text-xl md:text-4xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
+                        {content.title}
+                    </h2>
+
+                    <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--text-secondary)" }}>
+                        {content.desc}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                        {content.features.map(item => (
+                            <div
+                                key={item}
+                                data-animate-item
+                                className="flex items-center gap-3 text-sm font-semibold transition-transform hover:translate-x-1"
+                                style={{ color: "var(--text-primary)" }}
+                            >
+                                <FaCheckCircle className="shrink-0" style={{ color: "var(--accent-primary)" }} />
+                                <span>{item}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                <h2 className="text-xl md:text-4xl font-bold mb-6 tracking-tight" style={{ color: "var(--text-primary)" }}>
-                    {content.title}
-                </h2>
-
-                <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--text-secondary)" }}>
-                    {content.desc}
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
-                    {content.features.map(item => (
+                {/* Right Grid: React Icons as Logos */}
+                <div className="lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
+                    {content.logos.map((tech, i) => (
                         <div
-                            key={item}
+                            key={i}
                             data-animate-item
-                            className="flex items-center gap-3 text-sm font-semibold transition-transform hover:translate-x-1"
-                            style={{ color: "var(--text-primary)" }}
+                            className="h-32 bg-white border rounded-3xl shadow-sm flex flex-col items-center justify-center gap-3 transition-all duration-300 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-105 group"
+                            style={{ borderColor: "var(--border-default)" }}
                         >
-                            <FaCheckCircle className="shrink-0" style={{ color: "var(--accent-primary)" }} />
-                            <span>{item}</span>
+                            <div className="group-hover:text-[var(--accent-primary)] transition-colors duration-300 text-gray-400">
+                                {tech.icon}
+                            </div>
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-[var(--text-primary)]">
+                                {tech.name}
+                            </span>
                         </div>
                     ))}
                 </div>
-            </div>
-
-            {/* Right Grid: React Icons as Logos */}
-            <div className="lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
-                {content.logos.map((tech, i) => (
-                    <div
-                        key={i}
-                        data-animate-item
-                        className="h-32 bg-white border rounded-3xl shadow-sm flex flex-col items-center justify-center gap-3 transition-all duration-300 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-105 group"
-                        style={{ borderColor: "var(--border-default)" }}
-                    >
-                        <div className="group-hover:text-[var(--accent-primary)] transition-colors duration-300 text-gray-400">
-                            {tech.icon}
-                        </div>
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-[var(--text-primary)]">
-                            {tech.name}
-                        </span>
-                    </div>
-                ))}
             </div>
         </section>
     );

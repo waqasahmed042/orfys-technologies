@@ -10,6 +10,7 @@ import Header from '../Header';
 import { portfolioContentMap } from '@/lib/constants';
 import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/hooks/userScrollToTop";
+import Footer from '../Footer';
 
 const PortfolioHero = () => {
     const pathname = usePathname();
@@ -65,7 +66,7 @@ const PortfolioHero = () => {
                 className="relative w-full flex items-center mt-32 mb-12 overflow-hidden"
                 style={{ backgroundColor: "var(--bg-primary)" }}
             >
-                <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="w-full max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div ref={leftContentRef} className="space-y-4">
                             {/* Breadcrumbs  */}

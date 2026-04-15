@@ -11,7 +11,6 @@ import { industriesContent } from "@/lib/industriesConstant";
 import IndustriesContent from "./industriesContent";
 import Testimonials from "../Testimonials";
 import WhyOrfys from "../WhyOrfys";
-import TrustedCompanies from "../TrustedCompanies";
 import CTA from "../CTA";
 
 const IndustriesTemplate: React.FC = () => {
@@ -48,7 +47,6 @@ const IndustriesTemplate: React.FC = () => {
 
 
         <IndustriesContent />
-        <TrustedCompanies />
         <Testimonials />
         <WhyOrfys />
         <CTA />

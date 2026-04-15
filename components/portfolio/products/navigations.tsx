@@ -65,7 +65,7 @@ const Navigations = () => {
             <Header />
 
             <nav className="py-8">
-                <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap justify-center gap-x-12 gap-y-6">
+                <div className="max-w-[1300px] mx-auto px-6 flex flex-wrap justify-center gap-x-12 gap-y-6">
                     {navItems.map((item) => (
                         <button
                             key={item}

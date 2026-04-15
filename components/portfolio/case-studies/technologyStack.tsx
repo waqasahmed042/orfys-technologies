@@ -54,7 +54,7 @@ const TechnologyStack: React.FC = () => {
             id="technology-stack"
             className="py-20 bg-[var(--bg-primary)] relative overflow-hidden"
         >
-            <div className='max-w-[1400px] mx-auto px-6 mb-6'>
+            <div className='max-w-[1300px] mx-auto px-6 mb-6'>
                 <h2 className="text-lg md:text-4xl font-semibold text-[var(--accent-primary)] tracking-tight">
                     Technology Stack
                 </h2>

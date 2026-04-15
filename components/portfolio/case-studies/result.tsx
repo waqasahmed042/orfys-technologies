@@ -5,7 +5,7 @@ const Result: React.FC<ProjectDataProps> = ({ data }) => {
     return (
         <section
             id="results"
-            className="py-10 max-w-[1400px] mx-auto px-6 md:py-20 bg-[var(--accent-primary)] text-white"
+            className="py-10 max-w-[1300px] mx-auto px-6 md:py-20 bg-[var(--accent-primary)] text-white"
         >
             <div className="space-y-6">
                 {/* Header Section */}

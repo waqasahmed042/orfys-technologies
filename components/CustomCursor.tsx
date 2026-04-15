@@ -1,41 +1,57 @@
 "use client";
-import React, { useEffect } from "react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+type Point = {
+    x: number;
+    y: number;
+    id: number;
+};
 
 const CustomCursor: React.FC = () => {
-    // Motion values for cursor position
-    const cursorX = useMotionValue(-100);
-    const cursorY = useMotionValue(-100);
-
-    // Spring config for smooth cursor movement
-    const springConfig = { damping: 25, stiffness: 150 };
-    const edgeX = useSpring(cursorX, springConfig);
-    const edgeY = useSpring(cursorY, springConfig);
+    const [points, setPoints] = useState<Point[]>([]);
 
     useEffect(() => {
-        const moveCursor = (e: MouseEvent) => {
-            cursorX.set(e.clientX);
-            cursorY.set(e.clientY);
+        let id = 0;
+
+        const handleMouseMove = (e: MouseEvent) => {
+            const newPoint = { x: e.clientX, y: e.clientY, id: id++ };
+
+            setPoints((prev) => {
+                const updated = [...prev, newPoint];
+                return updated.slice(-20); // keep last 20 points (trail length)
+            });
         };
 
-        window.addEventListener("mousemove", moveCursor);
-        return () => {
-            window.removeEventListener("mousemove", moveCursor);
-        };
-    }, [cursorX, cursorY]);
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+    }, []);
 
     return (
-        <motion.div
-            className="fixed top-0 left-0 w-4 h-4 rounded-full pointer-events-none z-[9999]"
-            style={{
-                translateX: edgeX,
-                translateY: edgeY,
-                x: "-50%",
-                y: "-50%",
-                backgroundColor: "var(--accent-primary)",
-                boxShadow: "0 0 15px var(--accent-primary)",
-            }}
-        />
+        <>
+            {points.map((point, index) => {
+                const opacity = index / points.length; // fade effect
+                const scale = index / points.length;
+
+                return (
+                    <motion.div
+                        key={point.id}
+                        className="fixed pointer-events-none z-[9999] rounded-full"
+                        style={{
+                            left: point.x,
+                            top: point.y,
+                            width: "6px",
+                            height: "6px",
+                            backgroundColor: "var(--accent-primary)",
+                            opacity,
+                            transform: "translate(-50%, -50%)",
+                            scale,
+                            boxShadow: "0 0 8px var(--accent-primary)",
+                        }}
+                    />
+                );
+            })}
+        </>
     );
 };
 

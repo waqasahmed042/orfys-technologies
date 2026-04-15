@@ -9,6 +9,8 @@ import { useGSAPStagger } from "@/hooks/useGSAPStagger";
 import { IoIosArrowDown } from "react-icons/io";
 import { filterKeyMap, navigationMenus, projectsData } from "@/lib/portfolioConstants";
 import { FilterKeys } from "@/utilities/types";
+import WhyOrfys from "@/components/WhyOrfys";
+import CTA from "@/components/CTA";
 
 const CaseStudies: React.FC = () => {
     const [hoveredBtn, setHoveredBtn] = useState(false);
@@ -80,7 +82,7 @@ const CaseStudies: React.FC = () => {
 
     return (
         <>
-            <main className="bg-[var(--bg-primary)] min-h-screen">
+            <main className="bg-[var(--bg-primary)]">
                 <Hero />
 
                 <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-8">
@@ -200,6 +202,10 @@ const CaseStudies: React.FC = () => {
                 </div>
             </main>
 
+            <WhyOrfys />
+            <CTA />
+
+            {/* Footer */}
             <Footer />
         </>
     );

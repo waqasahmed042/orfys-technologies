@@ -105,10 +105,10 @@ const Blogs: React.FC = () => {
                 className="relative w-full flex items-start mt-16 mb-12 overflow-hidden"
                 style={{ backgroundColor: "var(--bg-primary)" }}
             >
-                <div className="w-full max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div className="w-full max-w-[1300px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
 
                     {/* Left Column: Blog List - Scrollable */}
-                    <main className="lg:col-span-8 space-y-6 order-2 lg:order-1 min-h-screen">
+                    <main className="lg:col-span-8 space-y-6 order-2 lg:order-1">
                         {currentPosts.length > 0 ? (
                             currentPosts.map((post) => (
                                 <Link href={`blogs/${post.slug}`} key={post.id}>

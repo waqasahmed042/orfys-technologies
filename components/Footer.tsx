@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="border-t transition-colors duration-300 max-w-[1600px] mx-auto px-6"
+      className="border-t transition-colors duration-300 mx-auto px-6"
       style={{
         backgroundColor: "#111827",
         borderColor: "var(--border-default)",

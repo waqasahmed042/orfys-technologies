@@ -39,7 +39,7 @@ const Products: React.FC = () => {
             <main className="bg-[var(--bg-primary)] min-h-screen">
                 <Hero />
 
-                <section className="py-20 px-6 lg:px-12 max-w-[1400px] mx-auto">
+                <section className="py-20 px-6 lg:px-12 max-w-[1300px] mx-auto">
                     <div className="mb-8">
                         {/* Mobile Filter Navigation */}
                         <div className="md:hidden">

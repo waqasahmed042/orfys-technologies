@@ -66,8 +66,8 @@ const TrustedCompanies: React.FC = () => {
         <section
             ref={sectionRef}
             id="trusted-companies"
-            className="mb-24 overflow-hidden"
-            style={{ backgroundColor: "var(--bg-primary)" }}
+            className="mb-24 py-12 overflow-hidden"
+            style={{ backgroundColor: "var(--border-default)" }}
         >
             <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
 
@@ -111,8 +111,8 @@ const TrustedCompanies: React.FC = () => {
 
                 {/* Moving logos section */}
                 <div className="relative w-full overflow-hidden pt-10">
-                    <div className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-[var(--bg-primary)] to-transparent" />
-                    <div className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-[var(--bg-primary)] to-transparent" />
+                    <div className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-[var(--border-default)] to-transparent" />
+                    <div className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-[var(--border-default)] to-transparent" />
 
                     <div
                         ref={marqueeRef}

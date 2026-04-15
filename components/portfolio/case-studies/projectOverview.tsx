@@ -4,7 +4,7 @@ import { ProjectDataProps } from '@/utilities/types';
 const ProjectOverview: React.FC<ProjectDataProps> = ({ data }) => {
     return (
         <section id="project-overview" className="py-6 md:py-16 bg-[var(--bg-primary)]">
-            <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-[1300px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                 {/* Left Side: Content */}
                 <div className="space-y-4">

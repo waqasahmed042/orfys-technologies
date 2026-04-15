@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGSAPStagger } from '@/hooks/useGSAPStagger';
+import TrustedCompanies from '../TrustedCompanies';
 
 const ExpertiesContent: React.FC = () => {
     const containerRef = useGSAPStagger({
@@ -17,7 +18,7 @@ const ExpertiesContent: React.FC = () => {
                 style={{ backgroundColor: "var(--bg-primary)" }}
             >
                 {/* What Would They Get Working With Us */}
-                <section className="py-8" style={{ backgroundColor: "var(--bg-secondary)" }}>
+                <section className="py-8">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="text-center mb-8">
                             <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-[var(--text-primary)] mb-4">
@@ -59,8 +60,10 @@ const ExpertiesContent: React.FC = () => {
                     </div>
                 </section>
 
+                <TrustedCompanies />
+
                 {/* What We Offer */}
-                <section className="py-8" style={{ backgroundColor: "var(--bg-secondary)" }}>
+                <section className="py-8">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="text-center mb-8">
                             <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-[var(--text-primary)] mb-4">What We Offer</h2>

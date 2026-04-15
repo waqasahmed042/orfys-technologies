@@ -155,7 +155,7 @@ export default function Header() {
     <>
       <header className={`fixed top-0 z-50 w-full transition-all duration-500 mt-4 px-8 flex justify-center ${isScrolled ? "pt-2 px-4" : "pt-0 px-0"}`}>
         {/* Main content container this becomes the Pill */}
-        <div className="flex items-center justify-between transition-all duration-500 ease-in-out max-w-6xl w-full px-8 py-2.5 rounded-full border bg-white/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] border-white/30">
+        <div className="flex items-center justify-between transition-all duration-500 ease-in-out max-w-[1220px] w-full px-8 py-2.5 rounded-full border bg-white/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] border-white/30">
 
           {/* Brand Logo */}
           <div className="flex-1">

@@ -7,10 +7,22 @@ import gsap from 'gsap';
 import PathSegments from '../pathSegments';
 import Header from '../Header';
 import Footer from '../Footer';
+import TrustedCompanies from '../TrustedCompanies';
+import Testimonials from '../Testimonials';
+import WhyOrfys from '../WhyOrfys';
+import CTA from '../CTA';
+import { useGSAPStagger } from '@/hooks/useGSAPStagger';
 
 const Technologies = () => {
-    const [activeTab, setActiveTab] = useState<number>(0); // 0 = Product Design (Default as requested)
+    const [activeTab, setActiveTab] = useState<number>(0);
     const [activeSidebarId, setActiveSidebarId] = useState<number>(1);
+
+    const containerRef = useGSAPStagger({
+        stagger: 0.15,
+        duration: 0.8,
+        animationType: "fadeIn",
+        delay: 0.2,
+    });
 
     const menuRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
     const [indicatorStyle, setIndicatorStyle] = useState({ top: 0, height: 0 });
@@ -211,7 +223,7 @@ const Technologies = () => {
                 className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"
                 style={{ backgroundColor: "var(--bg-primary)" }}
             >
-                <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="w-full max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div ref={leftContentRef} className="space-y-4">
                             <PathSegments />
@@ -251,7 +263,7 @@ const Technologies = () => {
 
             {/* Main Technologies Section */}
             <section className="pb-24" style={{ backgroundColor: "var(--bg-primary)" }}>
-                <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-22">
                     {/* Page Header */}
                     <div className="text-center mb-16">
                         <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
@@ -319,7 +331,10 @@ const Technologies = () => {
                         </div>
 
                         {/* Right Side - Technology Cards */}
-                        <div className="lg:col-span-9">
+                        <div
+                            ref={containerRef as React.RefObject<HTMLDivElement>}
+                            className="lg:col-span-9"
+                        >
                             <h3 className="text-2xl font-semibold mb-8" style={{ color: "var(--text-primary)" }}>
                                 {activeSidebarLabel}
                             </h3>
@@ -329,6 +344,7 @@ const Technologies = () => {
                                     currentTechs.map((tech, index) => (
                                         <div
                                             key={index}
+                                            data-animate-item
                                             className="border border-[var(--border-default)] text-[var(--text-secondary)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] rounded-2xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md hover:-translate-y-1"
                                         >
                                             <div
@@ -351,6 +367,10 @@ const Technologies = () => {
                 </div>
             </section>
 
+            <TrustedCompanies />
+            <Testimonials />
+            <WhyOrfys />
+            <CTA />
             <Footer />
         </>
     );

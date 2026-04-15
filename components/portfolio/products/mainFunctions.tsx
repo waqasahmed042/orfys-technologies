@@ -7,7 +7,7 @@ const MainFunctions: React.FC<ProjectDataProps> = ({ data }) => {
             id="main-functions"
             className="py-6 md:py-16 bg-[var(--bg-primary)]"
         >
-            <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-[1300px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                 {/* Left Side: Illustration */}
                 <div className="flex justify-center bg-blue-50 rounded-3xl p-10">

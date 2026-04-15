@@ -34,7 +34,7 @@ const ScreenShots: React.FC = () => {
             id="screenshots"
             className="py-10 md:py-20 bg-[var(--bg-primary)]"
         >
-            <div className="max-w-[1400px] mx-auto px-6">
+            <div className="max-w-[1300px] mx-auto px-6">
                 {/* Heading */}
                 <h2 className="text-3xl md:text-5xl font-semibold text-[var(--accent-primary)] tracking-tight mb-12 md:mb-16">
                     Screenshots
