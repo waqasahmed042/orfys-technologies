@@ -2,14 +2,13 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-import Link from "next/link";
-import ScrollToTop from "@/hooks/userScrollToTop";
-import { HeroProps } from "@/utilities/types";
+import { BlogsHeroProps } from "@/utilities/types";
 
-const Hero: React.FC<HeroProps> = ({
+const Hero: React.FC<BlogsHeroProps> = ({
     title,
     description,
-    buttonText,
+    published,
+    categories,
     image,
     imageAlt,
 }) => {
@@ -74,13 +73,22 @@ const Hero: React.FC<HeroProps> = ({
                                 {description}
                             </p>
 
-                            <div className="flex flex-wrap gap-4">
-                                <Link
-                                    href="/contact-us"
-                                    className="px-8 py-4 bg-[var(--accent-primary)] text-white font-bold rounded-xl flex items-center gap-2 hover:scale-105 transition-transform shadow-lg shadow-[var(--accent-primary)]/20"
-                                >
-                                    {buttonText}
-                                </Link>
+                            <p className="text-sm font-medium text-gray-400">
+                                Published: {published}
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mt-4">
+                                <span className="text-sm font-medium text-gray-400">
+                                    Categories:
+                                </span>
+                                {categories.map((category) => (
+                                    <span
+                                        key={category}
+                                        className="text-xs md:text-sm underline text-gray-400 hover:text-gray-600 cursor-pointer transition-colors duration-200"
+                                    >
+                                        {category}
+                                    </span>
+                                ))}
                             </div>
                         </div>
 

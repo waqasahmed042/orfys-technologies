@@ -1,5 +1,5 @@
 "use client";
-import ScrollToTop from '@/hooks/userScrollToTop';
+import ScrollToTop from '@/hooks/useScrollToTop';
 import React, { useState } from 'react';
 import { CgLayoutGrid } from 'react-icons/cg';
 import { CiMonitor } from 'react-icons/ci';

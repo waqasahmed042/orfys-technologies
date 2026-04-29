@@ -9,7 +9,7 @@ import Testimonials from "@/components/Testimonials";
 import WhyOrfys from "@/components/WhyOrfys";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
-import ScrollToTop from "@/hooks/userScrollToTop";
+import ScrollToTop from "@/hooks/useScrollToTop";
 
 export default function Home() {
   return (

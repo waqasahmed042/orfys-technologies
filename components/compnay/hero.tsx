@@ -7,7 +7,7 @@ import PathSegments from "../pathSegments";
 import { HeroProps } from "@/utilities/types";
 import CustomCursor from "../CustomCursor";
 import Header from "../Header";
-import ScrollToTop from "@/hooks/userScrollToTop";
+import ScrollToTop from "@/hooks/useScrollToTop";
 import AboutUS from "@/components/compnay/about-us";
 import Blogs from "./blogs/page";
 

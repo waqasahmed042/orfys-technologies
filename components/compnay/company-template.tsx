@@ -5,7 +5,7 @@ import { companyMenu } from "@/lib/constants";
 import Hero from "./hero";
 import Footer from "@/components/Footer";
 import NotFound from "@/app/not-found";
-import ScrollToTop from "@/hooks/userScrollToTop";
+import ScrollToTop from "@/hooks/useScrollToTop";
 import CustomCursor from "../CustomCursor";
 import Header from "../Header";
 

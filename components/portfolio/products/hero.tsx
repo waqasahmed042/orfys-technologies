@@ -10,7 +10,7 @@ import case_studies from "@/public/portfolio/case-studies.svg";
 import NotFound from "@/app/not-found";
 import Header from "@/components/Header";
 import CustomCursor from "@/components/CustomCursor";
-import ScrollToTop from "@/hooks/userScrollToTop";
+import ScrollToTop from "@/hooks/useScrollToTop";
 
 const PortfolioHero = () => {
     const pathname = usePathname();

@@ -59,7 +59,7 @@ export default function Hero() {
                 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.1]"
                 style={{ color: "var(--text-primary)" }}
               >
-                Build. Automate. Scale.
+                Build. <span style={{ color: "var(--accent-primary)" }}>Automate.</span> Scale.
               </h1>
               <p
                 className="text-md md:text-lg lg:text-2xl font-semibold"

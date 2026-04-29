@@ -5,7 +5,7 @@ import NotFound from "@/app/not-found";
 import { usePathname } from "next/navigation";
 import CustomCursor from "../CustomCursor";
 import Header from "../Header";
-import ScrollToTop from "@/hooks/userScrollToTop";
+import ScrollToTop from "@/hooks/useScrollToTop";
 import Footer from "@/components/Footer";
 import { industriesContent } from "@/lib/industriesConstant";
 import IndustriesContent from "./industriesContent";

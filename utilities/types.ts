@@ -17,6 +17,19 @@ export interface Service {
     description: string;
 };
 
+type ServiceItem = {
+    icon: React.ReactNode;
+    title: string;
+    desc: string;
+    longDesc?: string;
+};
+
+export type ServiceSection = {
+    title: string;
+    subtitle: string;
+    items: ServiceItem[];
+};
+
 export interface contentMap {
     title: string;
     highlight: string;
@@ -96,6 +109,15 @@ export interface HeroProps {
     imageAlt: string;
 };
 
+export interface BlogsHeroProps {
+    title: string;
+    description: string;
+    published: string;
+    categories: string[];
+    image: StaticImageData | string;
+    imageAlt: string;
+};
+
 export interface NoDataFoundProps {
     category?: string;
     clearCategory?: () => void;
@@ -115,4 +137,40 @@ export interface FilePreviewProps {
     type: string;
     size: number;
     base64?: string;
+};
+
+interface ConclusionProps {
+    title?: string;
+    description: string;
+    key_words?: string[];
+};
+
+export interface MainConclusionProps {
+    conclusion: ConclusionProps;
+};
+
+interface Section {
+    title: string;
+    description_1: string;
+    description_2: string;
+    description_3: string;
+    key_words?: string[];
+};
+
+export interface MainContentProps {
+    main_content: Section[];
+};
+
+export interface RelatedPostsProps {
+    currentSlug: string;
+    relatedPosts: string[];
+};
+
+interface KeyPoint {
+    title: string;
+    description: string;
+};
+
+export interface KeyTakeawaysProps {
+    key_takeaways?: KeyPoint[];
 };

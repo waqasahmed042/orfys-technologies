@@ -9,7 +9,7 @@ import { ourProducts } from "@/lib/constants";
 import NotFound from "@/app/not-found";
 import Header from "@/components/Header";
 import CustomCursor from "@/components/CustomCursor";
-import ScrollToTop from "@/hooks/userScrollToTop";
+import ScrollToTop from "@/hooks/useScrollToTop";
 import Hero from "./hero";
 import Description from "./description";
 import Customization from "./customization";

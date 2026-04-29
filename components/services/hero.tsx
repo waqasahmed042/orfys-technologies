@@ -9,7 +9,7 @@ import PathSegments from '../pathSegments';
 import Header from '../Header';
 import { servicesContentMap } from '@/lib/constants';
 import CustomCursor from "@/components/CustomCursor";
-import ScrollToTop from "@/hooks/userScrollToTop";
+import ScrollToTop from "@/hooks/useScrollToTop";
 
 const ServicesHero = () => {
     const pathname = usePathname();

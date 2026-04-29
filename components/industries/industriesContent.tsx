@@ -47,7 +47,11 @@ const IndustriesContent: React.FC = () => {
                                 <div
                                     key={i}
                                     data-animate-item
-                                    className="bg-white p-8 rounded-3xl border border-[var(--border-default)] hover:shadow-xl transition-all"
+                                    className="bg-white p-8 rounded-3xl flex flex-col border hover:shadow-xl transition-all"
+                                    style={{
+                                        backgroundColor: "var(--bg-secondary)",
+                                        borderColor: "var(--border-default)"
+                                    }}
                                 >
                                     <div className="w-12 h-12 bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] rounded-2xl flex items-center justify-center mb-6 text-3xl font-bold">
                                         {i + 1}
@@ -63,10 +67,13 @@ const IndustriesContent: React.FC = () => {
                 <TrustedCompanies />
 
                 {/* What We Offer */}
-                <section>
+                <section className="py-4">
                     <div className="max-w-7xl mx-auto px-6">
+
                         <div className="text-center mb-8">
-                            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-[var(--text-primary)] mb-4">What We Offer</h2>
+                            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-[var(--text-primary)] mb-4">
+                                What We Offer
+                            </h2>
                             <p className="text-sm md:text-md lg:text-lg text-[var(--text-secondary)] max-w-xl mx-auto">
                                 End-to-end technological solutions tailored for modern advertising and marketing agencies.
                             </p>
@@ -84,10 +91,23 @@ const IndustriesContent: React.FC = () => {
                                 <div
                                     key={i}
                                     data-animate-item
-                                    className="bg-white p-8 rounded-3xl border border-[var(--border-default)] hover:shadow-xl transition-all"
+                                    className="
+                                        p-8 rounded-2xl transition-all duration-300 group
+                                        bg-white border border-[var(--border-default)]
+                                        shadow-sm hover:shadow-2xl hover:-translate-y-2
+                                    "
+                                    style={{
+                                        backgroundColor: "var(--bg-secondary)",
+                                        borderColor: "var(--border-default)"
+                                    }}
                                 >
-                                    <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4">{offer.title}</h3>
-                                    <p className="text-sm md:text-md text-[var(--text-secondary)]">{offer.desc}</p>
+                                    <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
+                                        {offer.title}
+                                    </h3>
+
+                                    <p className="text-sm md:text-md text-[var(--text-secondary)] leading-relaxed">
+                                        {offer.desc}
+                                    </p>
                                 </div>
                             ))}
                         </div>
