@@ -1,4 +1,3 @@
-import CustomCursor from "@/components/CustomCursor";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -10,11 +9,11 @@ import WhyOrfys from "@/components/WhyOrfys";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/hooks/useScrollToTop";
+import ChatWidget from "@/components/chatWidget";
 
 export default function Home() {
   return (
     <>
-      <CustomCursor />
       <Header />
 
       <main>
@@ -30,6 +29,7 @@ export default function Home() {
 
       <Footer />
       <ScrollToTop />
+      <ChatWidget />
     </>
   );
-}
+};

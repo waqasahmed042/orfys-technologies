@@ -6,8 +6,8 @@ import Hero from "./hero";
 import Footer from "@/components/Footer";
 import NotFound from "@/app/not-found";
 import ScrollToTop from "@/hooks/useScrollToTop";
-import CustomCursor from "../CustomCursor";
 import Header from "../Header";
+import ChatWidget from "../chatWidget";
 
 const CompanyTemplate = () => {
   const pathname = usePathname();
@@ -44,7 +44,6 @@ const CompanyTemplate = () => {
 
   return (
     <>
-      <CustomCursor />
       <Header />
 
       <main className="bg-[var(--bg-primary)] min-h-screen">
@@ -60,6 +59,7 @@ const CompanyTemplate = () => {
         {/* Footer Section */}
         <Footer />
         <ScrollToTop />
+        <ChatWidget />
       </main>
     </>
   );

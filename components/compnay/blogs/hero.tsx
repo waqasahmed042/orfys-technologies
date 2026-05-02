@@ -7,34 +7,34 @@ import { BlogsHeroProps } from "@/utilities/types";
 const Hero: React.FC<BlogsHeroProps> = ({
     title,
     description,
+    tag_line,
     published,
     categories,
     image,
     imageAlt,
 }) => {
-    const leftContentRef = useRef<HTMLDivElement>(null);
-    const rightContentRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        const left = leftContentRef.current;
-        const right = rightContentRef.current;
+        const content = contentRef.current;
+        const imageEl = imageRef.current;
 
-        if (!left) return;
+        if (!content) return;
 
-        // Initial state
-        gsap.set(left, { opacity: 0, x: -30 });
-        if (right) gsap.set(right, { opacity: 0, x: 30, scale: 0.95 });
+        gsap.set(content, { opacity: 0, x: -30 });
+        if (imageEl) gsap.set(imageEl, { opacity: 0, x: 30, scale: 0.95 });
 
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-        tl.to(left, {
+        tl.to(content, {
             opacity: 1,
             x: 0,
-            duration: 0.9
+            duration: 0.9,
         }).to(
-            right,
+            imageEl,
             {
                 opacity: 1,
                 x: 0,
@@ -50,66 +50,78 @@ const Hero: React.FC<BlogsHeroProps> = ({
     }, []);
 
     return (
-        <>
-            <section
-                className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"
-                style={{ backgroundColor: "var(--bg-primary)" }}
-            >
-                <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        {/* Left Content */}
-                        <div ref={leftContentRef} className="space-y-4">
-                            <h1
-                                className="text-xl md:text-2xl lg:text-4xl font-bold leading-tight text-white flex flex-row items-center gap-2"
-                                style={{ color: "var(--text-primary)" }}
-                            >
-                                {title}
-                            </h1>
+        <section
+            className="pt-32 pb-20 overflow-hidden"
+            style={{ backgroundColor: "var(--bg-primary)" }}
+        >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-                            <p
-                                className="text-sm md:text-md lg:text-lg text-gray-200 leading-relaxed max-w-2xl"
+                    {/* Content */}
+                    <div ref={contentRef}>
+                        <div className="flex items-center gap-3 mb-6">
+                            <span
+                                className="px-3 py-1 text-xs font-bold rounded-full uppercase tracking-wider"
+                                style={{
+                                    backgroundColor: "var(--tags-primary)",
+                                    color: "var(--text-secondary)",
+                                }}
+                            >
+                                {tag_line}
+                            </span>
+
+                            <span
+                                className="text-sm italic"
                                 style={{ color: "var(--text-secondary)" }}
                             >
-                                {description}
-                            </p>
-
-                            <p className="text-sm font-medium text-gray-400">
                                 Published: {published}
-                            </p>
-
-                            <div className="flex flex-wrap gap-2 mt-4">
-                                <span className="text-sm font-medium text-gray-400">
-                                    Categories:
-                                </span>
-                                {categories.map((category) => (
-                                    <span
-                                        key={category}
-                                        className="text-xs md:text-sm underline text-gray-400 hover:text-gray-600 cursor-pointer transition-colors duration-200"
-                                    >
-                                        {category}
-                                    </span>
-                                ))}
-                            </div>
+                            </span>
                         </div>
 
-                        {/* Right Image */}
-                        <div
-                            ref={rightContentRef}
-                            className="relative w-full hidden lg:flex items-center justify-center"
+                        <h1
+                            className="text-xl md:text-2xl lg:text-5xl font-bold leading-[1.1] mb-6"
+                            style={{ color: "var(--text-primary)" }}
                         >
-                            <Image
-                                src={image}
-                                alt={imageAlt}
-                                priority
-                                className="w-full h-auto object-contain"
-                                width={600}
-                                height={500}
-                            />
+                            {title}
+                        </h1>
+
+                        <p
+                            className="text-sm md:text-md lg:text-lg leading-relaxed"
+                            style={{ color: "var(--text-secondary)" }}
+                        >
+                            {description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 mt-4">
+                            {categories.map((cat) => (
+                                <span
+                                    key={cat}
+                                    className="text-xs font-semibold px-3 py-1 rounded-md"
+                                    style={{
+                                        backgroundColor: "var(--tags-primary)",
+                                        color: "var(--text-secondary)",
+                                    }}
+                                >
+                                    #{cat}
+                                </span>
+                            ))}
                         </div>
                     </div>
+
+                    {/* Image */}
+                    <div ref={imageRef} className="relative hidden lg:flex justify-center">
+                        <Image
+                            src={image}
+                            alt={imageAlt}
+                            priority
+                            className="w-full h-auto object-contain"
+                            width={600}
+                            height={500}
+                        />
+                    </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 };
 

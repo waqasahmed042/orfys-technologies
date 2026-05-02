@@ -112,6 +112,7 @@ export interface HeroProps {
 export interface BlogsHeroProps {
     title: string;
     description: string;
+    tag_line: string;
     published: string;
     categories: string[];
     image: StaticImageData | string;
@@ -149,16 +150,12 @@ export interface MainConclusionProps {
     conclusion: ConclusionProps;
 };
 
-interface Section {
+export interface AnalysisProps {
     title: string;
-    description_1: string;
-    description_2: string;
-    description_3: string;
-    key_words?: string[];
-};
-
-export interface MainContentProps {
-    main_content: Section[];
+    description: string;
+    pro_tip_title: string;
+    pro_tip_description: string;
+    conclusion: string;
 };
 
 export interface RelatedPostsProps {
@@ -174,3 +171,10 @@ interface KeyPoint {
 export interface KeyTakeawaysProps {
     key_takeaways?: KeyPoint[];
 };
+
+export interface AuthorProps {
+    img: string | StaticImageData;
+    name: string;
+    role: string;
+    bio: string;
+}

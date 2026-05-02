@@ -13,7 +13,7 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ currentSlug, relatedPosts }
 
     return (
         <section id="related-articles">
-            <h2 className="text-3xl font-bold text-white mb-10">Related Articles</h2>
+            <h2 className="text-3xl font-bold text-[var(--text-primary)] mt-12 mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {related.map((post) => (
                     <Link

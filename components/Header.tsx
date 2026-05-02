@@ -153,7 +153,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 z-50 w-full transition-all duration-500 mt-4 px-8 flex justify-center ${isScrolled ? "pt-2 px-4" : "pt-0 px-0"}`}>
+      <header className={`fixed top-0 z-30 w-full transition-all duration-500 mt-4 px-8 flex justify-center ${isScrolled ? "pt-2 px-4" : "pt-0 px-0"}`}>
         {/* Main content container this becomes the Pill */}
         <div className="flex items-center justify-between transition-all duration-500 ease-in-out max-w-[1220px] w-full px-8 py-2.5 rounded-full border bg-white/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] border-white/30">
 
@@ -272,7 +272,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div ref={mobileMenuRef} className="lg:hidden fixed top-22 left-0 w-full h-[calc(100vh-64px)] overflow-y-auto bg-[var(--bg-primary)] z-[60] pb-20 shadow-2xl border-t border-[var(--bg-secondary)]">
+          <div ref={mobileMenuRef} className="lg:hidden fixed top-22 left-0 w-full h-[calc(100vh-64px)] overflow-y-auto bg-[var(--bg-primary)] z-30 pb-20 shadow-2xl border-t border-[var(--bg-secondary)]">
             <nav className="flex flex-col p-6 gap-2">
               {[...dropdownKeys, "Portfolio", "Company"].map((key) => {
                 const isMainKey = dropdownKeys.includes(key as keyof typeof navigationMenus);

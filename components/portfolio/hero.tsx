@@ -8,9 +8,9 @@ import gsap from 'gsap';
 import PathSegments from '../pathSegments';
 import Header from '../Header';
 import { portfolioContentMap } from '@/lib/constants';
-import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/hooks/useScrollToTop";
 import Footer from '../Footer';
+import ChatWidget from '../chatWidget';
 
 const PortfolioHero = () => {
     const pathname = usePathname();
@@ -58,7 +58,6 @@ const PortfolioHero = () => {
 
     return (
         <>
-            <CustomCursor />
             <Header />
 
             <section
@@ -113,6 +112,7 @@ const PortfolioHero = () => {
             </section>
 
             <ScrollToTop />
+            <ChatWidget />
         </>
     );
 };

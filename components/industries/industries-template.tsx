@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Hero from "./hero";
 import NotFound from "@/app/not-found";
 import { usePathname } from "next/navigation";
-import CustomCursor from "../CustomCursor";
 import Header from "../Header";
 import ScrollToTop from "@/hooks/useScrollToTop";
 import Footer from "@/components/Footer";
@@ -12,6 +11,7 @@ import IndustriesContent from "./industriesContent";
 import Testimonials from "../Testimonials";
 import WhyOrfys from "../WhyOrfys";
 import CTA from "../CTA";
+import ChatWidget from "../chatWidget";
 
 const IndustriesTemplate: React.FC = () => {
   const pathname = usePathname();
@@ -33,7 +33,6 @@ const IndustriesTemplate: React.FC = () => {
 
   return (
     <>
-      <CustomCursor />
       <Header />
 
       <main className="bg-[var(--bg-primary)] min-h-screen">
@@ -54,6 +53,7 @@ const IndustriesTemplate: React.FC = () => {
 
       <Footer />
       <ScrollToTop />
+      <ChatWidget />
     </>
   );
 };

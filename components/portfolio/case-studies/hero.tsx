@@ -9,8 +9,8 @@ import { projectsData } from "@/lib/portfolioConstants";
 import case_studies from "@/public/portfolio/case-studies.svg"
 import NotFound from "@/app/not-found";
 import Header from "@/components/Header";
-import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/hooks/useScrollToTop";
+import ChatWidget from "@/components/chatWidget";
 
 const CaseStudiesHero = () => {
     const pathname = usePathname();
@@ -70,7 +70,6 @@ const CaseStudiesHero = () => {
 
     return (
         <>
-            <CustomCursor />
             <Header />
 
             <section
@@ -126,6 +125,7 @@ const CaseStudiesHero = () => {
             </section>
 
             <ScrollToTop />
+            <ChatWidget />
         </>
     );
 };

@@ -12,6 +12,8 @@ import Testimonials from '../Testimonials';
 import WhyOrfys from '../WhyOrfys';
 import CTA from '../CTA';
 import { useGSAPStagger } from '@/hooks/useGSAPStagger';
+import ChatWidget from '../chatWidget';
+import ScrollToTop from '@/hooks/useScrollToTop';
 
 const Technologies = () => {
     const [activeTab, setActiveTab] = useState<number>(0);
@@ -372,6 +374,9 @@ const Technologies = () => {
             <WhyOrfys />
             <CTA />
             <Footer />
+
+            <ScrollToTop />
+            <ChatWidget />
         </>
     );
 };

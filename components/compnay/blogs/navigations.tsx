@@ -1,48 +1,83 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 gsap.registerPlugin(ScrollToPlugin);
 
 const Navigations = () => {
-    const heroLeftRef = useRef<HTMLDivElement>(null);
-    const heroRightRef = useRef<HTMLDivElement>(null);
+    const navRef = useRef<HTMLDivElement>(null);
+    const [active, setActive] = useState("Introduction");
+
+    const navItems = [
+        "Introduction",
+        "Key Takeaways",
+        "Analysis",
+        "Conclusion",
+        "Related Articles",
+    ];
 
     useEffect(() => {
-        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-        gsap.set(heroLeftRef.current, { opacity: 0, x: -30 });
-        gsap.set(heroRightRef.current, { opacity: 0, x: 30 });
+        const el = navRef.current;
+        if (!el) return;
 
-        tl.to(heroLeftRef.current, { opacity: 1, x: 0, duration: 0.8 })
-            .to(heroRightRef.current, { opacity: 1, x: 0, duration: 0.8 }, "-=0.4");
+        gsap.set(el, { opacity: 0, y: -20 });
+
+        gsap.to(el, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+        });
     }, []);
 
-    const navItems = ["Introduction", "Key Takeaways", "Main Content", "Conclusion", "Related Articles"];
+    const scrollToSection = (item: string) => {
+        const target = item.toLowerCase().replace(/\s+/g, "-");
 
-    const scrollToSection = (id: string) => {
-        const target = id.toLowerCase().replace(/\s+/g, '-');
-        gsap.to(window, { duration: 0.8, scrollTo: { y: `#${target}`, offsetY: 80 } });
+        setActive(item);
+
+        gsap.to(window, {
+            duration: 0.8,
+            scrollTo: { y: `#${target}`, offsetY: 100 },
+        });
     };
 
     return (
-        <>
-            <nav className="py-8">
-                <div className="max-w-[1300px] mx-auto px-6 flex flex-wrap justify-center gap-x-12 gap-y-6">
-                    {navItems.map((item) => (
-                        <button
-                            key={item}
-                            onClick={() => scrollToSection(item)}
-                            className="text-[14px] font-medium cursor-pointer underline underline-offset-8 transition-all duration-200 
-                                text-[var(--text-secondary)] decoration-[var(--border-default)]
-                                hover:text-[var(--accent-secondary)] hover:decoration-[var(--accent-secondary)]"
-                        >
-                            {item}
-                        </button>
-                    ))}
+        <div
+            ref={navRef}
+            className="sticky top-20 z-40 backdrop-blur-md border-b"
+            style={{
+                backgroundColor: "color-mix(in srgb, var(--bg-primary) 85%, transparent)",
+                borderColor: "var(--border-default)",
+            }}
+        >
+            <div className="max-w-[1300px] mx-auto px-6 overflow-x-auto">
+                <div className="flex items-center space-x-10 h-14 whitespace-nowrap">
+                    {navItems.map((item) => {
+                        const isActive = active === item;
+
+                        return (
+                            <button
+                                key={item}
+                                onClick={() => scrollToSection(item)}
+                                className="text-sm h-full flex items-center cursor-pointer transition-all duration-200"
+                                style={{
+                                    color: isActive
+                                        ? "var(--accent-primary)"
+                                        : "var(--text-secondary)",
+                                    borderBottom: isActive
+                                        ? "2px solid var(--accent-primary)"
+                                        : "2px solid transparent",
+                                    fontWeight: isActive ? 600 : 500,
+                                }}
+                            >
+                                {item}
+                            </button>
+                        );
+                    })}
                 </div>
-            </nav>
-        </>
+            </div>
+        </div>
     );
 };
 

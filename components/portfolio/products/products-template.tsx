@@ -8,13 +8,13 @@ import { usePathname } from "next/navigation";
 import { ourProducts } from "@/lib/constants";
 import NotFound from "@/app/not-found";
 import Header from "@/components/Header";
-import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/hooks/useScrollToTop";
 import Hero from "./hero";
 import Description from "./description";
 import Customization from "./customization";
 import MainFeatures from "./mainFeatures";
 import ScreenShots from "./screenShots";
+import ChatWidget from "@/components/chatWidget";
 
 const ProductsTemplate: React.FC = () => {
   const pathname = usePathname();
@@ -105,7 +105,6 @@ const ProductsTemplate: React.FC = () => {
   return (
     <>
       <main className="bg-[var(--bg-primary)] min-h-screen">
-        <CustomCursor />
         <Header />
         <Hero />
 
@@ -142,6 +141,7 @@ const ProductsTemplate: React.FC = () => {
 
         <Footer />
         <ScrollToTop />
+        <ChatWidget />
       </main>
     </>
   );

@@ -3,32 +3,34 @@ import { MainConclusionProps } from '@/utilities/types';
 
 const Conclusion: React.FC<MainConclusionProps> = ({ conclusion }) => {
     return (
-        <section id="conclusion">
-            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-tight mb-6">
-                {conclusion.title ?? "Conclusion"}
-            </h2>
+        <div
+            id="conclusion"
+            className="p-10 rounded-3xl mb-16 relative overflow-hidden"
+            style={{
+                backgroundColor: "var(--text-primary)", // dark theme surface
+                color: "#ffffff"
+            }}
+        >
+            {/* Content */}
+            <div className="relative z-10">
+                <h2 className="text-3xl font-extrabold mb-6">
+                    {conclusion.title ?? "Conclusion"}
+                </h2>
 
-            <div className="text-sm md:text-md lg:text-lg leading-relaxed text-[var(--text-secondary)]">
-                {conclusion.description}
+                <p style={{ color: "rgba(255,255,255,0.75)" }}>
+                    {conclusion.description}
+                </p>
             </div>
 
-            {conclusion.key_words && conclusion.key_words.length > 0 && (
-                <div className="flex flex-wrap gap-2 mt-6">
-                    <span className="text-sm font-medium text-gray-400">
-                        Key Takeaways:
-                    </span>
-
-                    {conclusion.key_words.map((word) => (
-                        <span
-                            key={word}
-                            className="text-xs md:text-sm underline text-gray-400 hover:text-gray-600 cursor-pointer transition-colors duration-200"
-                        >
-                            {word}
-                        </span>
-                    ))}
-                </div>
-            )}
-        </section>
+            {/* Glow effect (purple blob) */}
+            <div
+                className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl"
+                style={{
+                    backgroundColor: "rgba(124, 58, 237, 0.2)",
+                    transform: "translate(50%, -50%)"
+                }}
+            />
+        </div>
     );
 };
 

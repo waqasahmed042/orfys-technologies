@@ -3,23 +3,17 @@ import React from 'react';
 interface IntroductionProps {
     title: string;
     description: string;
-}
+};
 
 const Introduction: React.FC<IntroductionProps> = ({ title, description }) => {
     return (
         <section
             id="introduction"
-            className="pb-16"
+            className="prose prose-lg max-w-none mb-16"
+            style={{ color: "var(--text-primary)" }}
         >
-            {/* Section Header */}
-            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-4 tracking-tight text-[var(--text-primary)]">
-                {title}
-            </h2>
-
-            {/* Description Content */}
-            <p className="text-sm md:text-md lg:text-lg leading-relaxed text-[var(--text-secondary)]">
-                {description}
-            </p>
+            <h2 className="text-3xl font-extrabold text-brand-dark mb-6">{title}</h2>
+            <p>{description}</p>
         </section>
     );
 };

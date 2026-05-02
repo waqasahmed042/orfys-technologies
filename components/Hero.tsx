@@ -46,7 +46,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"
+      className="relative w-full flex items-center mt-28 mb-12 overflow-hidden z-0"
       style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <div className="w-full max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">

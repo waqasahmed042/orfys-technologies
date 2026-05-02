@@ -5,15 +5,17 @@ import Hero from "./hero";
 import Footer from "@/components/Footer";
 import NotFound from "@/app/not-found";
 import ScrollToTop from "@/hooks/useScrollToTop";
-import CustomCursor from "@/components/CustomCursor";
 import Header from "@/components/Header";
 import { blogPosts } from "@/lib/companyConstant";
+import Author from "./author";
 import Navigations from "./navigations";
 import Introduction from "./introduction";
 import KeyTakeaways from "./keyTakeaways";
-import MainContent from "./mainContent";
+import Analysis from "./analysis";
 import Conclusion from "./conclusion";
-import BlogRelatedPosts from "./relatedPosts";
+import RelatedPosts from "./relatedPosts";
+import Subscribe from "@/components/subscribe";
+import ChatWidget from "@/components/chatWidget";
 
 const BlogsTemplate = () => {
     const pathname = usePathname();
@@ -25,56 +27,76 @@ const BlogsTemplate = () => {
     const segments = pathname.split("/").filter(Boolean);
     const slug = segments[segments.length - 1];
 
-    // Find blog by slug
     const content = blogPosts.find((item) => item.slug === slug);
 
-    // Fallback if blog not found
-    if (!content) {
-        return <NotFound />;
-    }
+    if (!content) return <NotFound />;
 
     const { blogDetails } = content;
+    const author = blogDetails.author ?? {
+        img: "",
+        name: "",
+        role: "",
+        bio: "",
+    };
 
     return (
         <>
-            <CustomCursor />
             <Header />
 
             <main className="bg-[var(--bg-primary)] min-h-screen">
-                {/* Hero Section */}
-                <Hero
-                    title={blogDetails.hero.title}
-                    description={blogDetails.hero.description}
-                    published={blogDetails.hero.published}
-                    categories={blogDetails.hero.categories}
-                    image={blogDetails.hero.image}
-                    imageAlt={blogDetails.hero.imageAlt}
-                />
+                <Hero {...blogDetails.hero} />
 
                 <Navigations />
 
-                {/* Blog Content Sections */}
-                <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12 py-12 space-y-24">
-                    <Introduction
-                        title={blogDetails.content.introduction.title}
-                        description={blogDetails.content.introduction.description}
-                    />
+                <section className="py-16">
+                    <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
-                    <KeyTakeaways key_takeaways={blogDetails.content.key_takeaways} />
-                    <MainContent main_content={[blogDetails.content.main_content]} />
+                            {/* SIDEBAR */}
+                            <Author
+                                img={author.img}
+                                name={author.name}
+                                role={author.role}
+                                bio={author.bio}
+                            />
 
-                    {/* 4. Conclusion */}
-                    <Conclusion conclusion={blogDetails.content.conclusion} />
+                            {/* MAIN CONTENT */}
+                            <article className="lg:col-span-9 space-y-20">
+                                <Introduction
+                                    title={blogDetails.content.introduction.title}
+                                    description={blogDetails.content.introduction.description}
+                                />
 
-                    {/* 5. Related Posts */}
-                    <BlogRelatedPosts
-                        currentSlug={slug}
-                        relatedPosts={blogDetails.relatedPosts || []}
-                    />
-                </div>
+                                <KeyTakeaways
+                                    key_takeaways={blogDetails.content.key_takeaways}
+                                />
+
+                                <Analysis
+                                    title={blogDetails.content.analysis.title}
+                                    description={blogDetails.content.analysis.description}
+                                    pro_tip_title={blogDetails.content.analysis.pro_tip_title}
+                                    pro_tip_description={blogDetails.content.analysis.pro_tip_description}
+                                    conclusion={blogDetails.content.analysis.conclusion}
+                                />
+
+                                <Conclusion
+                                    conclusion={blogDetails.content.conclusion}
+                                />
+                            </article>
+                        </div>
+
+                        <RelatedPosts
+                            currentSlug={slug}
+                            relatedPosts={blogDetails.relatedPosts || []}
+                        />
+
+                        <Subscribe />
+                    </div>
+                </section>
 
                 <Footer />
                 <ScrollToTop />
+                <ChatWidget />
             </main>
         </>
     );

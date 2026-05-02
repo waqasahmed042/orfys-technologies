@@ -23,6 +23,23 @@ export const metadata: Metadata = {
     default: "Orfys Technologies - Build. Automate. Scale. | Software Development & Workflow Automation",
     template: "%s | Orfys Technologies",
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        url: "/favicon-32x32.png",
+        sizes: "32x32",
+      },
+      {
+        rel: "icon",
+        url: "/favicon-16x16.png",
+        sizes: "16x16",
+      },
+    ],
+  },
   description:
     "Transform your business with software development and workflow automation solutions. Orfys Technologies provides custom software applications, automation services, and integration solutions to streamline operations and accelerate growth.",
   keywords: [

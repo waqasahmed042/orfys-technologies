@@ -6,10 +6,10 @@ import { CiMonitor } from 'react-icons/ci';
 import { FaUserSecret } from 'react-icons/fa';
 import { FiFileText } from 'react-icons/fi';
 import Footer from './Footer';
-import CustomCursor from './CustomCursor';
 import Header from './Header';
 import Attachments from './Attachments';
 import { FilePreviewProps } from '@/utilities/types';
+import ChatWidget from './chatWidget';
 
 const steps = [
     {
@@ -44,7 +44,6 @@ const Contact: React.FC = () => {
 
     return (
         <>
-            <CustomCursor />
             <Header />
 
             <section
@@ -195,6 +194,7 @@ const Contact: React.FC = () => {
 
             <Footer />
             <ScrollToTop />
+            <ChatWidget />
         </>
     );
 };
