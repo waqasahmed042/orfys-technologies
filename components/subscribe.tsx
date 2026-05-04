@@ -1,19 +1,20 @@
+"use client";
 import React from "react";
 
 const Subscribe: React.FC = () => {
     return (
-        <section className="py-20">
-            <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-[3rem] p-12 md:p-20 relative text-center">
+        <section className="py-16 max-w-[1300px] mx-auto px-6">
+            <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-[3rem] pt-6 px-4 md:p-16 relative text-center">
 
                 {/* Content */}
                 <div className="relative z-10 max-w-2xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2">
                         Stay ahead of the curve with Orfys Insights
                     </h2>
 
-                    <p className="text-blue-100 mb-10 text-lg">
+                    <p className="text-sm md:text-md lg:text-lg leading-relaxed text-blue-100 mb-10 text-lg">
                         Join 10,000+ engineers receiving weekly insights on AI,
-                        architecture, and modern development.
+                        architecture, and modern development. No spam, just pure value.
                     </p>
 
                     <form
@@ -34,7 +35,7 @@ const Subscribe: React.FC = () => {
                         </button>
                     </form>
 
-                    <p className="mt-4 text-xs text-blue-200">
+                    <p className="mt-4 p-4 md:p-2 text-xs text-blue-200">
                         No spam, just quality engineering. Unsubscribe anytime.
                     </p>
                 </div>

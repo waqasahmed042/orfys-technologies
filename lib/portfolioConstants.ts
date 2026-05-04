@@ -54,15 +54,23 @@ export const filterKeyMap: Record<NavigationKey, FilterKeys> = {
     Expertise: "expertise",
 };
 
+import case_1 from "@/public/portfolio/case-study/case-1.png";
+import case_2 from "@/public/portfolio/case-study/case-2.png";
+import case_3 from "@/public/portfolio/case-study/case-3.png";
+import case_4 from "@/public/portfolio/case-study/case-4.png";
+import case_5 from "@/public/portfolio/case-study/case-5.png";
+import case_6 from "@/public/portfolio/case-study/case-6.png";
+
 export const projectsData = [
     {
         service: "Software Development",
         subService: "Enterprise Systems",
         title: "AI-Assisted Multi-lingual PIM System for Manufacturing",
         description: "Built a scalable product information management system with multi-language AI support for global manufacturing operations.",
-        tech: ["React", "Node.js", "MongoDB", "AI APIs"],
-        industry: "E-Commerce & Logistics",
+        tech: ["React", "Node.js", "MongoDB", "AI APIs", "E-Commerce"],
+        industry: "E-Commerce",
         hiddenTags: ["PIM", "Product Management", "Multi-language", "AI Integration", "Manufacturing", "Scalable System"],
+        img: case_1,
         clientOverview: {
             illustration: "Client Overview Illustration",
             title: "Overview Of Our Client",
@@ -148,9 +156,10 @@ export const projectsData = [
         subService: "Business Automation",
         title: "AI-Powered News Scanning & Reporting Automation",
         description: "Automated news aggregation, filtering, and report generation using AI workflows and APIs.",
-        tech: ["n8n", "OpenAI", "Node.js", "Webhooks"],
-        industry: "Media & Emerging",
+        tech: ["n8n", "OpenAI", "Node.js", "Webhooks", "Media & AI"],
+        industry: "Media & AI",
         hiddenTags: ["Automation", "News Aggregation", "AI Workflow", "Content Processing", "Web Scraping"],
+        img: case_2,
         clientOverview: {
             illustration: "Media Client Illustration",
             title: "Digital Media Agency",
@@ -227,9 +236,10 @@ export const projectsData = [
         subService: "Cloud Integrations",
         title: "Infrastructure & Database Migration to AWS",
         description: "Migrated legacy systems to AWS with secure API integrations and optimized cloud architecture.",
-        tech: ["AWS", "Docker", "Node.js", "RDS"],
-        industry: "Management Software",
+        tech: ["AWS", "Docker", "Node.js", "Terraform", "CloudWatch", "Software"],
+        industry: "Software",
         hiddenTags: ["AWS Migration", "Cloud Architecture", "DevOps", "CI/CD", "System Integration"],
+        img: case_3,
         clientOverview: {
             illustration: "SaaS Client Overview",
             title: "SaaS Management Provider",
@@ -306,9 +316,10 @@ export const projectsData = [
         subService: "Business Intelligence",
         title: "AI Blockchain Market Analysis Dashboard",
         description: "Developed a real-time analytics dashboard for crypto market trends using AI-driven insights.",
-        tech: ["Python", "Next.js", "Chart.js", "APIs"],
-        industry: "Crypto & Blockchain",
+        tech: ["Python", "Next.js", "Chart.js", "APIs", "Blockchain"],
+        industry: "Blockchain",
         hiddenTags: ["Crypto Analytics", "Real-time Data", "Dashboard", "AI Predictions", "Market Trends"],
+        img: case_4,
         clientOverview: {
             illustration: "Crypto Client Illustration",
             title: "Crypto Venture Fund",
@@ -385,9 +396,10 @@ export const projectsData = [
         subService: "Cross-Platform Apps",
         title: "Cocktail Recipes Mobile App with Smart Recommendations",
         description: "Built a cross-platform mobile app with personalized cocktail suggestions based on user preferences.",
-        tech: ["React Native", "Firebase", "AI APIs"],
-        industry: "Media & Emerging",
+        tech: ["React Native", "Firebase", "AI APIs", "Media & AI"],
+        industry: "Media & AI",
         hiddenTags: ["Mobile App", "Recommendation Engine", "User Personalization", "Food & Beverage", "Cross-platform"],
+        img: case_5,
         clientOverview: {
             illustration: "Mobile App Client",
             title: "Lifestyle Content Creator",
@@ -464,9 +476,10 @@ export const projectsData = [
         subService: "Security Audits",
         title: "Enterprise Application Security & Compliance System",
         description: "Implemented security audits, vulnerability detection, and compliance tracking for enterprise applications.",
-        tech: ["Node.js", "OWASP Tools", "JWT", "Cloud Security"],
-        industry: "Healthcare & Finance",
+        tech: ["Node.js", "OWASP Tools", "JWT", "Healthcare", "Cloud Security"],
+        industry: "Healthcare",
         hiddenTags: ["Cybersecurity", "OWASP", "Vulnerability Scan", "Compliance", "Data Protection"],
+        img: case_6,
         clientOverview: {
             illustration: "Security Client Overview",
             title: "Health-Tech Enterprise",

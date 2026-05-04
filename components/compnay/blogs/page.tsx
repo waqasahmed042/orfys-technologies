@@ -130,11 +130,11 @@ const Blogs: React.FC = () => {
                                                 {post.date}
                                             </span>
 
-                                            <h2 className="text-xl md:text-2xl font-bold text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] cursor-pointer leading-tight mb-3">
+                                            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] cursor-pointer leading-tight mb-3">
                                                 {post.title}
                                             </h2>
 
-                                            <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-4 flex-grow">
+                                            <p className="text-[var(--text-secondary)] text-sm md:text-md lg:text-lg leading-relaxed mb-4 flex-grow">
                                                 {post.description}
                                             </p>
 

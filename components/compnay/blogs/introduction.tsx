@@ -12,8 +12,8 @@ const Introduction: React.FC<IntroductionProps> = ({ title, description }) => {
             className="prose prose-lg max-w-none mb-16"
             style={{ color: "var(--text-primary)" }}
         >
-            <h2 className="text-3xl font-extrabold text-brand-dark mb-6">{title}</h2>
-            <p>{description}</p>
+            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-brand-dark mb-6">{title}</h2>
+            <p className='text-sm md:text-md lg:text-lg leading-relaxed'>{description}</p>
         </section>
     );
 };

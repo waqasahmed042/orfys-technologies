@@ -1,73 +1,60 @@
 "use client";
-import React, { useState, useMemo } from "react";
+
+import React, { useState, useEffect, useMemo } from "react";
 import Hero from "@/components/portfolio/hero";
 import Image from "next/image";
 import Link from "next/link";
-import services from "@/public/portfolio/services.png";
+import { FaSearch, FaTimes } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import { useGSAPStagger } from "@/hooks/useGSAPStagger";
-import { IoIosArrowDown } from "react-icons/io";
-import { filterKeyMap, navigationMenus, projectsData } from "@/lib/portfolioConstants";
-import { FilterKeys } from "@/utilities/types";
+import { projectsData } from "@/lib/portfolioConstants";
 import WhyOrfys from "@/components/WhyOrfys";
-import CTA from "@/components/CTA";
+import Subscribe from "@/components/subscribe";
+import { FiArrowUpRight } from "react-icons/fi";
+
+const ITEMS_PER_PAGE = 6;
+const filters = [
+    "All Projects",
+    "E-Commerce",
+    "Media & AI",
+    "Software",
+    "Blockchain",
+    "Healthcare",
+];
 
 const CaseStudies: React.FC = () => {
-    const [hoveredBtn, setHoveredBtn] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState<keyof typeof navigationMenus | null>(null);
-    const [selectedFilters, setSelectedFilters] = useState<Record<FilterKeys, string>>({
-        service: "",
-        tech: "",
-        industry: "",
-        expertise: "",
-    });
+    const [search, setSearch] = useState("");
+    const [activeFilter, setActiveFilter] = useState("All Projects");
+    const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+    const showClear = activeFilter !== "All Projects" || search !== "";
 
-    const handleSelectChange = (key: keyof typeof navigationMenus, value: string) => {
-        const mappedKey = filterKeyMap[key];
-        setSelectedFilters((prev) => ({
-            ...prev,
-            [mappedKey]: value,
-        }));
+    const handleClearFilters = () => {
+        setSearch("");
+        setActiveFilter("All Projects");
     };
 
-    const clearFilters = () => {
-        setSelectedFilters({
-            service: "",
-            tech: "",
-            industry: "",
-            expertise: "",
-        });
-    };
+    useEffect(() => {
+        setVisibleCount(ITEMS_PER_PAGE);
+    }, [activeFilter, search]);
 
-    // Filter Logic
+    // Combined filter logic (category + search)
     const filteredProjects = useMemo(() => {
         return projectsData.filter((project) => {
-            const matchesService =
-                !selectedFilters.service || project.service === selectedFilters.service;
+            const matchesCategory =
+                activeFilter === "All Projects" ||
+                project.industry?.toLowerCase() === activeFilter.toLowerCase();
 
-            const matchesIndustry =
-                !selectedFilters.industry || project.industry === selectedFilters.industry;
-
-            const matchesTech =
-                !selectedFilters.tech ||
+            const matchesSearch =
+                !search ||
+                project.title.toLowerCase().includes(search.toLowerCase()) ||
                 project.tech.some((t) =>
-                    t.toLowerCase().includes(selectedFilters.tech.toLowerCase())
+                    t.toLowerCase().includes(search.toLowerCase())
                 );
 
-            const matchesExpertise =
-                !selectedFilters.expertise ||
-                project.hiddenTags.some((tag) =>
-                    tag.toLowerCase().includes(selectedFilters.expertise.toLowerCase())
-                );
-
-            return (
-                matchesService &&
-                matchesIndustry &&
-                matchesTech &&
-                matchesExpertise
-            );
+            return matchesCategory && matchesSearch;
         });
-    }, [selectedFilters]);
+    }, [activeFilter, search]);
+    const visibleProjects = filteredProjects.slice(0, visibleCount);
 
     const containerRef = useGSAPStagger({
         stagger: 0.12,
@@ -76,136 +63,170 @@ const CaseStudies: React.FC = () => {
         delay: 0.1,
     });
 
-    const filterKey = useMemo(() => {
-        return Object.values(selectedFilters).join("-") || "all";
-    }, [selectedFilters]);
-
     return (
         <>
-            <main className="bg-[var(--bg-primary)]">
-                <Hero />
+            <Hero />
 
-                <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-8">
+            {/* Filter Bar */}
+            <section
+                className="sticky top-16 z-30 backdrop-blur-md border-b py-4"
+                style={{
+                    backgroundColor: "color-mix(in srgb, var(--bg-primary) 85%, transparent)",
+                    borderColor: "var(--border-default)",
+                }}
+            >
+                <div className="max-w-[1300px] mx-auto px-6">
+                    <div className="flex flex-wrap items-center justify-between gap-4">
 
-                    {/* Sidebar Filters */}
-                    <aside className="w-full md:w-64 flex-shrink-0 space-y-4">
-                        {(Object.keys(navigationMenus) as Array<keyof typeof navigationMenus>).map((key) => (
-                            <div key={key} className="relative group">
-                                <select
-                                    value={selectedFilters[filterKeyMap[key]]}
-                                    onChange={(e) => handleSelectChange(key, e.target.value)}
-                                    onFocus={() => setOpenDropdown(key)}
-                                    onBlur={() => setOpenDropdown(null)}
-                                    className="w-full p-3 border rounded appearance-none bg-transparent text-sm focus:outline-none transition-all cursor-pointer"
-                                    style={{
-                                        borderColor: "var(--text-secondary)",
-                                        color: "var(--text-primary)"
-                                    }}
-                                >
-                                    <option className="bg-[var(--bg-primary)] text-[var(--text-primary)]" value="">
-                                        All {key}
-                                    </option>
-                                    {navigationMenus[key].map((item) => (
-                                        <option key={item} className="bg-[var(--bg-primary)] text-[var(--text-primary)]" value={item}>
-                                            {item}
-                                        </option>
-                                    ))}
-                                </select>
+                        {/* Filters */}
+                        <div className="flex items-center gap-2 overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-2 md:pb-0">
+                            {filters.map((filter) => {
+                                const isActive = activeFilter === filter;
 
-                                <div
-                                    className={`pointer-events-none absolute inset-y-0 right-3 flex items-center transition-transform duration-300 ${openDropdown === key ? "rotate-180" : "rotate-0"
-                                        }`}
-                                    style={{ color: "var(--text-secondary)" }}
-                                >
-                                    <IoIosArrowDown />
-                                </div>
-                            </div>
-                        ))}
-
-                        <button
-                            onClick={clearFilters}
-                            onMouseEnter={() => setHoveredBtn(true)}
-                            onMouseLeave={() => setHoveredBtn(false)}
-                            className="w-full cursor-pointer py-3 border text-sm font-bold rounded transition-all duration-300"
-                            style={{
-                                borderColor: "var(--accent-primary)",
-                                color: hoveredBtn ? "#ffffff" : "var(--accent-primary)",
-                                backgroundColor: hoveredBtn ? "var(--accent-primary)" : "transparent"
-                            }}
-                        >
-                            Clear Filter
-                        </button>
-                    </aside>
-
-                    {/* Case Studies Grid */}
-                    <div className="flex-grow">
-                        <div
-                            key={filterKey}
-                            ref={containerRef as React.RefObject<HTMLDivElement>}
-                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-start"
-                        >
-                            {filteredProjects.map((item, idx) => (
-                                <Link
-                                    key={`${filterKey}-${idx}`}
-                                    href={`/portfolio/case-studies/${item.slug}`}
-                                    className="group cursor-pointer"
-                                    data-animate-item
-                                >
-                                    <div
-                                        className="group cursor-pointer border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[var(--accent-primary)] relative"
-                                        style={{ backgroundColor: "var(--bg-secondary)", borderColor: "var(--border-default)" }}
+                                return (
+                                    <button
+                                        key={filter}
+                                        onClick={() => setActiveFilter(filter)}
+                                        className={`px-4 py-2 rounded-full cursor-pointer text-sm font-medium whitespace-nowrap transition-all duration-200
+                                                ${isActive
+                                                ? "bg-purple-600 text-white shadow-sm"
+                                                : "border border-gray-300 text-gray-600 hover:border-purple-500 hover:text-purple-600"
+                                            }`}
                                     >
-                                        {/* Image Area */}
-                                        <div
-                                            className="h-40 flex items-center justify-center bg-[#f0f4f8] border-b relative overflow-hidden"
-                                            style={{ borderColor: "var(--border-default)" }}
-                                        >
-                                            <Image
-                                                src={services}
-                                                alt="Services"
-                                                className="transform transition-transform duration-500 ease-out group-hover:scale-110 z-0"
-                                            />
-                                        </div>
-
-                                        {/* Content Area */}
-                                        <div className="p-5 pt-0 relative z-10">
-                                            <div className="flex flex-wrap gap-1.5 -mt-3.5 mb-3">
-                                                {item.tech.map((t) => (
-                                                    <span
-                                                        key={t}
-                                                        className="text-[9px] uppercase tracking-tighter font-bold px-2 py-0.5 rounded text-white shadow-sm"
-                                                        style={{ backgroundColor: "var(--accent-primary)" }}
-                                                    >
-                                                        {t}
-                                                    </span>
-                                                ))}
-                                            </div>
-
-                                            <h3
-                                                className="text-sm font-bold leading-tight group-hover:text-[var(--accent-primary)] transition-colors duration-300"
-                                                style={{ color: "var(--text-primary)" }}
-                                            >
-                                                {item.title}
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
+                                        {filter}
+                                    </button>
+                                );
+                            })}
                         </div>
 
-                        {filteredProjects.length === 0 && (
-                            <div className="text-center py-20 w-full font-semibold">
-                                <p style={{ color: "var(--text-secondary)" }}>No Results. Please, clear filter.</p>
+                        {/* Right Side */}
+                        <div className="flex items-center gap-4">
+
+                            {/* Search */}
+                            <div className="relative">
+                                <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
+
+                                <input
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    placeholder="Search tech stack..."
+                                    className="pl-10 pr-4 py-2 rounded-xl text-[var(--text-primary)] text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 w-56 md:w-64"
+                                />
                             </div>
-                        )}
+
+                            {/* Clear Filter */}
+                            {showClear && (
+                                <button
+                                    onClick={handleClearFilters}
+                                    className="flex items-center cursor-pointer text-red-500 text-sm font-medium hover:underline"
+                                >
+                                    <FaTimes className="mr-1 text-xs" />
+                                    Clear Filter
+                                </button>
+                            )}
+                        </div>
                     </div>
                 </div>
-            </main>
+            </section>
+
+            {/* Projects Grid */}
+            <div className="py-20 max-w-[1250px] mx-auto px-6">
+                <div
+                    ref={containerRef as React.RefObject<HTMLDivElement>}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    {filteredProjects.length === 0 ? (
+                        <div className="col-span-full text-center py-20">
+                            <h3 className="text-lg font-semibold text-[var(--text-primary)]">
+                                No projects found matching your criteria.
+                            </h3>
+                        </div>
+                    ) : (
+                        visibleProjects.map((item, idx) => (
+                            <div
+                                key={idx}
+                                className="group"
+                                data-animate-item
+                            >
+                                <div className="bg-[var(--bg-primary)] rounded-xl border border-[var(--border-default)] overflow-hidden transition-all duration-300 hover:-translate-y-2">
+
+                                    {/* Image */}
+                                    <div className="h-56 relative overflow-hidden">
+                                        <Image
+                                            src={item.img}
+                                            alt={item.title}
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+
+                                        {/* Category Badge */}
+                                        <div className="absolute top-4 left-4">
+                                            <span className="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs text-purple-600 font-bold shadow-sm">
+                                                {item.industry}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="p-6">
+                                        {/* Title */}
+                                        <h3 className="text-lg text-[var(--text-primary)] font-bold mb-2">
+                                            {item.title}
+                                        </h3>
+
+                                        {/* Description (ADD this in your data if missing) */}
+                                        <p className="text-sm text-[var(--text-secondary)] mb-4 line-clamp-2">
+                                            {item.description || "High-performance scalable system designed for modern enterprise needs."}
+                                        </p>
+
+                                        {/* Tech Tags */}
+                                        <div className="flex flex-wrap gap-2 mb-4">
+                                            {item.tech.slice(0, 3).map((t) => (
+                                                <span
+                                                    key={t}
+                                                    className="bg-gray-100 text-gray-700 px-2 py-1 rounded-md text-xs font-semibold"
+                                                >
+                                                    {t}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        {/* CTA */}
+                                        <Link
+                                            href={`/portfolio/case-studies/${item.slug
+                                                .toLowerCase()
+                                                .replace(/[^a-z0-9]+/g, "-")
+                                                .replace(/^-|-$/g, "")}`}
+                                            className="group/link inline-flex items-center gap-2 text-[var(--accent-primary)] font-bold uppercase text-[10px] tracking-[0.15em]"
+                                        >
+                                            <span className="relative">
+                                                View Case Study
+                                                <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[var(--accent-primary)] transition-all duration-300 group-hover/link:w-full" />
+                                            </span>
+                                            <FiArrowUpRight className="text-lg transition-all duration-300 group-hover/link:rotate-45" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    )}
+                </div>
+
+                {/* Load More Button */}
+                {visibleProjects.length < filteredProjects.length && (
+                    <div className="mt-12 flex justify-center">
+                        <button
+                            className="border-2 border-[var(--accent-primary)] text-[var(--accent-primary)] cursor-pointer px-8 py-3 rounded-xl font-semibold hover:bg-[var(--accent-primary)] hover:text-white transition-all"
+                            onClick={() => setVisibleCount(visibleCount + ITEMS_PER_PAGE)}
+                        >
+                            Load More Projects
+                        </button>
+                    </div>
+                )}
+            </div>
 
             <WhyOrfys />
-            <CTA />
+            <Subscribe />
 
-            {/* Footer */}
             <Footer />
         </>
     );

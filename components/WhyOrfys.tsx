@@ -5,77 +5,83 @@ import { trustFactors } from "@/lib/constants";
 import { useGSAPStagger } from "@/hooks/useGSAPStagger";
 import {
   FaShieldAlt,
-  FaRocket,
+  FaBolt,
   FaUsers,
-  FaHeadset
+  FaHeadset,
 } from "react-icons/fa";
 
 const WhyOrfys: React.FC = () => {
   const containerRef = useGSAPStagger({
-    stagger: 0.12,
-    duration: 0.7,
+    stagger: 0.15,
+    duration: 0.8,
     animationType: "scale",
     delay: 0.1,
   });
 
-  // Updated helper to match your screenshot titles exactly
-  const renderIcon = (title: string) => {
-    const normalizedTitle = title.toLowerCase();
+  // Icon mapper
+  const getIcon = (title: string) => {
+    const t = title.toLowerCase();
 
-    if (normalizedTitle.includes("security")) return <FaShieldAlt />;
-    if (normalizedTitle.includes("implementation") || normalizedTitle.includes("fast")) return <FaRocket />;
-    if (normalizedTitle.includes("team") || normalizedTitle.includes("expert")) return <FaUsers />;
-    if (normalizedTitle.includes("support") || normalizedTitle.includes("24/7")) return <FaHeadset />;
+    if (t.includes("security")) return <FaShieldAlt />;
+    if (t.includes("fast") || t.includes("implementation")) return <FaBolt />;
+    if (t.includes("team") || t.includes("expert")) return <FaUsers />;
+    if (t.includes("support")) return <FaHeadset />;
 
-    return <FaRocket />; // Fallback
+    return <FaBolt />;
   };
 
   return (
     <section
       id="why-orfys"
       ref={containerRef as React.RefObject<HTMLElement>}
-      className="mb-24"
-      style={{ backgroundColor: "var(--bg-primary)" }}
+      className="relative py-20 text-white overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      {/* 🔥 Background Gradient (MAIN FIX) */}
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,#0b0f17_0%,#0b0f17_60%,#1a1333_100%)]" />
+
+      {/* Purple Glow */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-600/20 to-transparent blur-2xl" />
+
+      {/* Dark overlay for depth */}
+      <div className="absolute inset-0 bg-black/30" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2
-            className="text-lg md:text-2xl lg:text-4xl font-bold mb-3"
-            style={{ color: "var(--text-primary)" }}
-          >
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
             Why Choose Orfys?
           </h2>
-          <p
-            className="text-sm md:text-md lg:text-md leading-relaxed mb-12"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            Technology-focused expertise you can trust
+
+          <p className="text-base md:text-lg text-slate-400 max-w-2xl mx-auto">
+            We don't just write code; we build strategic digital assets that
+            drive business growth and operational efficiency.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
           {trustFactors.map((factor, index) => (
             <div
               key={index}
               data-animate-item
-              className="text-center"
+              className="flex space-x-6 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:scale-[1.02]"
             >
-              <div
-                className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white transition-transform hover:scale-110"
-                style={{ backgroundColor: "var(--accent-primary)" }}
-              >
-                {/* Now calls the helper that correctly identifies the title */}
-                {renderIcon(factor.title)}
+              {/* Icon */}
+              <div className="w-16 h-16 shrink-0 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-2xl">
+                {getIcon(factor.title)}
               </div>
-              <h3
-                className="text-xl font-bold mb-3"
-                style={{ color: "var(--text-primary)" }}
-              >
-                {factor.title}
-              </h3>
-              <p style={{ color: "var(--text-secondary)" }}>
-                {factor.description}
-              </p>
+
+              {/* Content */}
+              <div>
+                <h3 className="text-lg md:text-xl font-semibold mb-2">
+                  {factor.title}
+                </h3>
+
+                <p className="text-sm md:text-base text-slate-400 leading-relaxed">
+                  {factor.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

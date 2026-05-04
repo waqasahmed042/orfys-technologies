@@ -15,13 +15,18 @@ const Analysis: React.FC<AnalysisProps> = ({
             style={{ color: "var(--text-primary)" }}
         >
             <h2
-                className="text-3xl font-extrabold mb-6"
+                className="text-xl md:text-2xl lg:text-4xl font-bold mb-6"
                 style={{ color: "var(--text-primary)" }}
             >
                 {title}
             </h2>
 
-            <p style={{ color: "var(--text-secondary)" }}>{description}</p>
+            <p
+                style={{ color: "var(--text-secondary)" }}
+                className='text-sm md:text-md lg:text-lg leading-relaxed'
+            >
+                {description}
+            </p>
 
             {/* Pro Tip Box */}
             <div
@@ -38,10 +43,20 @@ const Analysis: React.FC<AnalysisProps> = ({
                     {pro_tip_title}
                 </h4>
 
-                <p className="text-sm italic" style={{ color: "var(--text-secondary)" }}>{pro_tip_description}</p>
+                <p
+                    className="text-sm italic text-sm md:text-md lg:text-lg leading-relaxed"
+                    style={{ color: "var(--text-secondary)" }}
+                >
+                    {pro_tip_description}
+                </p>
             </div>
 
-            <p style={{ color: "var(--text-secondary)" }}>{conclusion}</p>
+            <p
+                style={{ color: "var(--text-secondary)" }}
+                className='text-sm md:text-md lg:text-lg leading-relaxed'
+            >
+                {conclusion}
+            </p>
         </div>
     );
 };

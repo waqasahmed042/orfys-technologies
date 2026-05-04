@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { projectsData } from "@/lib/portfolioConstants";
-import case_studies from "@/public/portfolio/case-studies.svg"
+import case_studies from "@/public/portfolio/case-study/case-studies.svg"
 import NotFound from "@/app/not-found";
 import Header from "@/components/Header";
 import ScrollToTop from "@/hooks/useScrollToTop";

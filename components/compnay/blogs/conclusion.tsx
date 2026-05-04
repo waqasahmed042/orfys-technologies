@@ -5,19 +5,22 @@ const Conclusion: React.FC<MainConclusionProps> = ({ conclusion }) => {
     return (
         <div
             id="conclusion"
-            className="p-10 rounded-3xl mb-16 relative overflow-hidden"
+            className="p-6 md:p-8 rounded-3xl mb-16 relative overflow-hidden"
             style={{
-                backgroundColor: "var(--text-primary)", // dark theme surface
-                color: "#ffffff"
+                color: "#ffffff",
+                backgroundColor: "var(--text-primary)"
             }}
         >
             {/* Content */}
             <div className="relative z-10">
-                <h2 className="text-3xl font-extrabold mb-6">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold font-extrabold mb-4">
                     {conclusion.title ?? "Conclusion"}
                 </h2>
 
-                <p style={{ color: "rgba(255,255,255,0.75)" }}>
+                <p
+                    style={{ color: "rgba(255,255,255,0.75)" }}
+                    className="text-sm md:text-md lg:text-md leading-relaxed"
+                >
                     {conclusion.description}
                 </p>
             </div>

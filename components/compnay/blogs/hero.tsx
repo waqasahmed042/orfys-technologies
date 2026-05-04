@@ -54,7 +54,7 @@ const Hero: React.FC<BlogsHeroProps> = ({
             className="pt-32 pb-20 overflow-hidden"
             style={{ backgroundColor: "var(--bg-primary)" }}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 
                     {/* Content */}

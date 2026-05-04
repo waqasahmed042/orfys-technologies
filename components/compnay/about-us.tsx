@@ -150,6 +150,32 @@ const AboutUS: React.FC = () => {
                 </div>
             </section>
 
+            <section
+                className="max-w-[1200px] mx-auto px-6 py-4 sm:px-8 lg:px-12 bg-slate-900 rounded-3xl text-white relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-violet-500 rounded-full blur-[100px]"></div>
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-[100px]"></div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-xl text-center relative z-10">
+                    <div>
+                        <div className="text-h1 font-h1 mb-xs">99.9%</div>
+                        <div className="text-slate-400 font-label-sm">UPTIME SLAS</div>
+                    </div>
+                    <div>
+                        <div className="text-h1 font-h1 mb-xs">24/7</div>
+                        <div className="text-slate-400 font-label-sm">TECH SUPPORT</div>
+                    </div>
+                    <div>
+                        <div className="text-h1 font-h1 mb-xs">45%</div>
+                        <div className="text-slate-400 font-label-sm">ROAS INCREASE</div>
+                    </div>
+                    <div>
+                        <div className="text-h1 font-h1 mb-xs">150+</div>
+                        <div className="text-slate-400 font-label-sm">INTEGRATIONS</div>
+                    </div>
+                </div>
+            </section>
+
             {/* Our Mission */}
             <section
                 className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"

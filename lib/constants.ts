@@ -22,7 +22,7 @@ import integration_services from "@/public/services/integration-services.svg";
 import data_analysis from "@/public/services/data-analysis.svg";
 import mobile_solution from "@/public/services/mobile-solution.svg";
 import security_compliance from "@/public/services/security-compliance.svg";
-import case_studies from "@/public/portfolio/case-studies.svg";
+import case_studies from "@/public/portfolio/case-study/case-studies.svg";
 import our_products from "@/public/portfolio/our-products.svg";
 
 export const companyInfo = {
@@ -367,19 +367,6 @@ export const companyMenu = [
       imageAlt: "Blogs"
     }
   },
-  // {
-  //   title: "NEWS",
-  //   desc: "Stay updated with our latest company milestones and events.",
-  //   icon: "📰",
-  //   path: "/company/news",
-  //   news: {
-  //     title: "News",
-  //     description: "Stay updated with our latest news, announcements, and media coverage. Get all the important company updates in one place.",
-  //     button: "Get A Quote",
-  //     image: news,
-  //     imageAlt: "News"
-  //   }
-  // },
   {
     title: "PEOPLE",
     desc: "Meet the brilliant minds behind our successful solutions.",

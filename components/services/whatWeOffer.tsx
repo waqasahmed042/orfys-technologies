@@ -213,7 +213,7 @@ const WhatWeOffer: React.FC = () => {
         <section
             id="services-covered"
             ref={staggerRef as React.RefObject<HTMLElement>}
-            className="mb-24 max-w-[1260px] mx-auto px-6 max-w-7xl mx-auto"
+            className="my-16 max-w-[1260px] mx-auto px-6 max-w-7xl mx-auto"
         >
             {/* Header */}
             <div className="mb-16 flex justify-center items-center flex-col text-center">

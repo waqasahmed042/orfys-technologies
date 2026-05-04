@@ -55,11 +55,14 @@ const Contact: React.FC = () => {
                     {/* Left Side: Stepper */}
                     <div className="flex flex-col">
                         <h2
-                            className="text-4xl font-bold mb-12"
+                            className="text-4xl font-bold mb-2"
                             style={{ color: "var(--text-primary)" }}
                         >
                             Get started with us
                         </h2>
+                        <p className="text-body-lg text-secondary max-w-2xl mb-6">
+                            Ready to transform your vision into a digital masterpiece?
+                            Our streamlined process ensures your project kicks off with precision and strategic alignment.</p>
 
                         <div className="relative">
                             {/* Vertical Dashed Line */}
@@ -70,7 +73,7 @@ const Contact: React.FC = () => {
                                     {/* Icon Circle */}
                                     <div
                                         className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-white border shadow-sm"
-                                        style={{ color: "var(--text-primary)", borderColor: "var(--border-default)" }}
+                                        style={{ color: "var(--text-secondary)", borderColor: "var(--border-default)" }}
                                     >
                                         {step.icon}
                                     </div>

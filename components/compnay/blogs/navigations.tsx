@@ -32,13 +32,21 @@ const Navigations = () => {
     }, []);
 
     const scrollToSection = (item: string) => {
-        const target = item.toLowerCase().replace(/\s+/g, "-");
+        const target = document.getElementById(
+            item.toLowerCase().replace(/\s+/g, "-")
+        );
+
+        if (!target) return;
 
         setActive(item);
 
         gsap.to(window, {
             duration: 0.8,
-            scrollTo: { y: `#${target}`, offsetY: 100 },
+            scrollTo: {
+                y: target,
+                offsetY: 100,
+            },
+            ease: "power3.out",
         });
     };
 
@@ -51,7 +59,7 @@ const Navigations = () => {
                 borderColor: "var(--border-default)",
             }}
         >
-            <div className="max-w-[1300px] mx-auto px-6 overflow-x-auto">
+            <div className="max-w-[1300px] mx-auto px-6 overflow-x-auto hide-scrollbar snap-x snap-mandatory">
                 <div className="flex items-center space-x-10 h-14 whitespace-nowrap">
                     {navItems.map((item) => {
                         const isActive = active === item;

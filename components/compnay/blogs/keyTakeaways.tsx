@@ -13,7 +13,7 @@ const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
     return (
         <>
             <section className="mb-16" id="key-takeaways">
-                <h2 className="text-2xl font-extrabold text-brand-dark mb-8">Key Takeaways</h2>
+                <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-brand-dark mb-8">Key Takeaways</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {points.map((point, index) => (
                         <div
@@ -28,8 +28,8 @@ const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
                                 {index + 1}
                             </div>
 
-                            <h3 className="font-bold text-brand-dark my-2">{point.title}</h3>
-                            <p className="text-sm text-slate-500 leading-relaxed"> {point.description}</p>
+                            <h3 className="text-xl md:text-2xl lg:text-4xl font-bold text-brand-dark my-2">{point.title}</h3>
+                            <p className="text-sm md:text-md lg:text-lg leading-relaxed text-slate-500 leading-relaxed"> {point.description}</p>
                         </div>
                     ))}
                 </div>
