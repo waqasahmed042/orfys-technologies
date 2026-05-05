@@ -14,7 +14,7 @@ const CTA: React.FC = () => {
   return (
     <>
       <section ref={ref as React.RefObject<HTMLElement>}>
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 md:p-16 relative text-center">
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 md:p-16 relative text-center overflow-hidden">
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full"></div>
           <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-60 h-60 bg-white/10 rounded-full"></div>
           <div className="relative z-10">
