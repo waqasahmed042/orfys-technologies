@@ -3,15 +3,11 @@ import React, { useEffect } from "react";
 import Hero from "./hero";
 import NotFound from "@/app/not-found";
 import { usePathname } from "next/navigation";
-import Header from "../Header";
-import ScrollToTop from "@/hooks/useScrollToTop";
-import Footer from "@/components/Footer";
 import { industriesContent } from "@/lib/industriesConstant";
 import IndustriesContent from "./industriesContent";
 import Testimonials from "../Testimonials";
 import WhyOrfys from "../WhyOrfys";
 import CTA from "../CTA";
-import ChatWidget from "../chatWidget";
 
 const IndustriesTemplate: React.FC = () => {
   const pathname = usePathname();
@@ -33,8 +29,6 @@ const IndustriesTemplate: React.FC = () => {
 
   return (
     <>
-      <Header />
-
       <main className="bg-[var(--bg-primary)] min-h-screen">
         <Hero
           title={content.hero.title}
@@ -44,16 +38,11 @@ const IndustriesTemplate: React.FC = () => {
           imageAlt={content.hero.imageAlt}
         />
 
-
         <IndustriesContent />
         <Testimonials />
         <WhyOrfys />
         <CTA />
       </main>
-
-      <Footer />
-      <ScrollToTop />
-      <ChatWidget />
     </>
   );
 };

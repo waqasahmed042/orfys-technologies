@@ -5,15 +5,11 @@ import Image from 'next/image';
 import technologies from "@/public/technologies/technologies.svg";
 import gsap from 'gsap';
 import PathSegments from '../pathSegments';
-import Header from '../Header';
-import Footer from '../Footer';
 import TrustedCompanies from '../TrustedCompanies';
 import Testimonials from '../Testimonials';
 import WhyOrfys from '../WhyOrfys';
 import CTA from '../CTA';
 import { useGSAPStagger } from '@/hooks/useGSAPStagger';
-import ChatWidget from '../chatWidget';
-import ScrollToTop from '@/hooks/useScrollToTop';
 
 const Technologies = () => {
     const [activeTab, setActiveTab] = useState<number>(0);
@@ -217,8 +213,6 @@ const Technologies = () => {
 
     return (
         <>
-            <Header />
-
             {/* Hero Section */}
             <section
                 id="technologies"
@@ -373,10 +367,6 @@ const Technologies = () => {
             <Testimonials />
             <WhyOrfys />
             <CTA />
-            <Footer />
-
-            <ScrollToTop />
-            <ChatWidget />
         </>
     );
 };

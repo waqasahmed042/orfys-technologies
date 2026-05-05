@@ -13,11 +13,8 @@ const CTA: React.FC = () => {
 
   return (
     <>
-      <section
-        ref={ref as React.RefObject<HTMLElement>}
-        className="py-12 max-w-[1300px] mx-auto px-6"
-      >
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-[3rem] p-6 md:p-16 relative text-center">
+      <section ref={ref as React.RefObject<HTMLElement>}>
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 md:p-16 relative text-center">
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full"></div>
           <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-60 h-60 bg-white/10 rounded-full"></div>
           <div className="relative z-10">
@@ -34,7 +31,7 @@ const CTA: React.FC = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
                 href={`mailto:${companyInfo.email}?subject=Book%20a%20Call`}
-                className="bg-white text-primary px-10 rounded-xl py-3 font-bold hover:bg-gray-100 transition-colors shadow-lg"
+                className="bg-white text-black px-10 rounded-xl py-3 font-bold hover:bg-gray-100 transition-colors shadow-lg"
               >
                 Book a Call
               </a>

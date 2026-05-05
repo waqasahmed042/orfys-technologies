@@ -1,20 +1,24 @@
 "use client";
-
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type ElementType } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
-import { companyInfo, companyMenu, dropdownKeys, navigationMenus, portfolioMenu } from "@/lib/constants";
+import { useTheme } from "@/contexts/ThemeContext";
+import {
+  companyInfo, companyMenu, dropdownKeys,
+  navigationMenus, portfolioMenu
+} from "@/lib/constants";
 import ModeToggle from "./ModeToggle";
 import { IoMenu, IoClose } from 'react-icons/io5';
 import { MenuItem } from "@/utilities/types";
 import { IoIosArrowUp } from "react-icons/io";
 
 export default function Header() {
+  const { mode } = useTheme();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,32 +98,63 @@ export default function Header() {
     }
   };
 
-  const StandardItem = ({ item }: { item: MenuItem }) => (
-    <Link
-      href={item.path ?? "#"}
-      className="group/item flex items-start p-3 rounded-xl transition-all duration-200 hover:bg-[var(--bg-secondary)] cursor-pointer"
-    >
-      <div className="flex-shrink-0 w-9 h-9 border rounded-lg flex items-center justify-center text-lg transition-colors bg-[var(--bg-primary)] border-[var(--bg-secondary)] group-hover/item:border-[var(--accent-primary)]">
-        <span style={{ color: "var(--accent-primary)" }}>{item.icon}</span>
-      </div>
+  const StandardItem = ({ item }: { item: MenuItem }) => {
+    const Icon = item.icon as ElementType;
 
-      <div className="ml-3 text-left">
-        <p className="text-[12px] font-semibold text-[var(--text-primary)] transition-colors group-hover/item:text-[var(--accent-primary)]">
-          {item.title}
-        </p>
+    return (
+      <Link
+        href={item.path ?? "#"}
+        className="group/item flex items-start p-3 rounded-xl transition-all duration-200 hover:bg-[var(--bg-secondary)] cursor-pointer"
+      >
+        <div
+          className="flex-shrink-0 w-9 h-9 border rounded-lg flex items-center justify-center text-lg transition-colors bg-[var(--bg-primary)] border-[var(--bg-secondary)] group-hover/item:border-[var(--accent-primary)]"
+          style={
+            {
+              "--hover-color": item.hover,
+            } as React.CSSProperties
+          }
+        >
+          <item.icon
+            className="text-xl transition-colors duration-200 text-[var(--accent-primary)] group-hover/item:!text-[var(--hover-color)]"
+          />
+        </div>
 
-        <p className="text-[10px] leading-tight line-clamp-1 text-[var(--text-secondary)]">
-          {item.desc}
-        </p>
-      </div>
-    </Link>
-  );
+        <div className="ml-3 text-left">
+          <p className="text-[12px] font-semibold text-[var(--text-primary)] transition-colors group-hover/item:text-[var(--accent-primary)]">
+            {item.title}
+          </p>
+
+          <p className="text-[10px] leading-tight line-clamp-1 text-[var(--text-secondary)]">
+            {item.desc}
+          </p>
+        </div>
+      </Link>
+    );
+  };
 
   const CardItem = ({ item }: { item: MenuItem }) => {
+    const Icon = item.icon as ElementType;
     const content = (
       <div className="group/card cursor-pointer p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-primary)]/40 bg-[var(--bg-secondary)]/30 border-[var(--bg-secondary)]">
         <div className="aspect-video rounded-xl mb-4 flex items-center justify-center text-4xl transition-transform group-hover/card:scale-105 bg-[var(--bg-secondary)]/50 shadow-inner border border-[var(--bg-secondary)]">
-          {item.icon}
+          {typeof item.icon === "function" ? (
+            <Icon
+              className="text-xl transition-colors"
+              style={{
+                color: "var(--accent-primary)",
+              }}
+              onMouseEnter={(e: any) =>
+                (e.currentTarget.style.color = item.hover)
+              }
+              onMouseLeave={(e: any) =>
+                (e.currentTarget.style.color = "var(--accent-primary)")
+              }
+            />
+          ) : (
+            <span style={{ color: "var(--accent-primary)" }}>
+              {item.icon}
+            </span>
+          )}
         </div>
 
         <h4 className="text-[11px] font-bold uppercase tracking-widest mb-2 transition-colors text-[var(--text-primary)] group-hover/card:text-[var(--accent-primary)]">
@@ -135,21 +170,43 @@ export default function Header() {
     return item.path ? <Link href={item.path}>{content}</Link> : content;
   };
 
-  const ServiceItem = ({ item }: { item: MenuItem }) => (
-    <Link
-      href={item.path ?? "#"}
-      className="group/service flex items-center justify-between p-4 rounded-xl border transition-all duration-300 bg-[var(--bg-secondary)]/20 border-[var(--bg-secondary)] hover:border-[var(--accent-primary)]/50 hover:bg-[var(--bg-secondary)]/40"
-      onClick={() => setIsMobileMenuOpen(false)}
-    >
-      <div className="flex items-center gap-3">
-        <span className="text-xl text-[var(--accent-primary)]">{item.icon}</span>
-        <span className="text-sm font-medium text-[var(--text-primary)]">{item.title}</span>
-      </div>
-      <div className="w-6 h-6 rounded-full bg-[var(--bg-primary)] flex items-center justify-center border border-[var(--bg-secondary)] group-hover/service:border-[var(--accent-primary)] transition-colors">
-        <IoIosArrowUp className="rotate-90 text-[10px] text-[var(--text-secondary)] group-hover/service:text-[var(--accent-primary)]" />
-      </div>
-    </Link>
-  );
+  const ServiceItem = ({ item }: { item: MenuItem }) => {
+    const Icon = item.icon as ElementType;
+
+    return (
+      <Link
+        href={item.path ?? "#"}
+        className="group/service flex items-center justify-between p-4 rounded-xl border transition-all duration-300 bg-[var(--bg-secondary)]/20 border-[var(--bg-secondary)] hover:border-[var(--accent-primary)]/50 hover:bg-[var(--bg-secondary)]/40"
+        onClick={() => setIsMobileMenuOpen(false)}
+      >
+        <div className="flex items-center gap-3">
+          {typeof item.icon === "function" ? (
+            <Icon
+              className="text-xl transition-colors"
+              style={{
+                color: "var(--accent-primary)",
+              }}
+              onMouseEnter={(e: any) =>
+                (e.currentTarget.style.color = item.hover)
+              }
+              onMouseLeave={(e: any) =>
+                (e.currentTarget.style.color = "var(--accent-primary)")
+              }
+            />
+          ) : (
+            <span style={{ color: "var(--accent-primary)" }}>
+              {item.icon}
+            </span>
+          )}
+
+          <span className="text-sm font-medium text-[var(--text-primary)]">{item.title}</span>
+        </div>
+        <div className="w-6 h-6 rounded-full bg-[var(--bg-primary)] flex items-center justify-center border border-[var(--bg-secondary)] group-hover/service:border-[var(--accent-primary)] transition-colors">
+          <IoIosArrowUp className="rotate-90 text-[10px] text-[var(--text-secondary)] group-hover/service:text-[var(--accent-primary)]" />
+        </div>
+      </Link>
+    );
+  };
 
   return (
     <>
@@ -162,8 +219,12 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-2">
               {/* Desktop Logo: Hidden by default, shown on sm screens and up */}
               <Image
-                src={companyInfo.desktopLogo}
-                alt="Logo"
+                src={
+                  mode === "dark"
+                    ? companyInfo.desktopLogoWhite
+                    : companyInfo.desktopLogoDark
+                }
+                alt={`${companyInfo.name} Logo`}
                 width={100}
                 height={40}
                 priority

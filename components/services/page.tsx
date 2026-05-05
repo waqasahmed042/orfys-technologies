@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { services } from "@/lib/constants";
 import { useGSAPStagger } from "@/hooks/useGSAPStagger";

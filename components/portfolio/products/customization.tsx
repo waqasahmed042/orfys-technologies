@@ -5,12 +5,11 @@ const Customization: React.FC = () => {
         <>
             <section
                 id="customization"
-                className="relative px-6 py-8 overflow-hidden"
-                style={{
-                    background: `linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)`,
-                }}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 relative"
             >
-                <div className='max-w-[1300px] mx-auto'>
+                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full"></div>
+                <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-60 h-60 bg-white/10 rounded-full"></div>
+                <div className="space-y-6">
                     <h2
                         className="text-lg md:text-2xl lg:text-4xl font-bold flex flex-row justify-start items-center mb-2"
                         style={{ color: "#FFFFFF" }}

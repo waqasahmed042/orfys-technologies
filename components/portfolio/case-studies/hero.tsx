@@ -8,9 +8,6 @@ import gsap from "gsap";
 import { projectsData } from "@/lib/portfolioConstants";
 import case_studies from "@/public/portfolio/case-study/case-studies.svg"
 import NotFound from "@/app/not-found";
-import Header from "@/components/Header";
-import ScrollToTop from "@/hooks/useScrollToTop";
-import ChatWidget from "@/components/chatWidget";
 
 const CaseStudiesHero = () => {
     const pathname = usePathname();
@@ -70,8 +67,6 @@ const CaseStudiesHero = () => {
 
     return (
         <>
-            <Header />
-
             <section
                 id="case-studies"
                 className="relative w-full flex items-center mt-32 mb-12 overflow-hidden"
@@ -123,9 +118,6 @@ const CaseStudiesHero = () => {
                     </div>
                 </div>
             </section>
-
-            <ScrollToTop />
-            <ChatWidget />
         </>
     );
 };

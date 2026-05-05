@@ -2,10 +2,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Hero from "./hero";
-import Footer from "@/components/Footer";
 import NotFound from "@/app/not-found";
-import ScrollToTop from "@/hooks/useScrollToTop";
-import Header from "@/components/Header";
 import { blogPosts } from "@/lib/companyConstant";
 import Author from "./author";
 import Navigations from "./navigations";
@@ -15,7 +12,6 @@ import Analysis from "./analysis";
 import Conclusion from "./conclusion";
 import RelatedPosts from "./relatedPosts";
 import Subscribe from "@/components/subscribe";
-import ChatWidget from "@/components/chatWidget";
 
 const BlogsTemplate = () => {
     const pathname = usePathname();
@@ -41,8 +37,6 @@ const BlogsTemplate = () => {
 
     return (
         <>
-            <Header />
-
             <main className="bg-[var(--bg-primary)] min-h-screen">
                 <Hero {...blogDetails.hero} />
 
@@ -93,10 +87,6 @@ const BlogsTemplate = () => {
                         <Subscribe />
                     </div>
                 </section>
-
-                <Footer />
-                <ScrollToTop />
-                <ChatWidget />
             </main>
         </>
     );

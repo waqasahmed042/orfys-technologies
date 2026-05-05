@@ -10,7 +10,6 @@ import Solution from "./solution";
 import TechnologyStack from "./technologyStack";
 import CoreTeam from "./coreTeam";
 import Result from "./result";
-import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
 import { projectsData } from "@/lib/portfolioConstants";
 import NotFound from "@/app/not-found";
@@ -60,9 +59,6 @@ const CaseStudiesTemplate: React.FC = () => {
         <Result
           data={project.result || { illustration: "", title: "", paragraphs: [], bulletin: [] }}
         />
-
-        {/* Footer Section */}
-        <Footer />
       </main>
     </>
   );

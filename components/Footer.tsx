@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="border-t transition-colors duration-300 mx-auto px-6"
+      className="transition-colors duration-300 mx-auto px-6"
       style={{
         backgroundColor: "#111827",
         borderColor: "var(--border-default)",
@@ -41,14 +41,14 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/" className="inline-block">
               <Image
-                src={companyInfo.desktopLogo}
+                src={companyInfo.desktopLogoWhite}
                 alt={`${companyInfo.name} Logo`}
                 width={140}
                 height={40}
                 className="object-contain"
               />
             </Link>
-            <p className="leading-relaxed text-sm opacity-90" style={{ color: "var(--bg-primary)" }}>
+            <p className="leading-relaxed text-sm opacity-90 text-gray-300">
               Building the future of software development and workflow automation.
             </p>
 

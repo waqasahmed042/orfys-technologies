@@ -15,7 +15,7 @@ const Analysis: React.FC<AnalysisProps> = ({
             style={{ color: "var(--text-primary)" }}
         >
             <h2
-                className="text-xl md:text-2xl lg:text-4xl font-bold mb-6"
+                className="text-lg md:text-xl lg:text-3xl font-bold mb-6"
                 style={{ color: "var(--text-primary)" }}
             >
                 {title}
@@ -23,7 +23,7 @@ const Analysis: React.FC<AnalysisProps> = ({
 
             <p
                 style={{ color: "var(--text-secondary)" }}
-                className='text-sm md:text-md lg:text-lg leading-relaxed'
+                className='text-sm md:text-md lg:text-md leading-relaxed'
             >
                 {description}
             </p>
@@ -44,7 +44,7 @@ const Analysis: React.FC<AnalysisProps> = ({
                 </h4>
 
                 <p
-                    className="text-sm italic text-sm md:text-md lg:text-lg leading-relaxed"
+                    className="text-sm italic text-sm leading-relaxed"
                     style={{ color: "var(--text-secondary)" }}
                 >
                     {pro_tip_description}
@@ -53,7 +53,7 @@ const Analysis: React.FC<AnalysisProps> = ({
 
             <p
                 style={{ color: "var(--text-secondary)" }}
-                className='text-sm md:text-md lg:text-lg leading-relaxed'
+                className='text-sm md:text-md lg:text-md leading-relaxed'
             >
                 {conclusion}
             </p>

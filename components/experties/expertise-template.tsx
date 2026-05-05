@@ -3,15 +3,11 @@ import React, { useEffect } from "react";
 import Hero from "./hero";
 import NotFound from "@/app/not-found";
 import { usePathname } from "next/navigation";
-import Header from "../Header";
-import ScrollToTop from "@/hooks/useScrollToTop";
-import Footer from "@/components/Footer";
 import { expertiesContent } from "@/lib/expertiesConstant";
 import ExpertiesContent from "./expertiesContent";
 import Testimonials from "../Testimonials";
 import WhyOrfys from "../WhyOrfys";
 import CTA from "../CTA";
-import ChatWidget from "../chatWidget";
 
 const ExpertiesTemplate: React.FC = () => {
   const pathname = usePathname();
@@ -33,8 +29,6 @@ const ExpertiesTemplate: React.FC = () => {
 
   return (
     <>
-      <Header />
-
       <main className="bg-[var(--bg-primary)] min-h-screen">
         <Hero
           title={content.hero.title}
@@ -49,10 +43,6 @@ const ExpertiesTemplate: React.FC = () => {
         <WhyOrfys />
         <CTA />
       </main>
-
-      <Footer />
-      <ScrollToTop />
-      <ChatWidget />
     </>
   );
 };

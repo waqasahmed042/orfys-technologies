@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Footer from "@/components/Footer";
 import Hero from "@/components/services/hero";
 import WhyOrfys from "@/components/WhyOrfys";
 import Integrations from "@/components/services/integrations";
@@ -34,8 +33,6 @@ const ServiceTemplate: React.FC = () => {
         {/* Faqs */}
         <Faqs />
       </main>
-
-      <Footer />
     </>
   );
 };

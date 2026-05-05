@@ -7,6 +7,7 @@ import { CiSearch } from 'react-icons/ci';
 import { IoIosArrowDown } from 'react-icons/io';
 import { blogPosts, categoryNames } from '@/lib/companyConstant';
 import Footer from '@/components/Footer';
+import { trending } from './author';
 
 const Blogs: React.FC = () => {
     const pageSize = 4;
@@ -130,11 +131,11 @@ const Blogs: React.FC = () => {
                                                 {post.date}
                                             </span>
 
-                                            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] cursor-pointer leading-tight mb-3">
+                                            <h2 className="text-md md:text-lg lg:text-xl font-bold text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] cursor-pointer leading-tight mb-3">
                                                 {post.title}
                                             </h2>
 
-                                            <p className="text-[var(--text-secondary)] text-sm md:text-md lg:text-lg leading-relaxed mb-4 flex-grow">
+                                            <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-4 flex-grow">
                                                 {post.description}
                                             </p>
 
@@ -302,6 +303,29 @@ const Blogs: React.FC = () => {
                                         ))}
                                     </ul>
                                 </div>
+                            </div>
+
+
+
+                            <div className="border border-[var(--border-default)] bg-[var(--bg-primary)] rounded-2xl p-6 shadow-sm">
+                                <h4 className="text-sm font-extrabold uppercase tracking-widest mb-5 text-[var(--text-primary)]">
+                                    Trending Topics
+                                </h4>
+                                <ul className="space-y-3">
+                                    {trending.map((item, idx) => (
+                                        <li key={idx}>
+                                            <Link
+                                                href={`/blogs/${item.slug}`}
+                                                className="text-sm block transition-colors group"
+                                                style={{ color: "var(--text-primary)" }}
+                                            >
+                                                <span className="group-hover:text-[var(--accent-primary)] transition-colors">
+                                                    {item.label}
+                                                </span>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
                     </aside>

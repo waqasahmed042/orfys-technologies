@@ -1,9 +1,9 @@
 "use client";
-
+import { ScrollToTopProps } from "@/utilities/types";
 import { useEffect, useState } from "react";
 import { LuMouse, LuChevronsUp } from "react-icons/lu";
 
-export default function ScrollToTop() {
+export default function ScrollToTop({ chatOpen = false }: ScrollToTopProps) {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -12,7 +12,6 @@ export default function ScrollToTop() {
                 window.scrollY ||
                 document.documentElement.scrollTop ||
                 document.body.scrollTop;
-
             setIsVisible(scrollY > 300);
         };
 
@@ -21,17 +20,18 @@ export default function ScrollToTop() {
     }, []);
 
     const scrollToTop = () => {
-        const scrollElement =
-            document.scrollingElement || document.documentElement;
-
+        const scrollElement = document.scrollingElement || document.documentElement;
         scrollElement.scrollTo({
             top: 0,
             behavior: "smooth",
         });
     };
 
+    // Dynamic positioning based on chat state
+    const bottomPosition = chatOpen ? "bottom-[380px]" : "bottom-22";
+
     return (
-        <div className="fixed bottom-20 right-6">
+        <div className={`fixed ${bottomPosition} right-6 z-40 transition-all duration-300`}>
             <button
                 type="button"
                 onClick={scrollToTop}

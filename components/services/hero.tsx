@@ -1,15 +1,11 @@
 "use client";
-
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import PathSegments from '../pathSegments';
-import Header from '../Header';
 import { servicesContentMap } from '@/lib/constants';
-import ScrollToTop from "@/hooks/useScrollToTop";
-import ChatWidget from '../chatWidget';
 
 const ServicesHero = () => {
     const pathname = usePathname();
@@ -57,8 +53,6 @@ const ServicesHero = () => {
 
     return (
         <>
-            <Header />
-
             <section
                 id="software-development"
                 className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"
@@ -109,9 +103,6 @@ const ServicesHero = () => {
                     </div>
                 </div>
             </section>
-
-            <ScrollToTop />
-            <ChatWidget />
         </>
     );
 };

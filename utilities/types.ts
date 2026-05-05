@@ -5,7 +5,8 @@ import { IconType } from "react-icons";
 export type MenuItem = {
     title: string;
     desc?: string;
-    icon: string;
+    icon: string | IconType
+    hover: string;
     path?: string;
 };
 
@@ -177,4 +178,19 @@ export interface AuthorProps {
     name: string;
     role: string;
     bio: string;
-}
+};
+
+export type ScrollToTopProps = {
+    chatOpen?: boolean;
+};
+
+export type Message = {
+    id: number;
+    text: string;
+    sender: "user" | "bot";
+};
+
+export type ChatWidgetProps = {
+    open: boolean;
+    setOpen: (open: boolean) => void;
+};

@@ -2,19 +2,15 @@
 import React, { useEffect, useRef } from "react";
 import Navigations from "./navigations";
 import MainFunctions from "./mainFunctions";
-import Footer from "@/components/Footer";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { ourProducts } from "@/lib/constants";
 import NotFound from "@/app/not-found";
-import Header from "@/components/Header";
-import ScrollToTop from "@/hooks/useScrollToTop";
 import Hero from "./hero";
 import Description from "./description";
 import Customization from "./customization";
 import MainFeatures from "./mainFeatures";
 import ScreenShots from "./screenShots";
-import ChatWidget from "@/components/chatWidget";
 
 const ProductsTemplate: React.FC = () => {
   const pathname = usePathname();
@@ -105,7 +101,6 @@ const ProductsTemplate: React.FC = () => {
   return (
     <>
       <main className="bg-[var(--bg-primary)] min-h-screen">
-        <Header />
         <Hero />
 
         <Navigations />
@@ -138,10 +133,6 @@ const ProductsTemplate: React.FC = () => {
 
         <ScreenShots />
         <Customization />
-
-        <Footer />
-        <ScrollToTop />
-        <ChatWidget />
       </main>
     </>
   );

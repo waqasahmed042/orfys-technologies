@@ -2,15 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import { IoChatbubbleEllipsesOutline, IoClose } from "react-icons/io5";
+import { Message, ChatWidgetProps } from "@/utilities/types";
 
-type Message = {
-    id: number;
-    text: string;
-    sender: "user" | "bot";
-};
-
-const ChatWidget = () => {
-    const [open, setOpen] = useState(false);
+const ChatWidget = ({ open, setOpen }: ChatWidgetProps) => {
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState<Message[]>([
         {

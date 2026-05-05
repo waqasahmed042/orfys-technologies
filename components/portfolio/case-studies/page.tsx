@@ -69,7 +69,7 @@ const CaseStudies: React.FC = () => {
 
             {/* Filter Bar */}
             <section
-                className="sticky top-16 z-30 backdrop-blur-md border-b py-4"
+                className="sticky top-20 z-30 backdrop-blur-md border-b py-4"
                 style={{
                     backgroundColor: "color-mix(in srgb, var(--bg-primary) 85%, transparent)",
                     borderColor: "var(--border-default)",

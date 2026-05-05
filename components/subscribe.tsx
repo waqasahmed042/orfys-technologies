@@ -3,7 +3,7 @@ import React from "react";
 
 const Subscribe: React.FC = () => {
     return (
-        <section className="py-16 max-w-[1300px] mx-auto px-6">
+        <section className="py-16 max-w-[1300px] mx-auto">
             <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-[3rem] pt-6 px-4 md:p-16 relative text-center">
 
                 {/* Content */}

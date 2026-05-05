@@ -5,17 +5,6 @@ import blob4 from "@/public/services/blob4.png";
 import blob5 from "@/public/services/blob5.png";
 import blob6 from "@/public/services/blob6.png";
 import { MenuItem, Product, Service, contentMap, TrustFactor } from "@/utilities/types";
-import {
-  IoCodeSlash,
-  IoSettingsSharp,
-  IoSyncCircleSharp,
-  IoBarChartSharp,
-  IoPhonePortraitOutline,
-  IoShieldCheckmarkSharp
-} from "react-icons/io5";
-import { HiOutlineLightBulb, HiOutlineRectangleGroup, HiOutlineCpuChip, HiOutlineBeaker } from "react-icons/hi2";
-import { IoRocketOutline } from "react-icons/io5";
-import { LuShieldCheck } from "react-icons/lu";
 import software_development from "@/public/services/software-development.svg";
 import workflow_automation from "@/public/services/workflow-automation.svg";
 import integration_services from "@/public/services/integration-services.svg";
@@ -25,100 +14,360 @@ import security_compliance from "@/public/services/security-compliance.svg";
 import case_studies from "@/public/portfolio/case-study/case-studies.svg";
 import our_products from "@/public/portfolio/our-products.svg";
 
+// React Icons
+import {
+  IoCodeSlash, IoSettingsSharp, IoSyncCircleSharp,
+  IoBarChartSharp, IoPhonePortraitOutline, IoShieldCheckmarkSharp
+} from "react-icons/io5";
+
+import {
+  HiOutlineLightBulb, HiOutlineRectangleGroup,
+  HiOutlineCpuChip, HiOutlineBeaker
+} from "react-icons/hi2";
+import { IoRocketOutline } from "react-icons/io5";
+import { LuShieldCheck } from "react-icons/lu";
+
+import {
+  SiNodedotjs, SiPython, SiExpress, SiMongodb, SiPostgresql, SiRedis,
+  SiReact, SiFlutter, SiSwift, SiFirebase, SiDocker, SiKubernetes,
+  SiGithub, SiNextdotjs, SiTailwindcss, SiAmazon, SiMicrostation,
+  SiApple, SiAndroid, SiGooglecloud, SiBitcoin, SiBlockchaindotcom, SiWeb3Dotjs,
+} from "react-icons/si";
+
+import {
+  FaGlobe, FaCogs, FaBuilding, FaBolt, FaLink, FaChartBar,
+  FaChartLine, FaDatabase, FaLock, FaFileContract, FaShieldAlt,
+  FaHospital, FaCreditCard, FaUniversity, FaShoppingCart, FaTags,
+  FaTruck, FaBox, FaGamepad, FaGraduationCap, FaPhone, FaFilm,
+  FaBroadcastTower, FaBullhorn, FaFolder, FaIndustry, FaUsers, FaBook,
+  FaSync, FaVrCardboard, FaDraftingCompass, FaProjectDiagram, FaFlask,
+  FaPenFancy, FaRocket, FaHandshake,
+} from "react-icons/fa";
+
 export const companyInfo = {
   fullName: "ORFYS TECHNOLOGIES (PRIVATE) LIMITED",
   name: "Orfys Technologies",
   email: "info@orfys.com",
   phone: "+92 309 9999999",
   location: "Pakistan",
-  desktopLogo: "/o-full-logo.png",
+  desktopLogoDark: "/o-full-logo-dark.png",
+  desktopLogoWhite: "/o-full-logo-white.png",
   mobileLogo: "/o-logo.png",
 };
 
 export const navigationMenus = {
   "Services": {
     "Software Development": [
-      { title: "Web Applications", desc: "Modern, scalable web platforms", icon: "🌐", path: "/services/software-development" },
-      { title: "Custom Software", desc: "Tailored business solutions", icon: "💻", path: "/services/software-development" },
-      { title: "Enterprise Systems", desc: "Large-scale enterprise tools", icon: "🏢", path: "/services/software-development" },
+      {
+        title: "Web Applications",
+        desc: "Modern, scalable web platforms",
+        icon: FaGlobe,
+        hover: "#3B82F6",
+        path: "/services/software-development",
+      },
+      {
+        title: "Custom Software",
+        desc: "Tailored business solutions",
+        icon: FaCogs,
+        hover: "#8B5CF6",
+        path: "/services/software-development",
+      },
+      {
+        title: "Enterprise Systems",
+        desc: "Large-scale enterprise tools",
+        icon: FaBuilding,
+        hover: "#10B981",
+        path: "/services/software-development",
+      },
     ],
+
     "Workflow Automation": [
-      { title: "Business Automation", desc: "Streamline repetitive workflows", icon: "⚡", path: "/services/workflow-automation" },
-      { title: "Office Add-ins", desc: "Word, Excel & Outlook automation", icon: "🖇️", path: "/services/workflow-automation" },
-      { title: "Process Optimization", desc: "Improve operational efficiency", icon: "🔄", path: "/services/workflow-automation" },
+      {
+        title: "Business Automation",
+        desc: "Streamline repetitive workflows",
+        icon: FaBolt,
+        hover: "#F59E0B",
+        path: "/services/workflow-automation",
+      },
+      {
+        title: "Office Add-ins",
+        desc: "Word, Excel & Outlook automation",
+        icon: SiMicrostation,
+        hover: "#D83B01",
+        path: "/services/workflow-automation",
+      },
+      {
+        title: "Process Optimization",
+        desc: "Improve operational efficiency",
+        icon: FaCogs,
+        hover: "#6366F1",
+        path: "/services/workflow-automation",
+      },
     ],
+
     "Integration Services": [
-      { title: "API Development", desc: "Secure & scalable APIs", icon: "🔌", path: "/services/integration-services" },
-      { title: "Third-Party Integrations", desc: "Connect external platforms", icon: "🔗", path: "/services/integration-services" },
-      { title: "Cloud Integrations", desc: "Azure, AWS & SaaS connectivity", icon: "☁️", path: "/services/integration-services" },
+      {
+        title: "API Development",
+        desc: "Secure & scalable APIs",
+        icon: FaLink,
+        hover: "#06B6D4",
+        path: "/services/integration-services",
+      },
+      {
+        title: "Third-Party Integrations",
+        desc: "Connect external platforms",
+        icon: SiReact,
+        hover: "#61DBFB",
+        path: "/services/integration-services",
+      },
+      {
+        title: "Cloud Integrations",
+        desc: "Azure, AWS & SaaS connectivity",
+        icon: SiGooglecloud,
+        hover: "#4285F4",
+        path: "/services/integration-services",
+      },
     ],
+
     "Data Analytics": [
-      { title: "Data Visualization", desc: "Interactive dashboards & reports", icon: "📊", path: "/services/data-analytics" },
-      { title: "Business Intelligence", desc: "Insights for better decisions", icon: "📈", path: "/services/data-analytics" },
-      { title: "Data Processing", desc: "Transform and analyze datasets", icon: "🗄️", path: "/services/data-analytics" },
+      {
+        title: "Data Visualization",
+        desc: "Interactive dashboards & reports",
+        icon: FaChartBar,
+        hover: "#22C55E",
+        path: "/services/data-analytics",
+      },
+      {
+        title: "Business Intelligence",
+        desc: "Insights for better decisions",
+        icon: FaChartLine,
+        hover: "#14B8A6",
+        path: "/services/data-analytics",
+      },
+      {
+        title: "Data Processing",
+        desc: "Transform and analyze datasets",
+        icon: FaDatabase,
+        hover: "#A855F7",
+        path: "/services/data-analytics",
+      },
     ],
+
     "Mobile Solutions": [
-      { title: "iOS Development", desc: "Native Apple applications", icon: "🍎", path: "/services/mobile-solutions" },
-      { title: "Android Development", desc: "Modern Android experiences", icon: "🤖", path: "/services/mobile-solutions" },
-      { title: "Cross-Platform Apps", desc: "Single codebase mobile apps", icon: "📱", path: "/services/mobile-solutions" },
+      {
+        title: "iOS Development",
+        desc: "Native Apple applications",
+        icon: SiApple,
+        hover: "#000000",
+        path: "/services/mobile-solutions",
+      },
+      {
+        title: "Android Development",
+        desc: "Modern Android experiences",
+        icon: SiAndroid,
+        hover: "#3DDC84",
+        path: "/services/mobile-solutions",
+      },
+      {
+        title: "Cross-Platform Apps",
+        desc: "Single codebase mobile apps",
+        icon: SiFlutter,
+        hover: "#02569B",
+        path: "/services/mobile-solutions",
+      },
     ],
+
     "Security & Compliance": [
-      { title: "Application Security", desc: "Protect apps from threats", icon: "🔐", path: "/services/security-compliance" },
-      { title: "Compliance Solutions", desc: "Meet industry standards", icon: "📜", path: "/services/security-compliance" },
-      { title: "Security Audits", desc: "Identify and fix vulnerabilities", icon: "🛡️", path: "/services/security-compliance" },
-    ]
+      {
+        title: "Application Security",
+        desc: "Protect apps from threats",
+        icon: FaLock,
+        hover: "#EF4444",
+        path: "/services/security-compliance",
+      },
+      {
+        title: "Compliance Solutions",
+        desc: "Meet industry standards",
+        icon: FaFileContract,
+        hover: "#F97316",
+        path: "/services/security-compliance",
+      },
+      {
+        title: "Security Audits",
+        desc: "Identify and fix vulnerabilities",
+        icon: FaShieldAlt,
+        hover: "#DC2626",
+        path: "/services/security-compliance",
+      },
+    ],
   },
   "Technologies": {
     "Frontend": [
-      { title: "React.js", desc: "Dynamic UI", icon: "⚛️", path: "/technologies" },
-      { title: "Next.js", desc: "SSR & Performance", icon: "🚀", path: "/technologies" },
-      { title: "Tailwind CSS", desc: "Modern Styling", icon: "🎨", path: "/technologies" },
+      {
+        title: "React.js",
+        desc: "Dynamic UI",
+        icon: SiReact,
+        hover: "#61DBFB",
+        path: "/technologies",
+      },
+      {
+        title: "Next.js",
+        desc: "SSR & Performance",
+        icon: SiNextdotjs,
+        hover: "#000000",
+        path: "/technologies",
+      },
+      {
+        title: "Tailwind CSS",
+        desc: "Modern Styling",
+        icon: SiTailwindcss,
+        hover: "#06b6d4",
+        path: "/technologies",
+      },
     ],
+
     "Backend": [
-      { title: "Node.js", desc: "Fast JS Runtime", icon: "🟢", path: "/technologies" },
-      { title: "Python/Django", desc: "Secure & Robust", icon: "🐍", path: "/technologies" },
-      { title: "Express.js", desc: "Minimalist API", icon: "⚡", path: "/technologies" },
+      {
+        title: "Node.js",
+        desc: "Fast JS Runtime",
+        icon: SiNodedotjs,
+        hover: "#3C873A",
+        path: "/technologies",
+      },
+      {
+        title: "Python/Django",
+        desc: "Secure & Robust",
+        icon: SiPython,
+        hover: "#3776AB",
+        path: "/technologies",
+      },
+      {
+        title: "Express.js",
+        desc: "Minimalist API",
+        icon: SiExpress,
+        hover: "#dddddd",
+        path: "/technologies",
+      },
     ],
+
     "Database": [
-      { title: "MongoDB", desc: "NoSQL Database", icon: "🍃", path: "/technologies" },
-      { title: "PostgreSQL", desc: "Relational SQL", icon: "🐘", path: "/technologies" },
-      { title: "Redis", desc: "Caching & Speed", icon: "🛑", path: "/technologies" },
+      {
+        title: "MongoDB",
+        desc: "NoSQL Database",
+        icon: SiMongodb,
+        hover: "#47A248",
+        path: "/technologies",
+      },
+      {
+        title: "PostgreSQL",
+        desc: "Relational SQL",
+        icon: SiPostgresql,
+        hover: "#336791",
+        path: "/technologies",
+      },
+      {
+        title: "Redis",
+        desc: "Caching & Speed",
+        icon: SiRedis,
+        hover: "#DC382D",
+        path: "/technologies",
+      },
     ],
+
     "Mobile": [
-      { title: "React Native", desc: "Cross-platform", icon: "📱", path: "/technologies" },
-      { title: "Flutter", desc: "Native Performance", icon: "🐦", path: "/technologies" },
-      { title: "Swift", desc: "iOS Native", icon: "🍎", path: "/technologies" },
+      {
+        title: "React Native",
+        desc: "Cross-platform",
+        icon: SiReact,
+        hover: "#61DBFB",
+        path: "/technologies",
+      },
+      {
+        title: "Flutter",
+        desc: "Native Performance",
+        icon: SiFlutter,
+        hover: "#02569B",
+        path: "/technologies",
+      },
+      {
+        title: "Swift",
+        desc: "iOS Native",
+        icon: SiSwift,
+        hover: "#FA7343",
+        path: "/technologies",
+      },
     ],
+
     "Cloud": [
-      { title: "AWS", desc: "Amazon Web Services", icon: "☁️", path: "/technologies" },
-      { title: "Azure", desc: "Microsoft Cloud", icon: "💠", path: "/technologies" },
-      { title: "Firebase", desc: "Real-time Apps", icon: "🔥", path: "/technologies" },
+      {
+        title: "AWS",
+        desc: "Amazon Web Services",
+        icon: SiAmazon,
+        hover: "#FF9900",
+        path: "/technologies",
+      },
+      {
+        title: "Azure",
+        desc: "Microsoft Cloud",
+        icon: SiMicrostation,
+        hover: "#0078D4",
+        path: "/technologies",
+      },
+      {
+        title: "Firebase",
+        desc: "Real-time Apps",
+        icon: SiFirebase,
+        hover: "#FFCA28",
+        path: "/technologies",
+      },
     ],
+
     "Tools": [
-      { title: "Docker", desc: "Containerization", icon: "🐋", path: "/technologies" },
-      { title: "Kubernetes", desc: "Orchestration", icon: "☸️", path: "/technologies" },
-      { title: "Git / GitHub", desc: "Version Control", icon: "🐙", path: "/technologies" },
-    ]
+      {
+        title: "Docker",
+        desc: "Containerization",
+        icon: SiDocker,
+        hover: "#2496ED",
+        path: "/technologies",
+      },
+      {
+        title: "Kubernetes",
+        desc: "Orchestration",
+        icon: SiKubernetes,
+        hover: "#326CE5",
+        path: "/technologies",
+      },
+      {
+        title: "Git / GitHub",
+        desc: "Version Control",
+        icon: SiGithub,
+        hover: "#F05032",
+        path: "/technologies",
+      },
+    ],
   },
   "Industries": {
     "Healthcare & Finance": [
       {
         title: "Healthcare",
         desc: "Medical software systems",
-        icon: "🏥",
-        path: "/industries/healthcare-software-solutions"
+        icon: FaHospital,
+        hover: "#EF4444",
+        path: "/industries/healthcare-software-solutions",
       },
       {
         title: "FinTech",
         desc: "Financial technology",
-        icon: "💳",
-        path: "/industries/fintech-software-solutions"
+        icon: FaCreditCard,
+        hover: "#6366F1",
+        path: "/industries/fintech-software-solutions",
       },
       {
         title: "Banking",
         desc: "Core banking solutions",
-        icon: "🏦",
-        path: "/industries/banking-software-solutions"
+        icon: FaUniversity,
+        hover: "#3B82F6",
+        path: "/industries/banking-software-solutions",
       },
     ],
 
@@ -126,52 +375,61 @@ export const navigationMenus = {
       {
         title: "E-Commerce",
         desc: "Retail & Online stores",
-        icon: "🛍️",
-        path: "/industries/ecommerce-software-solutions"
+        icon: FaShoppingCart,
+        hover: "#F59E0B",
+        path: "/industries/ecommerce-software-solutions",
       },
       {
         title: "Product Information",
         desc: "Management Software (PIM)",
-        icon: "🏷️", path: "/industries/product-information-management-pim"
+        icon: FaTags,
+        hover: "#A855F7",
+        path: "/industries/product-information-management-pim",
       },
       {
         title: "Logistics",
         desc: "Fleet & Supply Chain",
-        icon: "🚛",
-        path: "/industries/logistics-supply-chain-software-solutions"
+        icon: FaTruck,
+        hover: "#10B981",
+        path: "/industries/logistics-supply-chain-software-solutions",
       },
       {
         title: "Warehouse",
         desc: "Inventory Management",
-        icon: "📦",
-        path: "/industries/warehouse-management-software-solutions"
+        icon: FaBox,
+        hover: "#06B6D4",
+        path: "/industries/warehouse-management-software-solutions",
       },
     ],
 
     "Gaming, Edu & Energy": [
       {
         title: "Gaming & Sports",
-        desc: "Gambling & Sports Betting",
-        icon: "🎮",
-        path: "/industries/gaming-sports-software-solutions"
+        desc: "Gaming & Sports systems",
+        icon: FaGamepad,
+        hover: "#EC4899",
+        path: "/industries/gaming-sports-software-solutions",
       },
       {
         title: "Education",
         desc: "School Management Software",
-        icon: "🎓",
-        path: "/industries/education-software-solutions"
+        icon: FaGraduationCap,
+        hover: "#14B8A6",
+        path: "/industries/education-software-solutions",
       },
       {
         title: "Telecom",
         desc: "Connectivity solutions",
-        icon: "📞",
-        path: "/industries/telecom-software-solutions"
+        icon: FaPhone,
+        hover: "#3B82F6",
+        path: "/industries/telecom-software-solutions",
       },
       {
         title: "Energy & Utilities",
         desc: "Renewable & Traditional",
-        icon: "⚡",
-        path: "/industries/energy-utilities-software-solutions"
+        icon: FaBolt,
+        hover: "#F97316",
+        path: "/industries/energy-utilities-software-solutions",
       },
     ],
 
@@ -179,20 +437,23 @@ export const navigationMenus = {
       {
         title: "Cryptocurrency",
         desc: "Exchanges, Wallets & Bots",
-        icon: "🪙",
-        path: "/industries/cryptocurrency-software-solutions"
+        icon: SiBitcoin,
+        hover: "#F59E0B",
+        path: "/industries/cryptocurrency-software-solutions",
       },
       {
         title: "Blockchain",
         desc: "DAO, DApp & DeFi",
-        icon: "🔗",
-        path: "/industries/blockchain-software-solutions"
+        icon: SiBlockchaindotcom,
+        hover: "#8B5CF6",
+        path: "/industries/blockchain-software-solutions",
       },
       {
         title: "Web3",
         desc: "Metaverse & NFT Development",
-        icon: "🌐",
-        path: "/industries/web3-software-solutions"
+        icon: SiWeb3Dotjs,
+        hover: "#06B6D4",
+        path: "/industries/web3-software-solutions",
       },
     ],
 
@@ -200,108 +461,126 @@ export const navigationMenus = {
       {
         title: "Media & Entertainment",
         desc: "Content & Streaming",
-        icon: "🎬",
-        path: "/industries/media-entertainment-software-solutions"
+        icon: FaFilm,
+        hover: "#EF4444",
+        path: "/industries/media-entertainment-software-solutions",
       },
       {
         title: "IoT",
         desc: "Connected devices",
-        icon: "📡",
-        path: "/industries/iot-software-solutions"
+        icon: FaBroadcastTower,
+        hover: "#22C55E",
+        path: "/industries/iot-software-solutions",
       },
       {
         title: "Advertising",
         desc: "AdTech solutions",
-        icon: "📢",
-        path: "/industries/advertising-adtech-software-solutions"
+        icon: FaBullhorn,
+        hover: "#F43F5E",
+        path: "/industries/advertising-adtech-software-solutions",
       },
-    ]
+    ],
   },
   "Expertise": {
     "Business Solutions": [
       {
         title: "Documents Management Systems (DMS)",
         desc: "Organized digital filing",
-        icon: "📁",
-        path: "/experties/documents-management-systems-dms"
+        icon: FaFolder,
+        hover: "#3B82F6",
+        path: "/experties/documents-management-systems-dms",
       },
       {
         title: "Business Process Management (BPM)",
         desc: "Workflow automation",
-        icon: "📈",
-        path: "/experties/business-process-management-bpm"
+        icon: FaChartLine,
+        hover: "#10B981",
+        path: "/experties/business-process-management-bpm",
       },
       {
         title: "Enterprise Asset Management (EAM)",
         desc: "Asset tracking & lifecycle",
-        icon: "🏗️",
-        path: "/experties/enterprise-asset-management-eam"
+        icon: FaBuilding,
+        hover: "#F59E0B",
+        path: "/experties/enterprise-asset-management-eam",
       },
       {
         title: "Facility Management Software (FM)",
         desc: "Infrastructure maintenance",
-        icon: "🏢",
-        path: "/experties/facility-management-software-fm"
+        icon: FaIndustry,
+        hover: "#6366F1",
+        path: "/experties/facility-management-software-fm",
       },
     ],
+
     "Management Software": [
       {
         title: "Human Resource Management (HRM)",
         desc: "Staff & payroll tools",
-        icon: "👥",
-        path: "/experties/human-resource-management-hrm"
+        icon: FaUsers,
+        hover: "#EC4899",
+        path: "/experties/human-resource-management-hrm",
       },
       {
         title: "Digital Publishing Software (DPS)",
         desc: "Content distribution",
-        icon: "📖",
-        path: "/experties/digital-publishing-software-dps"
+        icon: FaBook,
+        hover: "#14B8A6",
+        path: "/experties/digital-publishing-software-dps",
       },
       {
         title: "Digital Rights Management (DRM)",
         desc: "Content protection",
-        icon: "🔐",
-        path: "/experties/digital-rights-management-drm"
+        icon: FaLock,
+        hover: "#EF4444",
+        path: "/experties/digital-rights-management-drm",
       },
       {
         title: "Product Lifecycle Management (PLM)",
         desc: "Product roadmap tech",
-        icon: "🔄",
-        path: "/experties/product-lifecycle-management-plm"
+        icon: FaSync,
+        hover: "#A855F7",
+        path: "/experties/product-lifecycle-management-plm",
       },
     ],
+
     "Advanced Tech": [
       {
         title: "AR/VR Solutions",
         desc: "Immersive experiences",
-        icon: "🕶️",
-        path: "/experties/ar-vr-solutions"
+        icon: FaVrCardboard,
+        hover: "#06B6D4",
+        path: "/experties/ar-vr-solutions",
       },
       {
         title: "Big Data Software",
         desc: "Large scale analytics",
-        icon: "📉",
-        path: "/experties/big-data-software"
+        icon: FaDatabase,
+        hover: "#3B82F6",
+        path: "/experties/big-data-software",
       },
       {
         title: "CAD Software",
         desc: "Engineering design tools",
-        icon: "📐",
-        path: "/experties/cad-software"
+        icon: FaDraftingCompass,
+        hover: "#F97316",
+        path: "/experties/cad-software",
       },
       {
         title: "Customer Relationship (CRM)",
         desc: "Client management",
-        icon: "🤝",
-        path: "/experties/customer-relationship-crm"
+        icon: FaHandshake,
+        hover: "#22C55E",
+        path: "/experties/customer-relationship-crm",
       },
       {
         title: "Enterprise Resource Planning (ERP)",
         desc: "Unified business logic",
-        icon: "💼",
-        path: "/experties/enterprise-resource-planning-erp"
+        icon: FaProjectDiagram,
+        hover: "#0EA5E9",
+        path: "/experties/enterprise-resource-planning-erp",
       },
-    ]
+    ],
   }
 } as const;
 export const dropdownKeys = ["Services", "Technologies", "Industries", "Expertise"] as const;
@@ -310,27 +589,31 @@ export const portfolioMenu: MenuItem[] = [
   {
     title: "CASE STUDIES",
     desc: "Full range of custom software development services.",
-    icon: "📊",
-    path: "/portfolio/case-studies"
+    icon: FaChartBar,
+    hover: "#3B82F6",
+    path: "/portfolio/case-studies",
   },
   {
     title: "R&D WORKS",
     desc: "Keeping pace with the latest trends and API ecosystems.",
-    icon: "🔬",
-    path: "/portfolio/rd-works"
+    icon: FaFlask,
+    hover: "#8B5CF6",
+    path: "/portfolio/rd-works",
   },
   {
     title: "PRODUCTS",
     desc: "Custom software development projects and add-ons.",
-    icon: "📦",
-    path: "/portfolio/products"
+    icon: FaBox,
+    hover: "#F59E0B",
+    path: "/portfolio/products",
   },
   {
     title: "E-PUBLISHING SOLUTIONS",
     desc: "Tools for secure digital publishing and management.",
-    icon: "🛡️",
-    path: "/portfolio/e-publishing-solutions"
-  }
+    icon: FaShieldAlt,
+    hover: "#10B981",
+    path: "/portfolio/e-publishing-solutions",
+  },
 ];
 
 import about_us from "@/public/company/about-us/about-us.svg";
@@ -344,67 +627,77 @@ export const companyMenu = [
   {
     title: "ABOUT US",
     desc: "Our history, mission, and the values that drive our innovation.",
-    icon: "🏢",
+    icon: FaBuilding,
+    hover: "#3B82F6",
     path: "/company/about-us",
     aboutUS: {
       title: "About US",
-      description: "Discover our company's mission, vision, and values. Learn about our team, culture, and commitment to innovation. Explore our history, achievements, and future goals as we strive to make a positive impact in our industry and community.",
+      description:
+        "Discover our company's mission, vision, and values. Learn about our team, culture, and commitment to innovation. Explore our history, achievements, and future goals as we strive to make a positive impact in our industry and community.",
       button: "Get A Quote",
       image: about_us,
-      imageAlt: "About US"
-    }
+      imageAlt: "About US",
+    },
   },
   {
     title: "BLOG",
     desc: "Insights, tutorials, and latest trends from our tech experts.",
-    icon: "✍️",
+    icon: FaPenFancy,
+    hover: "#8B5CF6",
     path: "/company/blogs",
     blogs: {
       title: "Corporate Blog",
-      description: "Read the latest insights, articles, and thought leadership from our team. Stay informed about industry trends and company updates.",
+      description:
+        "Read the latest insights, articles, and thought leadership from our team. Stay informed about industry trends and company updates.",
       button: "Get A Quote",
       image: blogs,
-      imageAlt: "Blogs"
-    }
+      imageAlt: "Blogs",
+    },
   },
   {
     title: "PEOPLE",
     desc: "Meet the brilliant minds behind our successful solutions.",
-    icon: "👥",
+    icon: FaUsers,
+    hover: "#10B981",
     path: "/company/people",
     people: {
       title: "People",
-      description: "Meet the talented individuals behind our success. Learn about our leadership team and our diverse workforce driving innovation.",
+      description:
+        "Meet the talented individuals behind our success. Learn about our leadership team and our diverse workforce driving innovation.",
       button: "Get A Quote",
       image: people,
-      imageAlt: "People"
-    }
+      imageAlt: "People",
+    },
   },
   {
     title: "CAREERS",
     desc: "Join our team and build the future of technology with us.",
-    icon: "🚀",
+    icon: FaRocket,
+    hover: "#F59E0B",
     path: "/company/careers",
     careers: {
       title: "Careers",
-      description: "Explore exciting career opportunities with our company. Join our team and grow your career in a dynamic and innovative environment.",
+      description:
+        "Explore exciting career opportunities with our company. Join our team and grow your career in a dynamic and innovative environment.",
       button: "Get A Quote",
       image: careers,
-      imageAlt: "Careers"
-    }
+      imageAlt: "Careers",
+    },
   },
   {
     title: "ENGAGEMENT MODELS",
     desc: "Flexible partnership models including dedicated teams.",
-    icon: "🤝",
+    icon: FaHandshake,
+    hover: "#EF4444",
     path: "/company/engagement-models",
     engagementModels: {
-      title: "Engagments Models",
-      description: "Discover the various engagement models we offer to our clients, ensuring flexibility, efficiency, and tailored solutions for every project.",
+      title: "Engagement Models",
+      description:
+        "Discover the various engagement models we offer to our clients, ensuring flexibility, efficiency, and tailored solutions for every project.",
       button: "Get A Quote",
       image: engagement_models,
-      imageAlt: "Engagement Models"
-    }
+      imageAlt: "Engagement Models",
+    },
   }
 ];
 

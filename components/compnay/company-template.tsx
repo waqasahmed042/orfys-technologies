@@ -3,11 +3,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { companyMenu } from "@/lib/constants";
 import Hero from "./hero";
-import Footer from "@/components/Footer";
 import NotFound from "@/app/not-found";
-import ScrollToTop from "@/hooks/useScrollToTop";
-import Header from "../Header";
-import ChatWidget from "../chatWidget";
 
 const CompanyTemplate = () => {
   const pathname = usePathname();
@@ -44,8 +40,6 @@ const CompanyTemplate = () => {
 
   return (
     <>
-      <Header />
-
       <main className="bg-[var(--bg-primary)] min-h-screen">
         {/* Hero Section - Passing data from companyMenu */}
         <Hero
@@ -55,11 +49,6 @@ const CompanyTemplate = () => {
           image={content.image}
           imageAlt={content.imageAlt}
         />
-
-        {/* Footer Section */}
-        <Footer />
-        <ScrollToTop />
-        <ChatWidget />
       </main>
     </>
   );

@@ -6,11 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import PathSegments from '../pathSegments';
-import Header from '../Header';
 import { portfolioContentMap } from '@/lib/constants';
-import ScrollToTop from "@/hooks/useScrollToTop";
-import Footer from '../Footer';
-import ChatWidget from '../chatWidget';
 
 const PortfolioHero = () => {
     const pathname = usePathname();
@@ -58,8 +54,6 @@ const PortfolioHero = () => {
 
     return (
         <>
-            <Header />
-
             <section
                 id="case-studies"
                 className="relative w-full flex items-center mt-32 mb-12 overflow-hidden"
@@ -110,9 +104,6 @@ const PortfolioHero = () => {
                     </div>
                 </div>
             </section>
-
-            <ScrollToTop />
-            <ChatWidget />
         </>
     );
 };
