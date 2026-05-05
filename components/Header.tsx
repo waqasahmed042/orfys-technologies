@@ -13,7 +13,7 @@ import { IoMenu, IoClose } from 'react-icons/io5';
 import { MenuItem } from "@/utilities/types";
 import { IoIosArrowUp } from "react-icons/io";
 
-export default function Header() {
+const Header = () => {
   const { mode } = useTheme();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -115,8 +115,7 @@ export default function Header() {
     }
   };
 
-  // ==================== MENU ITEM COMPONENTS ====================
-
+  // MENU ITEM COMPONENTS
   const StandardItem = ({ item, onClick }: {
     item: MenuItem;
     onClick?: () => void
@@ -428,3 +427,5 @@ export default function Header() {
     </>
   );
 };
+
+export default Header;
