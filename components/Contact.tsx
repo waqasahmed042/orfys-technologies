@@ -5,11 +5,8 @@ import { CgLayoutGrid } from 'react-icons/cg';
 import { CiMonitor } from 'react-icons/ci';
 import { FaUserSecret } from 'react-icons/fa';
 import { FiFileText } from 'react-icons/fi';
-import Footer from './Footer';
-import Header from './Header';
 import Attachments from './Attachments';
 import { FilePreviewProps } from '@/utilities/types';
-import ChatWidget from './chatWidget';
 
 const steps = [
     {
@@ -44,8 +41,6 @@ const Contact: React.FC = () => {
 
     return (
         <>
-            <Header />
-
             <section
                 className="relative w-full py-20 px-6 mt-28 md:px-12 lg:px-24"
                 style={{ backgroundColor: "var(--bg-primary)" }}
@@ -194,10 +189,6 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
             </section>
-
-            <Footer />
-            <ScrollToTop />
-            <ChatWidget />
         </>
     );
 };

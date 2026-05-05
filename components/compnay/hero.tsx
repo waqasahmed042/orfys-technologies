@@ -5,11 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import PathSegments from "../pathSegments";
 import { HeroProps } from "@/utilities/types";
-import Header from "../Header";
-import ScrollToTop from "@/hooks/useScrollToTop";
 import AboutUS from "@/components/compnay/about-us";
 import Blogs from "./blogs/page";
-import ChatWidget from "../chatWidget";
 
 const Hero = ({
     title,
@@ -57,8 +54,6 @@ const Hero = ({
 
     return (
         <>
-            <Header />
-
             <section
                 className="relative w-full flex items-center mt-28 mb-12 overflow-hidden"
                 style={{ backgroundColor: "var(--bg-primary)" }}
@@ -118,9 +113,6 @@ const Hero = ({
             ) : (
                 <></>
             )}
-
-            <ScrollToTop />
-            <ChatWidget />
         </>
     );
 };
